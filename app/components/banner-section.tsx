@@ -77,7 +77,13 @@ export default function BannerSection() {
               overflow: "hidden",
               bgcolor: "grey.100",
             }}
-          />
+          >
+            <img
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              src="/goooose30.jpg"
+              alt="goooose30"
+            />
+          </Paper>
           <Paper
             elevation={2}
             sx={{
@@ -90,7 +96,13 @@ export default function BannerSection() {
               overflow: "hidden",
               bgcolor: "grey.100",
             }}
-          />
+          >
+            <img
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              src="/goooose30.jpg"
+              alt="goooose30"
+            />
+          </Paper>
           <Paper
             elevation={2}
             sx={{
@@ -103,7 +115,13 @@ export default function BannerSection() {
               overflow: "hidden",
               bgcolor: "grey.100",
             }}
-          />
+          >
+            <img
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              src="/goooose30.jpg"
+              alt="goooose30"
+            />
+          </Paper>
         </Box>
       </Box>
     </Container>
