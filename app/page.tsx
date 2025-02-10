@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import BannerSection from "./components/banner-section";
 import TopDestinations from "./components/top-destinations";
+import LatestStories from "./components/latest-stories";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <BannerSection />
         <TopDestinations />
+        <LatestStories />
       </main>
     </div>
   );
