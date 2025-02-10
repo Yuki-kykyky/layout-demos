@@ -3,6 +3,7 @@ import Header from "./header";
 import BannerSection from "./components/banner-section";
 import TopDestinations from "./components/top-destinations";
 import LatestStories from "./components/latest-stories";
+import Highlights from "./components/highlights";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <BannerSection />
         <TopDestinations />
         <LatestStories />
+        <Highlights />
       </main>
     </div>
   );
