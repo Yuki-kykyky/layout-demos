@@ -15,7 +15,7 @@ export default function HighlightsV2() {
       <Box
         data-layer="trekkers-highlights-section"
         sx={{
-          p: 6,
+          height: "520px",
           bgcolor: "white",
         }}
       >
@@ -62,7 +62,18 @@ export default function HighlightsV2() {
               Jan 15, 2024
             </Typography>
 
-            <Typography fontFamily="Inter" sx={{ lineHeight: 1.5 }}>
+            <Typography
+              fontFamily="Inter"
+              sx={{
+                lineHeight: 1.5,
+                maxHeight: "100px",
+                overflow: "hidden",
+                display: "-webkit-box",
+                WebkitLineClamp: 4,
+                WebkitBoxOrient: "vertical",
+                textOverflow: "ellipsis",
+              }}
+            >
               From the historic streets to modern attractions, this guide covers
               everything you need to know about exploring Turkey. The exquisite
               culinary scene and local hospitality made this trip truly special.

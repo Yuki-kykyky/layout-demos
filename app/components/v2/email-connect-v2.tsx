@@ -11,8 +11,7 @@ export default function EmailConnectV2() {
           alignItems: "center",
           justifyContent: "center",
           height: "400px",
-          bgcolor: "white",
-          border: "1px solid black",
+          bgcolor: "grey.100",
           p: 4,
           borderRadius: "8px",
         }}
@@ -39,6 +38,7 @@ export default function EmailConnectV2() {
               input: {
                 sx: {
                   borderRadius: "50px",
+                  bgcolor: "white",
                 },
               },
             }}
