@@ -9,6 +9,7 @@ import EmailConnect from "./components/ v1/email-connect";
 import Footer from "./components/ v1/footer";
 import { Button } from "@mui/material";
 import EmailConnectV2 from "./components/v2/email-connect-v2";
+import HighlightsV2 from "./components/v2/highlights-v2";
 
 export default function Home() {
   const [version, setVersion] = useState("v1");
@@ -29,7 +30,12 @@ export default function Home() {
             <EmailConnect />
           </>
         )}
-        {version === "v2" && <EmailConnectV2 />}
+        {version === "v2" && (
+          <>
+            <HighlightsV2 />
+            <EmailConnectV2 />
+          </>
+        )}
       </main>
       <Footer />
     </div>
