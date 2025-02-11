@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 由图生成页面布局
 
-## Getting Started
+这是一场有关由图生成页面布局、结合 AI 辅助的实验练习记录。
 
-First, run the development server:
+!['网图参考'](./public/readme/website-layout.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[参考图片地址](https://www.pinterest.com/pin/125045327150378894/)
+## 实验记录
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### V1 手动辅助线引导 + 对话调整最终效果
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+!['辅助线引导'](./public/readme/layout-with-auxiliary-line.jpg)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 根据经验手动绘制辅助线，示意定位，并将完整目标图作为输入，告知AI最终生成目标（但此刻暂停生成，仅作为参考信息录入）
+- 根据经验截取局部，以组件为单位，要求AI根据图示布局生成相应代码
+- 图片所不能直接暴露出的动态效果（例如横向滚动、纵向滚动等需求）作为补充信息录入
 
-## Learn More
+### V2 figma信息导入
 
-To learn more about Next.js, take a look at the following resources:
+> 目标是能生成更精准的样式
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### V3 代码库中设置 styles 文件，能根据文件内容，统一规范生成样式
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> 目标是更好的管理相关样式，遵守一定的设计规律
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### V4 ...
