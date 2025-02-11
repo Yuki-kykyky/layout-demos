@@ -17,12 +17,17 @@ export default function Home() {
   const [version, setVersion] = useState("v1");
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header
+        slot={
+          <div className="flex gap-4 justify-center">
+            <Button onClick={() => setVersion("v1")}>Image-based</Button>
+            <Button variant="contained" onClick={() => setVersion("v2")}>
+              Image combined with code
+            </Button>
+          </div>
+        }
+      />
       <main className="flex-1 flex flex-col gap-8 p-8 sm:p-20">
-        <div className="flex gap-4 justify-center">
-          <Button onClick={() => setVersion("v1")}>v1</Button>
-          <Button onClick={() => setVersion("v2")}>v2</Button>
-        </div>
         {version === "v1" && (
           <>
             <BannerSection />

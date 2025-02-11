@@ -1,16 +1,13 @@
-import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import {
   AppBar,
   Box,
-  Button,
   Container,
-  IconButton,
   Toolbar,
-  Typography,
+  Typography
 } from "@mui/material";
+import React from "react";
 
-export default function Header() {
+export default function Header(props: { slot?: React.ReactNode }) {
   return (
     <AppBar
       position="fixed"
@@ -32,60 +29,11 @@ export default function Header() {
             >
               Logo
             </Typography>
-
-            {/* Navigation Links */}
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: "32px" }}>
-              <Button
-                sx={{
-                  color: "text.secondary",
-                  "&:hover": { color: "text.primary" },
-                }}
-              >
-                Destinations
-              </Button>
-              <Button
-                sx={{
-                  color: "text.secondary",
-                  "&:hover": { color: "text.primary" },
-                }}
-              >
-                Travel Tips
-              </Button>
-              <Button
-                sx={{
-                  color: "text.secondary",
-                  "&:hover": { color: "text.primary" },
-                }}
-              >
-                Explore
-              </Button>
-              <Button
-                sx={{
-                  color: "text.secondary",
-                  "&:hover": { color: "text.primary" },
-                }}
-              >
-                Blog
-              </Button>
-            </Box>
           </Box>
 
           {/* Right Section */}
           <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <IconButton color="default" aria-label="Search">
-              <SearchIcon />
-            </IconButton>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "black",
-                color: "white",
-                borderRadius: "9999px",
-                "&:hover": { bgcolor: "black" },
-              }}
-            >
-              Login
-            </Button>
+            {props.slot}
           </Box>
         </Toolbar>
       </Container>
