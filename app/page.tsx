@@ -10,6 +10,7 @@ import Footer from "./components/ v1/footer";
 import { Button } from "@mui/material";
 import EmailConnectV2 from "./components/v2/email-connect-v2";
 import HighlightsV2 from "./components/v2/highlights-v2";
+import LatestStoriesV2 from "./components/v2/latest-stories-v2";
 
 export default function Home() {
   const [version, setVersion] = useState("v1");
@@ -32,6 +33,7 @@ export default function Home() {
         )}
         {version === "v2" && (
           <>
+            <LatestStoriesV2 />
             <HighlightsV2 />
             <EmailConnectV2 />
           </>
