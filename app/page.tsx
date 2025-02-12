@@ -13,7 +13,7 @@ import HighlightsV2 from "./components/v2/highlights-v2";
 import LatestStoriesV2 from "./components/v2/latest-stories-v2";
 import TopDestinationsV2 from "./components/v2/top-destinations-v2";
 import BannerSectionV2 from "./components/v2/banner-section-v2";
-import LayoutExerciseV3 from "./components/v3/layout-exercise-v3";
+import EmailConnectV3 from "./components/v3/email-connect-v3";
 export default function Home() {
   const [version, setVersion] = useState("v1");
   return (
@@ -54,7 +54,7 @@ export default function Home() {
         )}
         {version === "v3" && (
           <>
-            <LayoutExerciseV3 />
+            <EmailConnectV3 />
           </>
         )}
       </main>
