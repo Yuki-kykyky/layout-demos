@@ -56,6 +56,7 @@
 > 目标是更好的管理相关样式，遵守一定的设计规律
 
 !['简化版 figma 布局关系'](./public/readme/group-in-figma-v3.jpg)
+!['简化版 figma 布局关系 + 有层级 common ui 组件匹配'](./public/readme/group-in-figma-v4.jpg)
 
 在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。
 
@@ -63,6 +64,8 @@
 
 > 1. 优先寻找代码库中匹配的 UI 组件；（此行优先）
 > 2. 用 mui 组件替换代码中的基础 html 元素；
+
+样式以组件为单位进行替换，整体布局需要额外的局部微调。
 
 ### todo
 
