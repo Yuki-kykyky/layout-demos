@@ -1,4 +1,4 @@
-import { Container, Box, Stack } from "@mui/material";
+import { Container, Box, Stack, Rating } from "@mui/material";
 import React from "react";
 import { Title, SubTitle, ItemTitle } from "@/app/common/ui/title";
 import { Description, ItemDescription } from "@/app/common/ui/description";
@@ -21,7 +21,7 @@ export default function HighlightsV3() {
               avatarTitle="Maria Angelica"
               avatarDescription="Kuala Lumpur"
             />
-
+            <Rating value={5} readOnly sx={{ mb: 2 }} />
             <ItemTitle>An Unforgettable Journey Through Turkey</ItemTitle>
             <ItemDescription description="Jan 15, 2024" sx={{ mb: 2 }} />
 
