@@ -10,26 +10,22 @@ export default function TopDestinationsV3() {
     {
       imgSrc: "/goooose9.jpg",
       title: "Vietnam",
-      date: "Golden Bridge, Da Nang",
-      category: "Asia",
+      detailInfo: "Golden Bridge, Da Nang",
     },
     {
       imgSrc: "/goooose9.jpg",
       title: "Vietnam",
-      date: "Golden Bridge, Da Nang",
-      category: "Asia",
+      detailInfo: "Golden Bridge, Da Nang",
     },
     {
       imgSrc: "/goooose9.jpg",
       title: "Vietnam",
-      date: "Golden Bridge, Da Nang",
-      category: "Asia",
+      detailInfo: "Golden Bridge, Da Nang",
     },
     {
       imgSrc: "/goooose9.jpg",
       title: "Vietnam",
-      date: "Golden Bridge, Da Nang",
-      category: "Asia",
+      detailInfo: "Golden Bridge, Da Nang",
     },
   ];
 
@@ -80,8 +76,7 @@ export default function TopDestinationsV3() {
                 key={index}
                 imgSrc={destination.imgSrc}
                 title={destination.title}
-                date={destination.date}
-                category={destination.category}
+                detailInfo={destination.detailInfo}
               />
             ))}
           </Box>

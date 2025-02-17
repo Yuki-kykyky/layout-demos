@@ -59,4 +59,40 @@ export const v4 = {
       }
     ]
   },
+  topDestinations: {
+    headerTitle: "Top Destinations",
+    operationBar:{
+      chipLabels:[
+        "All",
+        "Asia",
+        "Europe",
+        "North America",
+        "South America",
+        "Australia",
+      ],
+      searchInputPlaceholder: "Search destination...",
+    },
+    verticalCards:[
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "Golden Bridge, Da Nang",
+        detailInfo: "Vietnam",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "fake title",
+        detailInfo: "fake date",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "another fake title",
+        detailInfo: "another fake date",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "another fake title again",
+        detailInfo: "another fake date again",
+      },
+    ]
+  },
 };

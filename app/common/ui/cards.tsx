@@ -40,9 +40,8 @@ const InfoCard = (props: {
 
 const VerticalCard = (props: {
   imgSrc: string;
-  category: string;
   title: string;
-  date: string;
+  detailInfo: string;
 }) => {
   return (
     <Card
@@ -64,7 +63,7 @@ const VerticalCard = (props: {
       />
       <Box sx={{ p: 1.5 }}>
         <ItemTitle>{props.title}</ItemTitle>
-        <ItemDescription description={props.date} />
+        <ItemDescription description={props.detailInfo} />
       </Box>
     </Card>
   );
