@@ -95,4 +95,12 @@ export const v4 = {
       },
     ]
   },
+  bannerSection: {
+    backgroundImageSrc: "/world-map.jpg",
+    imageSrc: "/goooose14.jpg",
+    detailTitle: "Discover the World's",
+    detailTitleSpan: "Hidden Wonders",
+    baseDescription: "Start an unforgettable journey and explore the world's most amazing hidden treasures",
+    inputButtonText: "start exploring",
+  },
 };

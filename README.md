@@ -61,7 +61,7 @@
 
 </details>
 
-### v3 figma 布局关系导入 + 代码库 common ui 组件匹配
+### V3 figma 布局关系导入 + 代码库 common ui 组件匹配
 
 <details>
 <summary><i>点击查看详情</i></summary>
@@ -90,7 +90,7 @@
 
 </details>
 
-### v4 figma 布局关系导入 + 组件库组件匹配 + 常量图文匹配
+### V4 figma 布局关系导入 + 组件库组件匹配 + 常量图文匹配
 
 !['简化版 figma 布局关系 + 组件库组件匹配 + 常量图文匹配'](./public/readme/group-in-figma-v4.jpg)
 
@@ -109,6 +109,10 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 > 5. 如果 svg 元素可以用 mui 组件替换，请替换；
 > 6. 用 mui 组件替换代码中的 html 元素；
 > 7. 移除作为分区提示的背景色块和辅助线；
+
+!['有绝对定位的元素时的参考 prompt '](./public/readme/v4-chat-01.jpg)
+
+一些特殊的复杂的样式效果（例如局部强调色、渐变色、文字截断、透明度效果等），需要额外补充说明。
 
 ### todo
 
