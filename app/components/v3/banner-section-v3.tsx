@@ -1,6 +1,6 @@
 import { Container, Box, Stack } from "@mui/material";
-import { DetailTitle } from "@/app/common/ui/title";
-import { Description } from "@/app/common/ui/description";
+import { DetailTitle } from "@/app/common/ui/titles";
+import { BaseDescription } from "@/app/common/ui/descriptions";
 import { InputButton } from "@/app/common/ui/buttons";
 import React from "react";
 
@@ -87,7 +87,7 @@ export default function BannerSectionV3() {
               <span style={{ color: "#797979" }}>Hidden Wonders</span>
             </DetailTitle>
 
-            <Description
+            <BaseDescription
               sx={{
                 fontSize: "20px",
                 lineHeight: "28px",

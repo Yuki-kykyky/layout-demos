@@ -94,7 +94,9 @@
 
 !['简化版 figma 布局关系 + 组件库组件匹配 + 常量图文匹配'](./public/readme/group-in-figma-v4.jpg)
 
-figma 的信息导入能提供一定的布局生成上的指导，对应生成的 data-layer 数据也能对 AI 匹配相应代码库具有一定的参考意义，但目前匹配效果仍需后续微调，可优化（或许可以增加组件匹配权重？）
+figma 的信息导入能提供一定的布局生成上的指导。常量图文数据相较于 figma 提供的 data-layer 数据，能提供更精准的组件匹配上的指导。
+
+当 figma 信息出现表意不明的情况：如图中所示 description 出现了多次且参考填充内容均是 xxx，根据 AI 生成测试验证，description 的内容填充和组件匹配会**根据提供的参考常量图文的顺序进行填充替换**。
 
 !['prompt 优化'](./public/readme/v4-chat.jpg)
 

@@ -1,6 +1,6 @@
-import { ItemDescription } from "@/app/common/ui/description";
-import { InfoTag } from "@/app/common/ui/tag";
-import { ItemTitle } from "@/app/common/ui/title";
+import { ItemDescription } from "@/app/common/ui/descriptions";
+import { InfoTag } from "@/app/common/ui/tags";
+import { ItemTitle } from "@/app/common/ui/titles";
 import { Box, Card } from "@mui/material";
 import React from "react";
 

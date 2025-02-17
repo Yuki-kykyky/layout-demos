@@ -1,7 +1,7 @@
 import React from "react";
 import { SxProps, Typography } from "@mui/material";
 
-const Description = ({
+const BaseDescription = ({
   description,
   sx,
 }: {
@@ -50,4 +50,4 @@ const EmphasizedDescription = ({
   );
 };
 
-export { Description, ItemDescription, EmphasizedDescription };
+export { BaseDescription, ItemDescription, EmphasizedDescription };

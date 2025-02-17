@@ -1,17 +1,17 @@
 import { Container, Stack, Box, Rating } from "@mui/material";
 import React from "react";
 import { v4 } from "@/app/constants/v4";
-import { Title } from "@/app/common/ui/title";
+import { HeaderTitle } from "@/app/common/ui/titles";
 import AvatarInfo from "@/app/common/ui/avatar-info";
-import { ItemTitle, SubTitle } from "@/app/common/ui/title";
-import { ItemDescription, Description } from "@/app/common/ui/description";
+import { ItemTitle, SubTitle } from "@/app/common/ui/titles";
+import { ItemDescription, BaseDescription } from "@/app/common/ui/descriptions";
 import { OperationButton } from "@/app/common/ui/buttons";
 
 export default function HighlightsV4() {
   return (
     <Container maxWidth="lg">
       <Box p={6}>
-        <Title>{v4.highlights.title}</Title>
+        <HeaderTitle>{v4.highlights.title}</HeaderTitle>
 
         <Stack direction="row" spacing={4} mt={4}>
           {/* Section A */}
@@ -24,7 +24,7 @@ export default function HighlightsV4() {
             <Rating value={5} readOnly />
             <ItemTitle>{v4.highlights.sectionA.title}</ItemTitle>
             <ItemDescription description={v4.highlights.sectionA.date} />
-            <Description description={v4.highlights.sectionA.description} />
+            <BaseDescription description={v4.highlights.sectionA.description} />
           </Stack>
 
           {/* Section B */}

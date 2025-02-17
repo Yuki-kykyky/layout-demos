@@ -3,8 +3,8 @@ import React from "react";
 import { BaseTextInput } from "@/app/common/ui/text-input";
 import {
   EmphasizedDescription,
-  Description,
-} from "@/app/common/ui/description";
+  BaseDescription,
+} from "@/app/common/ui/descriptions";
 import { InputButton } from "@/app/common/ui/buttons";
 
 export default function EmailConnectV3() {
@@ -30,7 +30,7 @@ export default function EmailConnectV3() {
             <InputButton buttonText="SUBSCRIBE" />
           </Stack>
 
-          <Description description="By subscribing you agree to our Privacy Policy. Check your inbox for the latest updates." />
+          <BaseDescription description="By subscribing you agree to our Privacy Policy. Check your inbox for the latest updates." />
         </Stack>
       </Box>
     </Container>

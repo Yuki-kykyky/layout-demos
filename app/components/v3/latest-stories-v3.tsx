@@ -1,9 +1,9 @@
 import { Container, Box } from "@mui/material";
 import React from "react";
-import { Title, DetailTitle } from "@/app/common/ui/title";
+import { HeaderTitle, DetailTitle } from "@/app/common/ui/titles";
 import { HeaderButton } from "@/app/common/ui/buttons";
-import { InfoCard } from "@/app/common/ui/card";
-import { Description, ItemDescription } from "@/app/common/ui/description";
+import { InfoCard } from "@/app/common/ui/cards";
+import { BaseDescription, ItemDescription } from "@/app/common/ui/descriptions";
 
 export default function LatestStoriesV3() {
   return (
@@ -11,7 +11,7 @@ export default function LatestStoriesV3() {
       <Box sx={{ p: 7, bgcolor: "white" }}>
         {/* Header */}
         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 8 }}>
-          <Title>Latest Stories</Title>
+          <HeaderTitle>Latest Stories</HeaderTitle>
           <HeaderButton buttonText="READ MORE ARTICLES" />
         </Box>
 
@@ -37,7 +37,7 @@ export default function LatestStoriesV3() {
               sx={{ mb: 1 }}
               description="Jan 14, 2024 • 5 min read"
             />
-            <Description description="A guide for a California's incredible eats: from street food to upscale dining, discover the best LA has to offer." />
+            <BaseDescription description="A guide for a California's incredible eats: from street food to upscale dining, discover the best LA has to offer." />
           </Box>
 
           {/* Story List */}

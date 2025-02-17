@@ -1,7 +1,7 @@
 import { Typography, SxProps } from "@mui/material";
 import React from "react";
 
-const Title = ({ children }: { children: React.ReactNode }) => {
+const HeaderTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <Typography variant="h3" fontWeight="bold">
       {children}
@@ -49,4 +49,4 @@ const DetailTitle = ({
   );
 };
 
-export { Title, SubTitle, ItemTitle, DetailTitle };
+export { HeaderTitle, SubTitle, ItemTitle, DetailTitle };

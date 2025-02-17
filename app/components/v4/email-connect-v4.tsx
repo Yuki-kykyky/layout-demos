@@ -3,9 +3,9 @@ import { Container, Stack } from "@mui/material";
 import { BaseTextInput } from "@/app/common/ui/text-input";
 import { InputButton } from "@/app/common/ui/buttons";
 import {
-  Description,
+  BaseDescription,
   EmphasizedDescription,
-} from "@/app/common/ui/description";
+} from "@/app/common/ui/descriptions";
 import { v4 } from "@/app/constants/v4";
 
 export default function EmailConnectV4() {
@@ -32,7 +32,7 @@ export default function EmailConnectV4() {
             <BaseTextInput placeholder={v4.emailConnect.placeholder} />
             <InputButton buttonText={v4.emailConnect.buttonText} />
           </Stack>
-          <Description description={v4.emailConnect.description} />
+          <BaseDescription description={v4.emailConnect.description} />
         </Stack>
       </Stack>
     </Container>

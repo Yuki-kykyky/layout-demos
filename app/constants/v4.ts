@@ -26,7 +26,37 @@ export const v4 = {
       imageSrc:"/goooose14.jpg",
       title:"Sunset Over Singapore's Skyline",
       description:"Watch the most beautiful sunset views from Marina Bay Sands",
-      buttonText:"See more highlights",
-    }
+      buttonText: "See more highlights",
+    },
+  },
+  latestStories: {
+    headerTitle: "Latest Stories",
+    headerButtonText: "READ MORE ARTICLES",
+    details: {
+      imageSrc: "/goooose14.jpg",
+      detailTitle:"Los Angeles food & drink guide: 10 things to try in Los Angeles, California",
+      itemDescription:"Jan 14, 2024 • 5 min read",
+      baseDescription:"A guide for a California's incredible eats: from street food to upscale dining, discover the best LA has to offer.",
+    },
+    infoCards:[
+      {
+        imageSrc: "/goooose14.jpg",
+        category:"Shopping",
+        title:"15 South London Markets You'll Love: Best Markets in South London",
+        date:"Jan 14, 2024 • 5 min read",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        category:"Shopping",
+        title:"16 South London Markets You'll Love: Best Markets in North London",
+        date:"Jan 24, 2024 • 15 min read",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        category:"Shopping",
+        title:"17 South London Markets You'll Love: Best Markets in West London",
+        date:"Jan 29, 2024 • 22 min read",
+      }
+    ]
   },
 };

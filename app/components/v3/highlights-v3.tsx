@@ -1,7 +1,7 @@
 import { Container, Box, Stack, Rating } from "@mui/material";
 import React from "react";
-import { Title, SubTitle, ItemTitle } from "@/app/common/ui/title";
-import { Description, ItemDescription } from "@/app/common/ui/description";
+import { HeaderTitle, SubTitle, ItemTitle } from "@/app/common/ui/titles";
+import { BaseDescription, ItemDescription } from "@/app/common/ui/descriptions";
 import AvatarInfo from "@/app/common/ui/avatar-info";
 import { OperationButton } from "@/app/common/ui/buttons";
 
@@ -10,14 +10,14 @@ export default function HighlightsV3() {
     <Container maxWidth="lg">
       <Box sx={{ p: 4 }}>
         {/* 标题区域 */}
-        <Title>Trekker&apos;s Highlights</Title>
+        <HeaderTitle>Trekker&apos;s Highlights</HeaderTitle>
 
         {/* 主要内容区域 */}
         <Stack direction="row" spacing={3} sx={{ mt: 4 }}>
           {/* Section A - 4份占比 */}
           <Box sx={{ flex: 4, alignContent: "center" }}>
             <AvatarInfo
-              avatar="/goooose9.jpg"
+              avatar="/goooose18.jpg"
               avatarTitle="Maria Angelica"
               avatarDescription="Kuala Lumpur"
             />
@@ -25,14 +25,14 @@ export default function HighlightsV3() {
             <ItemTitle>An Unforgettable Journey Through Turkey</ItemTitle>
             <ItemDescription description="Jan 15, 2024" sx={{ mb: 2 }} />
 
-            <Description description="From the historic streets to modern attractions, this guide covers everything you need to know about exploring Turkey. The exquisite culinary scene and local hospitality made this trip truly special." />
+            <BaseDescription description="From the historic streets to modern attractions, this guide covers everything you need to know about exploring Turkey. The exquisite culinary scene and local hospitality made this trip truly special." />
           </Box>
 
           {/* Section B - 3份占比 */}
           <Box sx={{ flex: 3, position: "relative" }}>
             <Box
               component="img"
-              src="/goooose9.jpg"
+              src="/goooose18.jpg"
               sx={{
                 width: "100%",
                 height: "400px",
@@ -60,7 +60,7 @@ export default function HighlightsV3() {
           <Stack sx={{ flex: 3, position: "relative" }} spacing={2}>
             <Box
               component="img"
-              src="/goooose9.jpg"
+              src="/goooose18.jpg"
               sx={{
                 width: "100%",
                 height: "200px",

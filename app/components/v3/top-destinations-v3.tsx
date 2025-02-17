@@ -1,9 +1,9 @@
 import { Container, Box, Stack } from "@mui/material";
 import React from "react";
-import { Title } from "@/app/common/ui/title";
+import { HeaderTitle } from "@/app/common/ui/titles";
 import { SearchInput } from "@/app/common/ui/text-input";
-import { ChipTag } from "@/app/common/ui/tag";
-import { VerticalCard } from "@/app/common/ui/card";
+import { ChipTag } from "@/app/common/ui/tags";
+import { VerticalCard } from "@/app/common/ui/cards";
 
 export default function TopDestinationsV3() {
   const destinations = [
@@ -45,7 +45,7 @@ export default function TopDestinationsV3() {
   return (
     <Container maxWidth="lg">
       <Box sx={{ p: 7, bgcolor: "white" }}>
-        <Title>Top Destinations</Title>
+        <HeaderTitle>Top Destinations</HeaderTitle>
 
         <Stack spacing={3} sx={{ mt: 4 }}>
           {/* Operations Bar */}
