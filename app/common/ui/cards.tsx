@@ -31,8 +31,8 @@ const InfoCard = (props: {
       />
       <Box sx={{ p: 1.5, flex: 1 }}>
         <InfoTag tag={props.category} sx={{ my: 1 }} />
-        <ItemTitle>{props.title}</ItemTitle>
-        <ItemDescription description={props.date} />
+        <ItemTitle isTruncated>{props.title}</ItemTitle>
+        <ItemDescription description={props.date} isTruncated />
       </Box>
     </Card>
   );
@@ -62,8 +62,10 @@ const VerticalCard = (props: {
         }}
       />
       <Box sx={{ p: 1.5 }}>
-        <ItemTitle>{props.title}</ItemTitle>
-        <ItemDescription description={props.detailInfo} />
+        <ItemTitle isTruncated lineClamp={1}>
+          {props.title}
+        </ItemTitle>
+        <ItemDescription description={props.detailInfo} isTruncated />
       </Box>
     </Card>
   );

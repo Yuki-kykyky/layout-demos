@@ -55,9 +55,15 @@ export const v4 = {
         imageSrc: "/goooose14.jpg",
         category:"Shopping",
         title:"17 South London Markets You'll Love: Best Markets in West London",
-        date:"Jan 29, 2024 • 22 min read",
-      }
-    ]
+        date: "Jan 29, 2024 • 22 min read",
+      },
+      {
+        imageSrc: "/goooose14.jpg",
+        category: "Shopping",
+        title: "18 South London Markets You'll Love: Best Markets in East London",
+        date: "Jan 30, 2024 • 25 min read",
+      },  
+    ],
   },
   topDestinations: {
     headerTitle: "Top Destinations",
@@ -92,8 +98,18 @@ export const v4 = {
         imageSrc: "/goooose14.jpg",
         title: "another fake title again",
         detailInfo: "another fake date again",
+      },      
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "another fake title again and again",
+        detailInfo: "another fake date again and again and again",
       },
-    ]
+      {
+        imageSrc: "/goooose14.jpg",
+        title: "more and more",
+        detailInfo: "more and more",
+      },
+    ],
   },
   bannerSection: {
     backgroundImageSrc: "/world-map.jpg",

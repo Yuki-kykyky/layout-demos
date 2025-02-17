@@ -38,15 +38,35 @@ export default function TopDestinationsV4() {
           </Stack>
 
           {/* Cards */}
-          <Stack direction="row" spacing={4} justifyContent="center">
-            {v4.topDestinations.verticalCards.map((card, index) => (
-              <VerticalCard
-                key={index}
-                imgSrc={card.imageSrc}
-                title={card.title}
-                detailInfo={card.detailInfo}
-              />
-            ))}
+          <Stack
+            direction="row"
+            spacing={4}
+            justifyContent="center"
+            overflow="auto"
+            sx={{
+              pb: 2,
+              "&::-webkit-scrollbar": {
+                height: "8px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "transparent",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#E0E0E0",
+                borderRadius: "4px",
+              },
+            }}
+          >
+            <Stack direction="row" spacing={4}>
+              {v4.topDestinations.verticalCards.map((card, index) => (
+                <VerticalCard
+                  key={index}
+                  imgSrc={card.imageSrc}
+                  title={card.title}
+                  detailInfo={card.detailInfo}
+                />
+              ))}
+            </Stack>
           </Stack>
         </Stack>
       </Box>

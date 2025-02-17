@@ -48,14 +48,18 @@ export default function BannerSectionV4() {
               p: 4,
             }}
           >
-            <DetailTitle sx={{ fontSize: "48px" }}>
+            <DetailTitle isTruncated lineClamp={3} sx={{ fontSize: "48px" }}>
               {v4.bannerSection.detailTitle}{" "}
               <span style={{ color: "#797979" }}>
                 {v4.bannerSection.detailTitleSpan}
               </span>
             </DetailTitle>
 
-            <BaseDescription description={v4.bannerSection.baseDescription} />
+            <BaseDescription
+              description={v4.bannerSection.baseDescription}
+              isTruncated
+              lineClamp={3}
+            />
 
             <InputButton buttonText={v4.bannerSection.inputButtonText} />
           </Stack>
@@ -80,6 +84,7 @@ export default function BannerSectionV4() {
                 height: 300,
                 left: 282,
                 top: 0,
+                borderRadius: 4,
                 objectFit: "cover",
               }}
             />
@@ -93,6 +98,7 @@ export default function BannerSectionV4() {
                 height: 400,
                 left: 0,
                 top: 48,
+                borderRadius: 4,
                 objectFit: "cover",
               }}
             />
@@ -105,6 +111,7 @@ export default function BannerSectionV4() {
                 width: 240,
                 height: 200,
                 left: 282,
+                borderRadius: 4,
                 top: 332,
                 objectFit: "cover",
               }}

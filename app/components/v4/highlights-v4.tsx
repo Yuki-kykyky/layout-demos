@@ -22,9 +22,16 @@ export default function HighlightsV4() {
               avatarDescription={v4.highlights.sectionA.avatarInfo.description}
             />
             <Rating value={5} readOnly />
-            <ItemTitle>{v4.highlights.sectionA.title}</ItemTitle>
-            <ItemDescription description={v4.highlights.sectionA.date} />
-            <BaseDescription description={v4.highlights.sectionA.description} />
+            <ItemTitle isTruncated>{v4.highlights.sectionA.title}</ItemTitle>
+            <ItemDescription
+              description={v4.highlights.sectionA.date}
+              isTruncated
+            />
+            <BaseDescription
+              description={v4.highlights.sectionA.description}
+              isTruncated
+              lineClamp={4}
+            />
           </Stack>
 
           {/* Section B */}
@@ -67,8 +74,12 @@ export default function HighlightsV4() {
                 borderRadius: 4,
               }}
             />
-            <ItemTitle>{v4.highlights.sectionC.title}</ItemTitle>
-            <ItemDescription description={v4.highlights.sectionC.description} />
+            <ItemTitle isTruncated>{v4.highlights.sectionC.title}</ItemTitle>
+            <ItemDescription
+              description={v4.highlights.sectionC.description}
+              isTruncated
+              lineClamp={3}
+            />
             <Box sx={{ position: "absolute", bottom: 0, right: 0 }}>
               <OperationButton buttonText={v4.highlights.sectionC.buttonText} />
             </Box>

@@ -24,9 +24,31 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const ItemTitle = ({ children }: { children: React.ReactNode }) => {
+const ItemTitle = ({
+  children,
+  isTruncated = false,
+  lineClamp = 2,
+}: {
+  children: React.ReactNode;
+  isTruncated?: boolean;
+  lineClamp?: number;
+}) => {
   return (
-    <Typography fontWeight="bold" sx={{ fontSize: 16, lineHeight: 1.5, mb: 1 }}>
+    <Typography
+      fontWeight="bold"
+      sx={{
+        fontSize: 16,
+        lineHeight: 1.5,
+        mb: 1,
+        ...(isTruncated && {
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          display: "-webkit-box",
+          WebkitLineClamp: lineClamp,
+          WebkitBoxOrient: "vertical",
+        }),
+      }}
+    >
       {children}
     </Typography>
   );
@@ -35,14 +57,30 @@ const ItemTitle = ({ children }: { children: React.ReactNode }) => {
 const DetailTitle = ({
   children,
   sx,
+  isTruncated = false,
+  lineClamp = 2,
 }: {
   children: React.ReactNode;
   sx?: SxProps;
+  isTruncated?: boolean;
+  lineClamp?: number;
 }) => {
   return (
     <Typography
       fontWeight="bold"
-      sx={{ fontSize: 24, lineHeight: 1.5, mb: 1, ...sx }}
+      sx={{
+        fontSize: 24,
+        lineHeight: 1.5,
+        mb: 1,
+        ...(isTruncated && {
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          display: "-webkit-box",
+          WebkitLineClamp: lineClamp,
+          WebkitBoxOrient: "vertical",
+        }),
+        ...sx,
+      }}
     >
       {children}
     </Typography>

@@ -33,21 +33,40 @@ export default function LatestStoriesV4() {
                   width: "100%",
                   height: 320,
                   objectFit: "cover",
-                  borderRadius: 2,
+                  borderRadius: 4,
                 }}
               />
-              <DetailTitle>{v4.latestStories.details.detailTitle}</DetailTitle>
+              <DetailTitle isTruncated lineClamp={2}>
+                {v4.latestStories.details.detailTitle}
+              </DetailTitle>
               <ItemDescription
                 description={v4.latestStories.details.itemDescription}
+                isTruncated
               />
-<BaseDescription
+              <BaseDescription
                 description={v4.latestStories.details.baseDescription}
+                isTruncated
+                lineClamp={3}
               />
-
             </Stack>
 
             {/* Right Section - Info Cards */}
-            <Stack spacing={3} flex={1}>
+            <Stack
+              spacing={3}
+              flex={1}
+              sx={{
+                maxHeight: 536, // 与左侧图片高度保持一致
+                overflowY: "auto",
+                pr: 1,
+                "&::-webkit-scrollbar": {
+                  width: "6px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "rgba(0,0,0,0.2)",
+                  borderRadius: "3px",
+                },
+              }}
+            >
               {v4.latestStories.infoCards.map((card, index) => (
                 <InfoCard
                   key={index}
