@@ -58,7 +58,7 @@
 !['简化版 figma 布局关系'](./public/readme/group-in-figma-v3.jpg)
 !['简化版 figma 布局关系 + 有层级 common ui 组件匹配'](./public/readme/group-in-figma-v4.jpg)
 
-在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。
+在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。如果对应 ui 文件没有进行导入的话，也无法进行正常识别。
 
 !['代码库 common ui 组件匹配'](./public/readme/figma-with-codebase.jpg)
 

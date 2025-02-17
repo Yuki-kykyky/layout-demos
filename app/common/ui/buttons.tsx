@@ -33,4 +33,23 @@ const OperationButton = ({ buttonText }: { buttonText: string }) => {
     </Button>
   );
 };
-export { InputButton, OperationButton };
+
+const HeaderButton = ({ buttonText }: { buttonText: string }) => {
+  return (
+    <Button
+      variant="outlined"
+      sx={{
+        borderRadius: "30px",
+        height: "60px",
+        px: 4,
+        fontFamily: "Inter",
+        textTransform: "none",
+        fontWeight: 500,
+      }}
+    >
+      {buttonText}
+    </Button>
+  );
+};
+
+export { InputButton, OperationButton, HeaderButton };
