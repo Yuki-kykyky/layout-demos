@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Header from "./header";
-import BannerSection from "./components/ v1/banner-section";
-import TopDestinations from "./components/ v1/top-destinations";
-import LatestStories from "./components/ v1/latest-stories";
-import Highlights from "./components/ v1/highlights";
-import EmailConnect from "./components/ v1/email-connect";
-import Footer from "./components/ v1/footer";
+import BannerSection from "@/app/components/v1/banner-section";
+import TopDestinations from "@/app/components/v1/top-destinations";
+import LatestStories from "@/app/components/v1/latest-stories";
+import Highlights from "@/app/components/v1/highlights";
+import EmailConnect from "@/app/components/v1/email-connect";
+import Footer from "@/app/components/v1/footer";
 import { Button } from "@mui/material";
 import EmailConnectV2 from "./components/v2/email-connect-v2";
 import HighlightsV2 from "./components/v2/highlights-v2";
