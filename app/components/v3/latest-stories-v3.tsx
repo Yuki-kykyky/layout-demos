@@ -1,6 +1,6 @@
 import { Container, Box } from "@mui/material";
 import React from "react";
-import { ItemTitle, Title } from "@/app/common/ui/title";
+import { Title, DetailTitle } from "@/app/common/ui/title";
 import { HeaderButton } from "@/app/common/ui/buttons";
 import { InfoCard } from "@/app/common/ui/card";
 import { Description, ItemDescription } from "@/app/common/ui/description";
@@ -29,10 +29,10 @@ export default function LatestStoriesV3() {
                 mb: 2,
               }}
             />
-            <ItemTitle>
+            <DetailTitle>
               Los Angeles food & drink guide: 10 things to try in Los Angeles,
               California
-            </ItemTitle>
+            </DetailTitle>
             <ItemDescription
               sx={{ mb: 1 }}
               description="Jan 14, 2024 • 5 min read"

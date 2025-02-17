@@ -32,4 +32,12 @@ const ItemTitle = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export { Title, SubTitle, ItemTitle };
+const DetailTitle = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Typography fontWeight="bold" sx={{ fontSize: 24, lineHeight: 1.5, mb: 1 }}>
+      {children}
+    </Typography>
+  );
+};
+
+export { Title, SubTitle, ItemTitle, DetailTitle };
