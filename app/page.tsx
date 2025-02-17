@@ -6,8 +6,8 @@ import VersionSelector from "@/app/components/version-selector";
 
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
-import EmailConnectV4 from "./components/v4/email-connect-v4";
 import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
+import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text-generation";
 
 export default function Home() {
   const versionMap = {
@@ -25,7 +25,7 @@ export default function Home() {
     },
     v4: {
       label: "exploring...",
-      content: <EmailConnectV4 />,
+      content: <FigmaWithCodeAndTextGeneration />,
     },
   };
 
