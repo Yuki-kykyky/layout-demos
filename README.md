@@ -10,13 +10,22 @@
 
 ### V1 手动辅助线引导 + 对话调整最终效果
 
+<details>
+<summary><i>点击查看详情</i></summary>
+
 !['辅助线引导'](./public/readme/layout-with-auxiliary-line.jpg)
 
 - 根据经验手动绘制辅助线，示意定位，并将完整目标图作为输入，告知 AI 最终生成目标（但此刻暂停生成，仅作为参考信息录入）
 - 根据经验截取局部，以组件为单位，要求 AI 根据图示布局生成相应代码
 - 图片所不能直接暴露出的动态效果（例如横向滚动、纵向滚动等需求）作为补充信息录入
 
+</details>
+
 ### V2 figma 信息导入
+
+<details>
+<summary><i>点击查看详情</i></summary>
+
 
 > 目标是能生成更精准的样式
 
@@ -51,14 +60,28 @@
 
 > 最后 移除作为分区提示的 **背景色块** 和 **辅助线** ；
 
+</details>
+
 ### v3 figma 布局关系导入 + 代码库 common ui 组件匹配
+
+<details>
+<summary><i>点击查看详情</i></summary>
+
 
 > 目标是更好的管理相关样式，遵守一定的设计规律
 
 !['简化版 figma 布局关系'](./public/readme/group-in-figma-v3.jpg)
 !['简化版 figma 布局关系 + 有层级 common ui 组件匹配'](./public/readme/group-in-figma-v4.jpg)
 
-在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。如果对应 ui 文件没有进行导入的话，也无法进行正常识别。
+在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。
+
+**如果对应 ui 文件没有进行导入的话，也无法进行正常识别。**
+
+快捷操作：
+
+`shift + ctrl` 批量选中，`右键` 选择导入文件至 cursor chat。
+
+!['快捷操作'](./public/readme/add-relative-files.jpg)
 
 !['代码库 common ui 组件匹配'](./public/readme/figma-with-codebase.jpg)
 
@@ -66,6 +89,8 @@
 > 2. 用 mui 组件替换代码中的基础 html 元素；
 
 样式以组件为单位进行替换，整体布局需要额外的局部微调。
+
+</details>
 
 ### todo
 
