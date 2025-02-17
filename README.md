@@ -90,7 +90,7 @@
 
 </details>
 
-### V4 figma 布局关系导入 + 组件库组件匹配 + 常量图文匹配
+### V4 figma 布局关系导入 + 代码库 common ui 组件匹配 + json 图文匹配
 
 !['简化版 figma 布局关系 + 组件库组件匹配 + 常量图文匹配'](./public/readme/group-in-figma-v4.jpg)
 

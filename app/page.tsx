@@ -20,11 +20,11 @@ export default function Home() {
       content: <ImageCodeGeneration />,
     },
     v3: {
-      label: "figma layout + code",
+      label: "figma layout + components",
       content: <FigmaCodeGeneration />,
     },
     v4: {
-      label: "exploring...",
+      label: "figma layout + components + json",
       content: <FigmaWithCodeAndTextGeneration />,
     },
   };
