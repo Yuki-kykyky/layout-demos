@@ -26,7 +26,6 @@
 <details>
 <summary><i>点击查看详情</i></summary>
 
-
 > 目标是能生成更精准的样式
 
 !['figma信息导入'](./public/readme/group-in-figma.jpg)
@@ -67,11 +66,10 @@
 <details>
 <summary><i>点击查看详情</i></summary>
 
-
 > 目标是更好的管理相关样式，遵守一定的设计规律
 
 !['简化版 figma 布局关系'](./public/readme/group-in-figma-v3.jpg)
-!['简化版 figma 布局关系 + 有层级 common ui 组件匹配'](./public/readme/group-in-figma-v4.jpg)
+!['简化版 figma 布局关系 + 有层级 common ui 组件匹配'](./public/readme/group-in-figma-v3-01.jpg)
 
 在使用 cursor 对代码进行样式优化时，将代码库中的 ui 组件作为参考文件导入。
 
@@ -92,6 +90,9 @@
 
 </details>
 
+### v4 figma 布局关系导入 + 组件库组件匹配 + 常量图文匹配
+
+!['简化版 figma 布局关系 + 组件库组件匹配 + 常量图文匹配'](./public/readme/group-in-figma-v4.jpg)
 ### todo
 
-- [ ] V4 能同步生成测试代码，保证代码质量...
+- [ ] V5 能同步生成测试代码，保证代码质量...
