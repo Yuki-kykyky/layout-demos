@@ -1,6 +1,6 @@
 import { Container, Box, Stack } from "@mui/material";
 import React from "react";
-import TextInput from "@/app/common/ui/text-input";
+import { BaseTextInput } from "@/app/common/ui/text-input";
 import {
   EmphasizedDescription,
   Description,
@@ -26,7 +26,7 @@ export default function EmailConnectV3() {
           </EmphasizedDescription>
 
           <Stack direction="row" spacing={2}>
-            <TextInput placeholder="Enter your email" />
+            <BaseTextInput placeholder="Enter your email" />
             <InputButton buttonText="SUBSCRIBE" />
           </Stack>
 
