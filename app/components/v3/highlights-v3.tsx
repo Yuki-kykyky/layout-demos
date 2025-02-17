@@ -17,7 +17,7 @@ export default function HighlightsV3() {
           {/* Section A - 4份占比 */}
           <Box sx={{ flex: 4, alignContent: "center" }}>
             <AvatarInfo
-              avatar="/goooose18.jpg"
+              avatar="/goooose9.jpg"
               avatarTitle="Maria Angelica"
               avatarDescription="Kuala Lumpur"
             />
@@ -32,7 +32,7 @@ export default function HighlightsV3() {
           <Box sx={{ flex: 3, position: "relative" }}>
             <Box
               component="img"
-              src="/goooose18.jpg"
+              src="/goooose9.jpg"
               sx={{
                 width: "100%",
                 height: "400px",
@@ -60,7 +60,7 @@ export default function HighlightsV3() {
           <Stack sx={{ flex: 3, position: "relative" }} spacing={2}>
             <Box
               component="img"
-              src="/goooose18.jpg"
+              src="/goooose9.jpg"
               sx={{
                 width: "100%",
                 height: "200px",
