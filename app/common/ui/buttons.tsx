@@ -1,6 +1,12 @@
-import { Button } from "@mui/material";
+import { Button, SxProps } from "@mui/material";
 import React from "react";
-const InputButton = ({ buttonText }: { buttonText: string }) => {
+const InputButton = ({
+  buttonText,
+  sx,
+}: {
+  buttonText: string;
+  sx?: SxProps;
+}) => {
   return (
     <Button
       variant="contained"
@@ -9,6 +15,7 @@ const InputButton = ({ buttonText }: { buttonText: string }) => {
         color: "white",
         height: "56px",
         borderRadius: "50px",
+        ...sx,
       }}
     >
       {buttonText}

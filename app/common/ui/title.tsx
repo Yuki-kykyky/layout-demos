@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, SxProps } from "@mui/material";
 import React from "react";
 
 const Title = ({ children }: { children: React.ReactNode }) => {
@@ -32,9 +32,18 @@ const ItemTitle = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const DetailTitle = ({ children }: { children: React.ReactNode }) => {
+const DetailTitle = ({
+  children,
+  sx,
+}: {
+  children: React.ReactNode;
+  sx?: SxProps;
+}) => {
   return (
-    <Typography fontWeight="bold" sx={{ fontSize: 24, lineHeight: 1.5, mb: 1 }}>
+    <Typography
+      fontWeight="bold"
+      sx={{ fontSize: 24, lineHeight: 1.5, mb: 1, ...sx }}
+    >
       {children}
     </Typography>
   );
