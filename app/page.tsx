@@ -1,13 +1,15 @@
 "use client";
-import Footer from "@/app/components/page1/v1/footer";
+import Footer from "@/app/footer";
+import { Button, Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
+import "typeface-source-code-pro";
 import Header from "./header";
-import { Menu, MenuItem, Button } from "@mui/material";
 
+import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text-generation";
+import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
+import { HundredCards } from "./pages/hundred-cards";
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
-import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
-import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text-generation";
 
 export default function Home() {
   const versionMap = {
@@ -27,9 +29,13 @@ export default function Home() {
       label: "figma layout + components + json",
       content: <FigmaWithCodeAndTextGeneration />,
     },
+    v5: {
+      label: "100 cards",
+      content: <HundredCards />,
+    },
   };
 
-  const [version, setVersion] = useState("v1");
+  const [version, setVersion] = useState("v5");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -47,7 +53,7 @@ export default function Home() {
         slot={
           <>
             <Button variant="contained" onClick={handleClick}>
-              Page 1 version selector
+              version selector
             </Button>
             <Menu
               anchorEl={anchorEl}

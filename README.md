@@ -114,6 +114,13 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 
 一些特殊的复杂的样式效果（例如局部强调色、渐变色、文字截断、透明度效果等），需要额外补充说明。
 
+### V5 figma 组件导出生成 ui 组件
+
+[100 card design templates UI kit](https://www.figma.com/community/file/1097964499926853798)
+
+!['figma ui 组件包'](./public/readme/figma-ui-kit.jpg)
+
+
 ### todo
 
-- [ ] V5 能同步生成测试代码，保证代码质量...
+- [ ] V6 能同步生成测试代码，保证代码质量...
