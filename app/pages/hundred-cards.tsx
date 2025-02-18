@@ -1,9 +1,11 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import {
   CardV1,
   CardV2,
   CardV3,
   CardV4,
+  CardV5,
+  CardV6,
 } from "../common/ui/page2/vertical-cards";
 import React from "react";
 
@@ -41,6 +43,32 @@ export function HundredCards() {
         headline="Headline"
         content="Please add your content here. Keep it short and simple. And smile :)"
         icons={["/goooose14.jpg", "/goooose14.jpg", "/goooose14.jpg"]}
+      />
+      <CardV5
+        headline="Headline"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+        svgContent={
+          <Box
+            component="img"
+            src="/goooose14.jpg"
+            alt="Headline"
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: "24px",
+            }}
+          />
+        }
+      />
+      <CardV6
+        part="Part I"
+        headline="Headline"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+        buttons={[
+          { label: "Button 2", variant: "outlined" },
+          { label: "Button 1", variant: "contained" },
+        ]}
       />
     </Container>
   );

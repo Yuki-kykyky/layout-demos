@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+} from "@mui/material";
 import React from "react";
 export const CardV1 = ({
   headline,
@@ -351,7 +358,7 @@ export const CardV4 = ({
                 width: 40,
                 height: 40,
                 background: "#DEDEDE",
-                borderRadius: 2,
+                borderRadius: 3,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -365,7 +372,7 @@ export const CardV4 = ({
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  borderRadius: 2,
+                  borderRadius: 3,
                 }}
               />
             </Box>
@@ -408,6 +415,218 @@ export const CardV4 = ({
           >
             {content}
           </Typography>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CardV5 = ({
+  headline,
+  content,
+  svgContent,
+}: {
+  headline: string;
+  content: string;
+  svgContent: React.ReactNode;
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 304,
+        padding: 3,
+        background: "white",
+        borderRadius: 3,
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        gap: 1.25,
+      }}
+    >
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 3,
+        }}
+        style={{ padding: 0 }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            height: "150px",
+          }}
+        >
+          {svgContent}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            gap: 0.5,
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              width: 128,
+              color: "black",
+              fontSize: 18,
+              fontFamily: "Source Code Pro, monospace",
+              fontWeight: 500,
+              wordWrap: "break-word",
+            }}
+          >
+            {headline}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              width: 256,
+              color: "#666666",
+              fontSize: 14,
+              fontFamily: "Source Code Pro, monospace",
+              fontWeight: 400,
+              wordWrap: "break-word",
+            }}
+          >
+            {content}
+          </Typography>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CardV6 = ({
+  part,
+  headline,
+  content,
+  buttons,
+}: {
+  part: string;
+  headline: string;
+  content: string;
+  buttons: {
+    label: string;
+    variant: "outlined" | "contained";
+  }[];
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 304,
+        padding: 3,
+        background: "white",
+        borderRadius: 3,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        gap: 1.25,
+      }}
+    >
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-end",
+          gap: 2.625,
+        }}
+        style={{ padding: 0 }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            gap: 3,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              gap: 0.5,
+            }}
+          >
+            <Typography
+              variant="body2"
+              sx={{
+                width: 139,
+                color: "#666666",
+                fontSize: 14,
+                fontFamily: "Source Code Pro, monospace",
+                fontWeight: 400,
+                wordWrap: "break-word",
+              }}
+            >
+              {part}
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                width: 128,
+                color: "black",
+                fontSize: 18,
+                fontFamily: "Source Code Pro, monospace",
+                fontWeight: 500,
+                wordWrap: "break-word",
+              }}
+            >
+              {headline}
+            </Typography>
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{
+              width: 256,
+              color: "#666666",
+              fontSize: 14,
+              fontFamily: "Source Code Pro, monospace",
+              fontWeight: 400,
+              wordWrap: "break-word",
+            }}
+          >
+            {content}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
+          {buttons.map((button, index) => (
+            <Button
+              key={index}
+              variant={button.variant}
+              sx={{
+                borderRadius: "50px",
+                paddingX: 1.5,
+                paddingY: 1,
+                fontSize: 12,
+                fontFamily: "Source Code Pro, monospace",
+                fontWeight: 400,
+                textTransform: "none",
+              }}
+            >
+              {button.label}
+            </Button>
+          ))}
         </Box>
       </CardContent>
     </Card>
