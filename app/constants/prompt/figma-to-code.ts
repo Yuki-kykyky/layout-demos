@@ -1,5 +1,9 @@
-export const figmaToCode = `
-根据现有各元素的嵌套层级，修改当前代码，要求：
+export const divideFigma = `
+根据最外层的<div>标签的data-layer属性, 将当前代码分割为多个代码块。
+`
+
+export const singleFigmaToUI = `
+根据当前代码块各元素的嵌套层级，修改当前代码，要求：
 
 1. 如果不存在absolute布局, 则跳过此条指令。存在absolute布局, 则移除现有代码中的 absolute 样式设置，根据目标布局，用 flexbox 实现。
 2. 保持当前元素样式，如字体样式、圆角样式、阴影样式等；
