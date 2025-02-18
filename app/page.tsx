@@ -7,9 +7,9 @@ import Header from "./header";
 
 import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text-generation";
 import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
-import { HundredCards } from "./pages/hundred-cards";
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
+import { LayoutUiMappingGeneration } from "./pages/layout-ui-mapping-generation";
 
 export default function Home() {
   const versionMap = {
@@ -31,7 +31,7 @@ export default function Home() {
     },
     v5: {
       label: "100 cards",
-      content: <HundredCards />,
+      content: <LayoutUiMappingGeneration />,
     },
   };
 

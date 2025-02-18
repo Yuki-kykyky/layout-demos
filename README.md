@@ -120,6 +120,49 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 
 !['figma ui 组件包'](./public/readme/figma-ui-kit.jpg)
 
+> 根据现有各元素的嵌套层级，修改当前代码，要求：
+>
+> 1. 将此段代码根据最外层的 div 抽成组件，并支持传参；
+> 2. 如果不存在 absolute 布局，则跳过此条指令。存在 absolute 布局，则移除现有代码中的 absolute 样式设置，根据目标布局，用 flexbox 实现;
+> 3. 保持当前元素样式；
+> 4. 用 mui 组件替换代码中基础 html 元素；
+> 5. 以步骤 4 的结果为基准，用 mui card 组件进行替换。
+
+此段 prompt 可以对多个组件同时进行操作（个人尝试最多 4 个，代码约 800 行）。但存在问题：
+
+- 如果组件中存在绝对定位的元素，例如图片上方悬浮的固定 tag 或 button，会在第 2 步中被移除，替换成冗余的 flex 布局。
+- 直接用 mui card 组件进行替换，有可能导致样式异常。
+- 部分 sx 样式设置失效，需查看具体的 mui 文档查看样式设置：
+
+  - 例如：
+
+    ```typescript
+    <TextField
+      variant="outlined"
+      placeholder="Enter your email"
+      slotProps={{
+        input: {
+          sx: {
+            borderRadius: "50px",
+            bgcolor: "white",
+          },
+        },
+      }}
+    />
+
+    // 在 mui 的 textField 组件中，input 样式需要使用 slotProps.input.sx 来设置样式，而不是直接在组件中设置。
+    ```
+
+!['figma 只提供 layout 信息'](./public/readme/figma-only-layout.jpg)
+
+!['prompt layout- UI 匹配'](./public/readme/long-file-details.jpg)
+
+当只利用 figma 的布局信息，剩余信息全部由代码库中常量文件提供并作为代码组件指引时：
+
+- prompt 的指引不明（指示词包含代词例如 “当前、此项”），匹配错误的概率高；
+- 同样的 prompt 语句，执行顺序不同，结果不同；
+- 与大模型的选择有关，但何种 prompt 语句能更好的引导大模型生成更符合预期的结果，需要更多的实验。
+- 一键生成需要很精准的 prompt 指引，而这引申出来的是对执行逻辑的高度清晰化。而且在一步步的 prompt 指引中，每一步都可能产生差错需要微调。是否追求一键生成目标效果，投入产出比如何，有待考量。
 
 ### todo
 

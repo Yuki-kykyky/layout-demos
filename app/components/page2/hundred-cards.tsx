@@ -10,7 +10,7 @@ import {
   CardV8,
   CardV9,
   CardV10,
-} from "../common/ui/page2/vertical-cards";
+} from "@/app/common/ui/page2/vertical-cards";
 import React from "react";
 
 export function HundredCards() {
