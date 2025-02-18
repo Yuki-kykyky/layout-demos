@@ -5,6 +5,7 @@ import {
   CardMedia,
   Typography,
   Button,
+  Chip,
 } from "@mui/material";
 import React from "react";
 export const CardV1 = ({
@@ -629,6 +630,606 @@ export const CardV6 = ({
           ))}
         </Box>
       </CardContent>
+    </Card>
+  );
+};
+
+export const CardV7 = ({
+  headline,
+  content,
+  tags,
+  avatar,
+}: {
+  headline: string;
+  content: string;
+  tags: string[];
+  avatar?: string;
+}) => {
+  return (
+    <Card
+      sx={{
+        padding: 3,
+        background: "white",
+        borderRadius: 3,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        gap: 2,
+      }}
+    >
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 2,
+        }}
+        style={{ padding: 0 }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-end",
+            gap: 2,
+          }}
+        >
+          <Box
+            data-layer="picture"
+            className="Picture"
+            sx={{
+              width: 32,
+              height: 32,
+              background: "#DEDEDE",
+              borderRadius: "50%",
+              backgroundImage: `url(${avatar})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 1,
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{
+                  width: 193,
+                  color: "black",
+                  fontSize: 18,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 500,
+                  wordWrap: "break-word",
+                }}
+              >
+                {headline}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  width: 256,
+                  color: "#666666",
+                  fontSize: 14,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 400,
+                  wordWrap: "break-word",
+                }}
+              >
+                {content}
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "100%",
+              gap: 2,
+            }}
+          >
+            {tags.map((tag, index) => (
+              <Chip
+                key={index}
+                label={tag}
+                variant="outlined"
+                sx={{
+                  borderColor: "#3C3C43",
+                  color: "#3C3C43",
+                  fontSize: 12,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 400,
+                }}
+              />
+            ))}
+          </Box>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CardV8 = ({
+  tagLabel,
+  headline,
+  content,
+  image,
+}: {
+  tagLabel: string;
+  headline: string;
+  content: string;
+  image: string;
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 304,
+        background: "white",
+        borderRadius: 2,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: 198,
+          position: "relative",
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <Chip
+          label={tagLabel}
+          variant="filled"
+          color="default"
+          sx={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+            background: "#3C3C43",
+            borderRadius: "50px",
+            border: "1px #3C3C43 solid",
+            color: "white",
+            fontSize: 12,
+            fontFamily: "Source Code Pro, monospace",
+            fontWeight: 400,
+          }}
+        />
+      </Box>
+      <CardContent
+        sx={{
+          padding: 3,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 1.5,
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            width: "100%",
+            color: "black",
+            fontSize: 18,
+            fontFamily: "Source Code Pro, monospace",
+            fontWeight: 500,
+            wordWrap: "break-word",
+          }}
+        >
+          {headline}
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            width: "100%",
+            color: "#666666",
+            fontSize: 14,
+            fontFamily: "Source Code Pro, monospace",
+            fontWeight: 400,
+            wordWrap: "break-word",
+            textAlign: "justify",
+          }}
+        >
+          {content}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CardV9 = ({
+  headline,
+  subhead,
+  svgContent,
+  avatar,
+  contents,
+}: {
+  headline: string;
+  subhead: string;
+  svgContent: React.ReactNode;
+  avatar: string;
+  contents: string[];
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 342,
+        padding: 3,
+        background: "white",
+        borderRadius: 3,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        gap: 2,
+      }}
+    >
+      <Box
+        sx={{
+          height: 75,
+          width: "100%",
+          paddingY: 2,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 1.5,
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+          }}
+        >
+          <Box
+            sx={{
+              width: 141,
+              height: 43,
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <Box
+              data-layer="picture"
+              className="Picture"
+              sx={{
+                width: 32,
+                height: 32,
+                background: "#DEDEDE",
+                borderRadius: "50%",
+                backgroundImage: `url(${avatar})`,
+                backgroundSize: "cover",
+              }}
+            />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 0.5,
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{
+                  width: 101,
+                  color: "black",
+                  fontSize: 18,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 500,
+                  wordWrap: "break-word",
+                }}
+              >
+                {headline}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  width: 101,
+                  color: "#666666",
+                  fontSize: 14,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 400,
+                  wordWrap: "break-word",
+                }}
+              >
+                {subhead}
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              width: 16,
+              height: 16,
+              background: "#DEDEDE",
+              borderRadius: "50%",
+              position: "absolute",
+              top: 13.5,
+              right: 10,
+            }}
+          />
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: 210,
+        }}
+      >
+        {svgContent}
+      </Box>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 1.5,
+          width: "100%",
+        }}
+        style={{ padding: 0 }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-end",
+            gap: 3,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              gap: 2,
+              width: "100%",
+            }}
+          >
+            {contents.map((content, index) => (
+              <Box
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  gap: 2,
+                }}
+              >
+                <Box
+                  sx={{
+                    background: "#DEDEDE",
+                    width: 32,
+                    height: 32,
+                    flexShrink: 0,
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography
+                    variant="body2"
+                    fontWeight={500}
+                    fontFamily="Source Code Pro, monospace"
+                    sx={{
+                      color: "#666666",
+                    }}
+                  >
+                    {index + 1}
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#666666",
+                    fontSize: 14,
+                    fontFamily: "Source Code Pro, monospace",
+                    fontWeight: 400,
+                    wordWrap: "break-word",
+                    textAlign: "justify",
+                  }}
+                >
+                  {content}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-start",
+              gap: 2,
+            }}
+          >
+            <Chip
+              label="Button 2"
+              variant="outlined"
+              sx={{
+                paddingX: 1.5,
+                paddingY: 1,
+                borderRadius: "50px",
+                borderColor: "#3C3C43",
+                color: "#3C3C43",
+                fontSize: 12,
+                fontFamily: "Source Code Pro, monospace",
+                fontWeight: 400,
+              }}
+            />
+            <Chip
+              label="Button 1"
+              variant="filled"
+              sx={{
+                paddingX: 1.5,
+                paddingY: 1,
+                borderRadius: "50px",
+                background: "#3C3C43",
+                borderColor: "#3C3C43",
+                color: "white",
+                fontSize: 12,
+                fontFamily: "Source Code Pro, monospace",
+                fontWeight: 400,
+              }}
+            />
+          </Box>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CardV10 = ({
+  contents,
+  headline,
+  subhead,
+}: {
+  contents: string[];
+  headline: string;
+  subhead: string;
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 348,
+        padding: 3,
+        background: "white",
+        borderRadius: 3,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 2,
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="h6"
+            align="center"
+            sx={{
+              width: 193,
+              color: "black",
+              fontSize: 18,
+              fontFamily: "Source Code Pro, monospace",
+              fontWeight: 500,
+              wordWrap: "break-word",
+            }}
+          >
+            {headline}
+          </Typography>
+          <Typography
+            variant="body2"
+            align="center"
+            sx={{
+              width: 108,
+              color: "#181818",
+              fontSize: 14,
+              fontFamily: "Source Code Pro, monospace",
+              fontWeight: 400,
+              wordWrap: "break-word",
+            }}
+          >
+            {subhead}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            gap: 2,
+          }}
+        >
+          {contents.map((content, index) => (
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+              }}
+            >
+              <Box
+                sx={{
+                  width: 32,
+                  height: 32,
+                  background: "#DEDEDE",
+                  borderRadius: "50%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#3C3C43",
+                    fontFamily: "Source Code Pro, monospace",
+                    fontWeight: 500,
+                  }}
+                >
+                  {index + 1}
+                </Typography>
+              </Box>
+              <Typography
+                variant="body2"
+                sx={{
+                  width: 256,
+                  color: "#666666",
+                  fontSize: 14,
+                  fontFamily: "Source Code Pro, monospace",
+                  fontWeight: 400,
+                  wordWrap: "break-word",
+                }}
+              >
+                {content}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Box>
     </Card>
   );
 };
