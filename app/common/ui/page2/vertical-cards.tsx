@@ -975,7 +975,7 @@ export const CardV9 = ({
         sx={{
           position: "relative",
           width: "100%",
-          height: 210,
+          height: 150,
         }}
       >
         {svgContent}

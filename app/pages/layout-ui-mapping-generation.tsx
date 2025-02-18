@@ -2,10 +2,11 @@ import { Container, Box } from "@mui/material";
 import React from "react";
 import { CardV1, CardV8 } from "../common/ui/page2/vertical-cards";
 import { v5 } from "../constants/page2/v5";
-
+import { HundredCards } from "../components/page2/hundred-cards";
 export function LayoutUiMappingGeneration() {
   return (
     <Container maxWidth="lg">
+      <HundredCards />
       <Box
         data-layer="Frame 1"
         sx={{

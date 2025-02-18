@@ -9,7 +9,13 @@ const HeaderTitle = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const SubTitle = ({ children }: { children: React.ReactNode }) => {
+const SubTitle = ({
+  children,
+  sx,
+}: {
+  children: React.ReactNode;
+  sx?: SxProps;
+}) => {
   return (
     <Typography
       variant="h5"
@@ -17,6 +23,7 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => {
       fontWeight="bold"
       sx={{
         textAlign: "center",
+        ...sx,
       }}
     >
       {children}
