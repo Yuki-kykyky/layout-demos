@@ -1,11 +1,14 @@
 import { Container, Stack, Box, Rating } from "@mui/material";
 import React from "react";
-import { v4 } from "@/app/constants/v4";
-import { HeaderTitle } from "@/app/common/ui/titles";
-import AvatarInfo from "@/app/common/ui/avatar-info";
-import { ItemTitle, SubTitle } from "@/app/common/ui/titles";
-import { ItemDescription, BaseDescription } from "@/app/common/ui/descriptions";
-import { OperationButton } from "@/app/common/ui/buttons";
+import { v4 } from "@/app/constants/page1/v4";
+import { HeaderTitle } from "@/app/common/ui/page1/titles";
+import AvatarInfo from "@/app/common/ui/page1/avatar-info";
+import { ItemTitle, SubTitle } from "@/app/common/ui/page1/titles";
+import {
+  ItemDescription,
+  BaseDescription,
+} from "@/app/common/ui/page1/descriptions";
+import { OperationButton } from "@/app/common/ui/page1/buttons";
 
 export default function HighlightsV4() {
   return (

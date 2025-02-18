@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Stack } from "@mui/material";
-import { BaseTextInput } from "@/app/common/ui/text-input";
-import { InputButton } from "@/app/common/ui/buttons";
+import { BaseTextInput } from "@/app/common/ui/page1/text-input";
+import { InputButton } from "@/app/common/ui/page1/buttons";
 import {
   BaseDescription,
   EmphasizedDescription,
-} from "@/app/common/ui/descriptions";
-import { v4 } from "@/app/constants/v4";
+} from "@/app/common/ui/page1/descriptions";
+import { v4 } from "@/app/constants/page1/v4";
 
 export default function EmailConnectV4() {
   return (

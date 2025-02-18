@@ -1,10 +1,10 @@
 import { Container, Stack, Box } from "@mui/material";
 import React from "react";
-import { v4 } from "@/app/constants/v4";
-import { HeaderTitle } from "@/app/common/ui/titles";
-import { SearchInput } from "@/app/common/ui/text-input";
-import { ChipTag } from "@/app/common/ui/tags";
-import { VerticalCard } from "@/app/common/ui/cards";
+import { v4 } from "@/app/constants/page1/v4";
+import { HeaderTitle } from "@/app/common/ui/page1/titles";
+import { SearchInput } from "@/app/common/ui/page1/text-input";
+import { ChipTag } from "@/app/common/ui/page1/tags";
+import { VerticalCard } from "@/app/common/ui/page1/cards";
 
 export default function TopDestinationsV4() {
   return (

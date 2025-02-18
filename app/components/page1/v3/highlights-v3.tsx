@@ -1,9 +1,12 @@
 import { Container, Box, Stack, Rating } from "@mui/material";
 import React from "react";
-import { HeaderTitle, SubTitle, ItemTitle } from "@/app/common/ui/titles";
-import { BaseDescription, ItemDescription } from "@/app/common/ui/descriptions";
-import AvatarInfo from "@/app/common/ui/avatar-info";
-import { OperationButton } from "@/app/common/ui/buttons";
+import { HeaderTitle, SubTitle, ItemTitle } from "@/app/common/ui/page1/titles";
+import {
+  BaseDescription,
+  ItemDescription,
+} from "@/app/common/ui/page1/descriptions";
+import AvatarInfo from "@/app/common/ui/page1/avatar-info";
+import { OperationButton } from "@/app/common/ui/page1/buttons";
 
 export default function HighlightsV3() {
   return (

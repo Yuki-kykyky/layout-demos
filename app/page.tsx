@@ -1,8 +1,8 @@
 "use client";
-import Footer from "@/app/components/v1/footer";
+import Footer from "@/app/components/page1/v1/footer";
 import React, { useState } from "react";
 import Header from "./header";
-import VersionSelector from "@/app/components/version-selector";
+import { Menu, MenuItem, Button } from "@mui/material";
 
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
@@ -30,15 +30,37 @@ export default function Home() {
   };
 
   const [version, setVersion] = useState("v1");
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (version: string) => {
+    setVersion(version);
+    setAnchorEl(null);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header
         slot={
-          <VersionSelector
-            versionMap={versionMap}
-            onVersionChange={setVersion}
-          />
+          <>
+            <Button variant="contained" onClick={handleClick}>
+              Page 1 version selector
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={() => handleClose(version)}
+            >
+              {Object.keys(versionMap).map((key) => (
+                <MenuItem key={key} onClick={() => handleClose(key)}>
+                  {versionMap[key as keyof typeof versionMap].label}
+                </MenuItem>
+              ))}
+            </Menu>
+          </>
         }
       />
       <main className="flex-1 flex flex-col gap-8 p-8 sm:p-20">

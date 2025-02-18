@@ -1,7 +1,7 @@
 import { Container, Box, Stack } from "@mui/material";
-import { DetailTitle } from "@/app/common/ui/titles";
-import { BaseDescription } from "@/app/common/ui/descriptions";
-import { InputButton } from "@/app/common/ui/buttons";
+import { DetailTitle } from "@/app/common/ui/page1/titles";
+import { BaseDescription } from "@/app/common/ui/page1/descriptions";
+import { InputButton } from "@/app/common/ui/page1/buttons";
 import React from "react";
 
 export default function BannerSectionV3() {

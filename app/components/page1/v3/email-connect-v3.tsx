@@ -1,11 +1,11 @@
 import { Container, Box, Stack } from "@mui/material";
 import React from "react";
-import { BaseTextInput } from "@/app/common/ui/text-input";
+import { BaseTextInput } from "@/app/common/ui/page1/text-input";
 import {
   EmphasizedDescription,
   BaseDescription,
-} from "@/app/common/ui/descriptions";
-import { InputButton } from "@/app/common/ui/buttons";
+} from "@/app/common/ui/page1/descriptions";
+import { InputButton } from "@/app/common/ui/page1/buttons";
 
 export default function EmailConnectV3() {
   return (

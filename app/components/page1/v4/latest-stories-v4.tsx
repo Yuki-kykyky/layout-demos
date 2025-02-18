@@ -1,11 +1,14 @@
 import { Container, Stack, Box } from "@mui/material";
 import React from "react";
-import { v4 } from "@/app/constants/v4";
-import { HeaderTitle } from "@/app/common/ui/titles";
-import { HeaderButton } from "@/app/common/ui/buttons";
-import { InfoCard } from "@/app/common/ui/cards";
-import { DetailTitle } from "@/app/common/ui/titles";
-import { ItemDescription, BaseDescription } from "@/app/common/ui/descriptions";
+import { v4 } from "@/app/constants/page1/v4";
+import { HeaderTitle } from "@/app/common/ui/page1/titles";
+import { HeaderButton } from "@/app/common/ui/page1/buttons";
+import { InfoCard } from "@/app/common/ui/page1/cards";
+import { DetailTitle } from "@/app/common/ui/page1/titles";
+import {
+  ItemDescription,
+  BaseDescription,
+} from "@/app/common/ui/page1/descriptions";
 
 export default function LatestStoriesV4() {
   return (

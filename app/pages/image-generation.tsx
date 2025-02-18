@@ -1,9 +1,9 @@
 import React from "react";
-import BannerSection from "../components/v1/banner-section";
-import EmailConnect from "../components/v1/email-connect";
-import Highlights from "../components/v1/highlights";
-import LatestStories from "../components/v1/latest-stories";
-import TopDestinations from "../components/v1/top-destinations";
+import BannerSection from "../components/page1/v1/banner-section";
+import EmailConnect from "../components/page1/v1/email-connect";
+import Highlights from "../components/page1/v1/highlights";
+import LatestStories from "../components/page1/v1/latest-stories";
+import TopDestinations from "../components/page1/v1/top-destinations";
 
 export function ImageGeneration() {
   return (

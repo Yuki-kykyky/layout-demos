@@ -1,9 +1,9 @@
 import { Container, Box, Stack } from "@mui/material";
 import React from "react";
-import { HeaderTitle } from "@/app/common/ui/titles";
-import { SearchInput } from "@/app/common/ui/text-input";
-import { ChipTag } from "@/app/common/ui/tags";
-import { VerticalCard } from "@/app/common/ui/cards";
+import { HeaderTitle } from "@/app/common/ui/page1/titles";
+import { SearchInput } from "@/app/common/ui/page1/text-input";
+import { ChipTag } from "@/app/common/ui/page1/tags";
+import { VerticalCard } from "@/app/common/ui/page1/cards";
 
 export default function TopDestinationsV3() {
   const destinations = [

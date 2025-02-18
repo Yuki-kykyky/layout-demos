@@ -1,9 +1,12 @@
 import { Container, Box } from "@mui/material";
 import React from "react";
-import { HeaderTitle, DetailTitle } from "@/app/common/ui/titles";
-import { HeaderButton } from "@/app/common/ui/buttons";
-import { InfoCard } from "@/app/common/ui/cards";
-import { BaseDescription, ItemDescription } from "@/app/common/ui/descriptions";
+import { HeaderTitle, DetailTitle } from "@/app/common/ui/page1/titles";
+import { HeaderButton } from "@/app/common/ui/page1/buttons";
+import { InfoCard } from "@/app/common/ui/page1/cards";
+import {
+  BaseDescription,
+  ItemDescription,
+} from "@/app/common/ui/page1/descriptions";
 
 export default function LatestStoriesV3() {
   return (
