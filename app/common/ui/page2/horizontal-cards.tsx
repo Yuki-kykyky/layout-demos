@@ -172,7 +172,7 @@ const CardH2 = ({
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
-            gap: 2,
+            gap: 1,
           }}
         >
           <Box
@@ -266,7 +266,7 @@ const CardH3 = ({
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "flex-start",
-          gap: 1.5,
+          gap: 0.5,
         }}
       >
         <Box
