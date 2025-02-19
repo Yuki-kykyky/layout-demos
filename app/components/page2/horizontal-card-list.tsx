@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
 import React from "react";
 import {
   CardH1,
@@ -8,6 +8,8 @@ import {
   CardH5,
   CardH6,
   CardH7,
+  CardH8,
+  CardH9,
 } from "../../common/ui/page2/horizontal-cards";
 
 export function HorizontalCardList() {
@@ -57,6 +59,49 @@ export function HorizontalCardList() {
       <CardH7
         headline="Headline"
         dueDate="12:00 PM"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+      />
+      <CardH8
+        tag="Tag or button"
+        headline="Headline"
+        dueDate="Due by 04/22"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+      />
+      <CardH9
+        appendix={
+          <Box
+            sx={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "rgba(102, 102, 102, 0.80)",
+                fontSize: "12px",
+                fontFamily: "Source Code Pro",
+                fontWeight: 400,
+                wordWrap: "break-word",
+              }}
+            >
+              Something here
+            </Typography>
+            <Typography
+              sx={{
+                textAlign: "right",
+                color: "rgba(102, 102, 102, 0.80)",
+                fontSize: "12px",
+                fontFamily: "Source Code Pro",
+                fontWeight: 400,
+                wordWrap: "break-word",
+              }}
+            >
+              Due by 04/22
+            </Typography>
+          </Box>
+        }
+        headline="Headline"
         content="Please add your content here. Keep it short and simple. And smile :)"
       />
     </Stack>

@@ -586,6 +586,7 @@ const CardH6 = ({
     </Card>
   );
 };
+
 const CardH7 = ({
   tag,
   headline,
@@ -691,4 +692,201 @@ const CardH7 = ({
   );
 };
 
-export { CardH1, CardH2, CardH3, CardH4, CardH5, CardH6, CardH7 };
+const CardH8 = ({
+  tag,
+  headline,
+  dueDate,
+  content,
+}: {
+  tag?: string;
+  headline: string;
+  dueDate: string;
+  content: string;
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 578,
+        px: 3,
+        py: 2,
+        background: "white",
+        borderRadius: "12px",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Box
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            gap: "8px",
+          }}
+        >
+          <Typography
+            sx={{
+              width: "119px",
+              color: "black",
+              fontSize: "18px",
+              fontFamily: "Source Code Pro",
+              fontWeight: 500,
+              wordWrap: "break-word",
+            }}
+          >
+            {headline}
+          </Typography>
+          <Typography
+            sx={{
+              width: "400px",
+              color: "#666666",
+              fontSize: "14px",
+              fontFamily: "Source Code Pro",
+              fontWeight: 400,
+              wordWrap: "break-word",
+            }}
+          >
+            {content}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-end",
+            gap: "8px",
+          }}
+        >
+          <Typography
+            sx={{
+              textAlign: "right",
+              color: "rgba(102, 102, 102, 0.80)",
+              fontSize: "12px",
+              fontFamily: "Source Code Pro",
+              fontWeight: 400,
+              wordWrap: "break-word",
+            }}
+          >
+            {dueDate}
+          </Typography>
+          {tag && (
+            <Box
+              sx={{
+                padding: "8px",
+                background: "#3C3C43",
+                borderRadius: "12px",
+                border: "1px #3C3C43 solid",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "flex-end",
+                gap: "10px",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "12px",
+                  fontFamily: "Source Code Pro",
+                  fontWeight: 400,
+                  wordWrap: "break-word",
+                }}
+              >
+                {tag}
+              </Typography>
+            </Box>
+          )}
+        </Box>
+      </Box>
+    </Card>
+  );
+};
+
+const CardH9 = ({
+  appendix,
+  headline,
+  content,
+}: {
+  appendix: React.ReactNode;
+  headline: string;
+  content: string;
+}) => {
+  return (
+    <Card
+      sx={{
+        width: 578,
+        padding: "16px 24px",
+        background: "white",
+        borderRadius: "12px",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: "16px",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            gap: "8px",
+          }}
+        >
+          <Typography
+            sx={{
+              color: "black",
+              fontSize: "18px",
+              fontFamily: "Source Code Pro",
+              fontWeight: 500,
+              wordWrap: "break-word",
+            }}
+          >
+            {headline}
+          </Typography>
+          <Typography
+            sx={{
+              color: "#666666",
+              fontSize: "14px",
+              fontFamily: "Source Code Pro",
+              fontWeight: 400,
+              wordWrap: "break-word",
+              textAlign: "justify",
+            }}
+          >
+            {content}
+          </Typography>
+        </Box>
+        {appendix}
+      </Box>
+    </Card>
+  );
+};
+export {
+  CardH1,
+  CardH2,
+  CardH3,
+  CardH4,
+  CardH5,
+  CardH6,
+  CardH7,
+  CardH8,
+  CardH9,
+};
