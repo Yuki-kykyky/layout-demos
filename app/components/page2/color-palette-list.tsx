@@ -21,7 +21,7 @@ export function ColorPaletteList({
 
   return (
     <Box
-      data-layer="Light/color palette"
+      data-layer="color-palette"
       sx={{
         width: "100%",
         display: "flex",
@@ -72,13 +72,14 @@ export function ColorPaletteList({
             {/* 颜色列表 */}
             <AccordionDetails
               sx={{
-                bgcolor: ColorPalette.Background.bgDarken,
-                borderTop: `1px solid ${ColorPalette.Greyscale.dividers}`,
+                bgcolor: colorPalette.Background.bgDarken,
+                borderTop: `1px solid ${colorPalette.Greyscale.dividers}`,
               }}
             >
               <Stack direction="row" flexWrap="wrap" gap={1.5} pt={1}>
                 {Object.entries(colors).map(([colorName, colorValue]) => (
                   <ColorItem
+                    colorPalette={colorPalette}
                     key={colorName}
                     colorName={colorName}
                     colorValue={colorValue}

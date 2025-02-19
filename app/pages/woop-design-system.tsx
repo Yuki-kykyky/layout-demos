@@ -17,9 +17,18 @@ export function WoopDesignSystem() {
     <Container maxWidth="xl">
       <Stack direction="row" gap={2}>
         <Box>
-          <Accordion id="color-palette-light-list">
+          <Accordion
+            sx={{
+              bgcolor: ColorPalette.Background.bgLight,
+            }}
+            id="color-palette-light-list"
+          >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={
+                <ExpandMoreIcon
+                  sx={{ color: ColorPalette.Greyscale.textPrimary }}
+                />
+              }
               aria-controls="color-palette-light-list"
               id="color-palette-light-list"
             >
@@ -47,6 +56,7 @@ export function WoopDesignSystem() {
             id="color-palette-dark-list"
             sx={{
               bgcolor: ColorPaletteDark.Background.bgDarken,
+              border: `1px solid ${ColorPaletteDark.Greyscale.dividers}`,
             }}
           >
             <AccordionSummary

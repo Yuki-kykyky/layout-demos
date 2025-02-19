@@ -5,9 +5,14 @@ import { ColorPalette } from "../../common/styles/color-palette";
 interface ColorItemProps {
   colorName: string;
   colorValue: string;
+  colorPalette: typeof ColorPalette;
 }
 
-const ColorItem: React.FC<ColorItemProps> = ({ colorName, colorValue }) => {
+const ColorItem: React.FC<ColorItemProps> = ({
+  colorName,
+  colorValue,
+  colorPalette,
+}) => {
   return (
     <Paper
       sx={{
@@ -16,6 +21,8 @@ const ColorItem: React.FC<ColorItemProps> = ({ colorName, colorValue }) => {
         alignItems: "center",
         padding: 2,
         gap: 2,
+        bgcolor: colorPalette.Background.bgLight,
+        border: `1px solid ${colorPalette.Greyscale.dividers}`,
       }}
       data-layer="color itm"
     >
@@ -27,7 +34,7 @@ const ColorItem: React.FC<ColorItemProps> = ({ colorName, colorValue }) => {
           height: 40,
           bgcolor: colorValue,
           borderRadius: 2,
-          border: `1px solid ${ColorPalette.Greyscale.stroke}`,
+          border: `1px solid ${colorPalette.Greyscale.stroke}`,
         }}
       />
       {/* 颜色信息 */}
@@ -44,7 +51,7 @@ const ColorItem: React.FC<ColorItemProps> = ({ colorName, colorValue }) => {
           component="div"
           data-layer={colorName.replace(/\s+/g, "")}
           sx={{
-            color: ColorPalette.Greyscale.textPrimary,
+            color: colorPalette.Greyscale.textPrimary,
             fontWeight: "700",
             fontFamily: "Mulish, sans-serif",
           }}
@@ -56,7 +63,7 @@ const ColorItem: React.FC<ColorItemProps> = ({ colorName, colorValue }) => {
           component="div"
           data-layer={colorValue.replace("#", "")}
           sx={{
-            color: ColorPalette.Greyscale.textSecondary,
+            color: colorPalette.Greyscale.textSecondary,
             fontWeight: "500",
             fontFamily: "Mulish, sans-serif",
           }}
