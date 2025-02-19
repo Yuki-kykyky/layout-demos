@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Typography, Paper } from "@mui/material";
 
-export default function ShadowItem({
-  shadowName,
-  shadow,
+export default function StyleItem({
+  name,
+  defination,
 }: {
-  shadowName: string;
-  shadow: { description: string; boxShadow: string };
+  name: string;
+  defination?: { description: string; style: string };
 }) {
   return (
     <Paper
@@ -25,7 +25,7 @@ export default function ShadowItem({
           width: 40,
           height: 40,
           borderRadius: 2,
-          boxShadow: shadow.boxShadow,
+          boxShadow: defination?.style,
         }}
       />
 
@@ -43,7 +43,7 @@ export default function ShadowItem({
             fontFamily: "Mulish, sans-serif",
           }}
         >
-          Shadows {shadowName}
+          {name}
         </Typography>
         <Typography
           variant="body2"
@@ -53,7 +53,7 @@ export default function ShadowItem({
             fontFamily: "Mulish, sans-serif",
           }}
         >
-          {shadow.description}
+          {defination?.description}
         </Typography>
       </Box>
     </Paper>

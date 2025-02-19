@@ -12,6 +12,7 @@ import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import React from "react";
+import { WoopBtn } from "../common/ui/page2/woop/woop-btn";
 
 export function WoopDesignSystem() {
   return (
@@ -101,7 +102,7 @@ export function WoopDesignSystem() {
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h6" fontWeight="800">
-                shadow and corner radius
+                Shadow
               </Typography>
             </AccordionSummary>
             <AccordionDetails
@@ -112,6 +113,98 @@ export function WoopDesignSystem() {
               }}
             >
               <ShadowList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Buttons
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
+                <WoopBtn
+                  buttonText="L size + Primary"
+                  size="L"
+                  type="Primary"
+                />
+                <WoopBtn
+                  buttonText="L size + Secondary"
+                  size="L"
+                  type="Secondary"
+                />
+                <WoopBtn
+                  buttonText="L size + Tertiary"
+                  size="L"
+                  type="Tertiary"
+                />
+              </Stack>
+              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
+                <WoopBtn
+                  buttonText="M size + Primary"
+                  size="M"
+                  type="Primary"
+                />
+                <WoopBtn
+                  buttonText="M size + Secondary"
+                  size="M"
+                  type="Secondary"
+                />
+                <WoopBtn
+                  buttonText="M size + Tertiary"
+                  size="M"
+                  type="Tertiary"
+                />
+              </Stack>
+              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
+                <WoopBtn
+                  buttonText="S size + Primary"
+                  size="S"
+                  type="Primary"
+                />
+                <WoopBtn
+                  buttonText="S size + Secondary"
+                  size="S"
+                  type="Secondary"
+                />
+                <WoopBtn
+                  buttonText="S size + Tertiary"
+                  size="S"
+                  type="Tertiary"
+                />
+              </Stack>
+              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
+                <WoopBtn
+                  buttonText="XS size + Primary"
+                  size="XS"
+                  type="Primary"
+                />
+                <WoopBtn
+                  buttonText="XS size + Secondary"
+                  size="XS"
+                  type="Secondary"
+                />
+                <WoopBtn
+                  buttonText="XS size + Tertiary"
+                  size="XS"
+                  type="Tertiary"
+                />
+              </Stack>
             </AccordionDetails>
           </Accordion>
         </Box>
