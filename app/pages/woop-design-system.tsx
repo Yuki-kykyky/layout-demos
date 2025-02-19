@@ -1,22 +1,28 @@
-import {
-  AccordionDetails,
-  Accordion,
-  Container,
-  Typography,
-  AccordionSummary,
-  Stack,
-  Box,
-} from "@mui/material";
-import { ColorPaletteList } from "../components/page2/color-palette-list";
-import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Container,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
+import { ColorPaletteList } from "../components/page2/color-palette-list";
+import { ShadowList } from "../components/page2/shadow-list";
+import React from "react";
 
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
-      <Stack direction="row" gap={2}>
-        <Box>
+      <Stack
+        direction="row"
+        gap={2}
+        flexWrap="wrap"
+        justifyContent="space-between"
+      >
+        <Box sx={{ width: "49%" }}>
           <Accordion
             sx={{
               bgcolor: ColorPalette.Background.bgLight,
@@ -51,12 +57,12 @@ export function WoopDesignSystem() {
             </AccordionDetails>
           </Accordion>
         </Box>
-        <Box>
+        <Box sx={{ width: "49%" }}>
           <Accordion
             id="color-palette-dark-list"
             sx={{
               bgcolor: ColorPaletteDark.Background.bgDarken,
-              border: `1px solid ${ColorPaletteDark.Greyscale.dividers}`,
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
             }}
           >
             <AccordionSummary
@@ -80,10 +86,32 @@ export function WoopDesignSystem() {
             <AccordionDetails
               sx={{
                 bgcolor: ColorPaletteDark.Background.bgDarken,
-                borderTop: `1px solid ${ColorPaletteDark.Greyscale.dividers}`,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
               }}
             >
               <ColorPaletteList colorPalette={ColorPaletteDark} />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                shadow and corner radius
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <ShadowList />
             </AccordionDetails>
           </Accordion>
         </Box>
