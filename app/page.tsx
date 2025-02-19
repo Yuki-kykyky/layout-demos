@@ -9,7 +9,7 @@ import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text
 import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
-import { LayoutUiMappingGeneration } from "./pages/layout-ui-mapping-generation";
+import { WoopDesignSystem } from "./pages/woop-design-system";
 
 export default function Home() {
   const versionMap = {
@@ -30,8 +30,8 @@ export default function Home() {
       content: <FigmaWithCodeAndTextGeneration />,
     },
     v5: {
-      label: "100 cards",
-      content: <LayoutUiMappingGeneration />,
+      label: "woop design system generation",
+      content: <WoopDesignSystem />,
     },
   };
 

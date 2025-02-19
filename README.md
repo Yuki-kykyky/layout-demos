@@ -92,6 +92,9 @@
 
 ### V4 figma 布局关系导入 + 代码库 common ui 组件匹配 + json 图文匹配
 
+<details>
+<summary><i>点击查看详情</i></summary>
+
 !['简化版 figma 布局关系 + 组件库组件匹配 + 常量图文匹配'](./public/readme/group-in-figma-v4.jpg)
 
 figma 的信息导入能提供一定的布局生成上的指导。常量图文数据相较于 figma 提供的 data-layer 数据，能提供更精准的组件匹配上的指导。
@@ -114,7 +117,12 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 
 一些特殊的复杂的样式效果（例如局部强调色、渐变色、文字截断、透明度效果等），需要额外补充说明。
 
+</details>
+
 ### V5 figma 组件导出生成 ui 组件 + 代码库常量文件存储 prompt
+
+<details>
+<summary><i>点击查看详情</i></summary>
 
 [100 card design templates UI kit](https://www.figma.com/community/file/1097964499926853798)
 
@@ -167,6 +175,16 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 **可以通过 prompt 常量分步执行。**
 
 !['代码库常量文件存储 prompt'](./public/readme/separate-prompt.jpg)
+
+</details>
+
+### V6 figma design system 设计系统导出
+
+开源的 figma design system 设计系统， 作为本次练习参考。
+
+[woop free design system](https://www.figma.com/community/file/1096735018562561482)
+
+!['woop free design system'](./public/readme/figma-design-system.jpg)
 
 ### todo
 
