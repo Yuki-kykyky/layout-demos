@@ -1,6 +1,13 @@
 import { Stack } from "@mui/material";
 import React from "react";
-import { CardH1, CardH2, CardH3 } from "../../common/ui/page2/horizontal-cards";
+import {
+  CardH1,
+  CardH2,
+  CardH3,
+  CardH4,
+  CardH5,
+  CardH6,
+} from "../../common/ui/page2/horizontal-cards";
 
 export function HorizontalCardList() {
   return (
@@ -22,6 +29,23 @@ export function HorizontalCardList() {
         content="Please add your content here. Keep it short and simple. And smile :)"
         iconUrl="/goooose20.jpg"
         colorCode="#3C3C43"
+      />
+      <CardH4
+        headline="Headline 4"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+        tags={["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]}
+        iconUrl="/goooose20.jpg"
+      />
+      <CardH5
+        iconUrl="/goooose20.jpg"
+        headline="Headline"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+        time="12:00 PM"
+      />
+      <CardH6
+        headline="Headline 6"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+        iconUrl="/goooose20.jpg"
       />
     </Stack>
   );
