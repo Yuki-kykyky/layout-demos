@@ -46,3 +46,50 @@ export const ColorPalette = {
       "errorTertiary": "#FFF2F2",
     },
   };
+
+export const ColorPaletteDark = {
+    Background: {
+      "bgLight": "#181818",
+      "bgDarken": "#121212",
+    },
+    Greyscale: {
+      "textPrimary": "#E0E0E0",
+      "textSecondary": "#B0B0B0",
+      "textTertiary": "#A0A0A0",
+      "icons": "#B8B8B8",
+      "stroke": "#4D4D4D",
+      "dividers": "#3A3A3A",
+      "disabledText": "#A0A0A0",
+      "disabledBg": "#2A2A2A",
+      "white": "#FFFFFF",
+      "textOnColorPlashes": "#E0E0E0",
+    },
+    AccentViolet: {
+      "accent1Primary": "#4A6BFF",
+      "accent1Secondary": "#7A9BFD",
+      "accent1Tertiary": "#B0C1FF",
+      "accent1Quaternary": "#E0E6FF",
+      "hoverState": "#2B4AF0",
+      "clickState": "#003ED0",
+    },
+    AccentOrange: {
+      "accent2Primary": "#FF6F3D",
+      "accent2Secondary": "#003ED0",
+      "accent2Tertiary": "#FFD5BE",
+      "accent2Quaternary": "#FFECE1",
+    },
+    SystemColors: {
+      "successfulHover": "#4CAF50",
+      "successful": "#4CAF50",
+      "successfulSecondary": "#A5D6A7",
+      "successfulTertiary": "#C8E6C9",
+      "attentionHover": "#FBC02D",
+      "attention": "#FBC02D",
+      "attentionSecondary": "#FFEB3B",
+      "attentionTertiary": "#FFF9C4",
+      "errorHover": "#F44336",
+      "error": "#F44336",
+      "errorSecondary": "#FFCDD2",
+      "errorTertiary": "#FFEBEE",
+    },
+};

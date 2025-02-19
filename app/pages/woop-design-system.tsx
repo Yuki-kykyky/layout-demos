@@ -4,33 +4,80 @@ import {
   Container,
   Typography,
   AccordionSummary,
+  Stack,
+  Box,
 } from "@mui/material";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ColorPalette } from "../common/styles/color-palette";
+import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
 
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
-      <Accordion sx={{ width: "25%" }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="color-palette-list"
-          id="color-palette-list-header"
-        >
-          <Typography
-            variant="h6"
-            fontWeight="800"
-            color={ColorPalette.Greyscale.textPrimary}
+      <Stack direction="row" gap={2}>
+        <Box>
+          <Accordion id="color-palette-light-list">
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="color-palette-light-list"
+              id="color-palette-light-list"
+            >
+              <Typography
+                component="span"
+                variant="h6"
+                fontWeight="800"
+                color={ColorPalette.Greyscale.textPrimary}
+              >
+                Color Palette - Light
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                bgcolor: ColorPalette.Background.bgLight,
+                borderTop: `1px solid ${ColorPalette.Greyscale.dividers}`,
+              }}
+            >
+              <ColorPaletteList colorPalette={ColorPalette} />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box>
+          <Accordion
+            id="color-palette-dark-list"
+            sx={{
+              bgcolor: ColorPaletteDark.Background.bgDarken,
+            }}
           >
-            Color Palette
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ColorPaletteList />
-        </AccordionDetails>
-      </Accordion>
+            <AccordionSummary
+              expandIcon={
+                <ExpandMoreIcon
+                  sx={{ color: ColorPaletteDark.Greyscale.textPrimary }}
+                />
+              }
+              aria-controls="color-palette-dark-list"
+              id="color-palette-dark-list"
+            >
+              <Typography
+                component="span"
+                variant="h6"
+                fontWeight="800"
+                color={ColorPaletteDark.Greyscale.textPrimary}
+              >
+                Color Palette - Dark
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                bgcolor: ColorPaletteDark.Background.bgDarken,
+                borderTop: `1px solid ${ColorPaletteDark.Greyscale.dividers}`,
+              }}
+            >
+              <ColorPaletteList colorPalette={ColorPaletteDark} />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+      </Stack>
     </Container>
   );
 }
