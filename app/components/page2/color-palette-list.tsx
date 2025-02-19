@@ -6,7 +6,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-import ColorItem from "../ColorItem";
+import ColorItem from "./color-item";
 import { ColorPalette } from "../../common/styles/color-palette";
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

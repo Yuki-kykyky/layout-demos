@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Box, Typography } from "@mui/material";
-import { ColorPalette } from "../common/styles/color-palette";
+import { ColorPalette } from "../../common/styles/color-palette";
 
 interface ColorItemProps {
   colorName: string;
