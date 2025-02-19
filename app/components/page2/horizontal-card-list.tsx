@@ -7,6 +7,7 @@ import {
   CardH4,
   CardH5,
   CardH6,
+  CardH7,
 } from "../../common/ui/page2/horizontal-cards";
 
 export function HorizontalCardList() {
@@ -46,6 +47,17 @@ export function HorizontalCardList() {
         headline="Headline 6"
         content="Please add your content here. Keep it short and simple. And smile :)"
         iconUrl="/goooose20.jpg"
+      />
+      <CardH7
+        tag="Tag or button"
+        headline="Headline"
+        dueDate="Due by 04/22"
+        content="Please add your content here. Keep it short and simple. And smile :)"
+      />
+      <CardH7
+        headline="Headline"
+        dueDate="12:00 PM"
+        content="Please add your content here. Keep it short and simple. And smile :)"
       />
     </Stack>
   );

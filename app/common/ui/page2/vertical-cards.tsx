@@ -8,7 +8,7 @@ import {
   Chip,
 } from "@mui/material";
 import React from "react";
-export const CardV1 = ({
+const CardV1 = ({
   headline,
   content,
   image,
@@ -85,7 +85,7 @@ export const CardV1 = ({
   );
 };
 
-export const CardV2 = ({
+const CardV2 = ({
   image,
   headline,
   subtitle,
@@ -187,7 +187,7 @@ export const CardV2 = ({
   );
 };
 
-export const CardV3 = ({
+const CardV3 = ({
   headline,
   content,
   tag,
@@ -306,7 +306,7 @@ export const CardV3 = ({
   );
 };
 
-export const CardV4 = ({
+const CardV4 = ({
   headline,
   content,
   icons,
@@ -422,7 +422,7 @@ export const CardV4 = ({
   );
 };
 
-export const CardV5 = ({
+const CardV5 = ({
   headline,
   content,
   svgContent,
@@ -505,7 +505,7 @@ export const CardV5 = ({
   );
 };
 
-export const CardV6 = ({
+const CardV6 = ({
   part,
   headline,
   content,
@@ -634,7 +634,7 @@ export const CardV6 = ({
   );
 };
 
-export const CardV7 = ({
+const CardV7 = ({
   headline,
   content,
   tags,
@@ -763,7 +763,7 @@ export const CardV7 = ({
   );
 };
 
-export const CardV8 = ({
+const CardV8 = ({
   tagLabel,
   headline,
   content,
@@ -854,7 +854,7 @@ export const CardV8 = ({
   );
 };
 
-export const CardV9 = ({
+const CardV9 = ({
   headline,
   subhead,
   svgContent,
@@ -1104,7 +1104,7 @@ export const CardV9 = ({
   );
 };
 
-export const CardV10 = ({
+const CardV10 = ({
   contents,
   headline,
   subhead,
@@ -1233,3 +1233,5 @@ export const CardV10 = ({
     </Card>
   );
 };
+
+export { CardV1, CardV2, CardV3, CardV4, CardV5, CardV6, CardV7, CardV8, CardV9, CardV10 };
