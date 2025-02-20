@@ -1,6 +1,12 @@
 "use client";
 import Footer from "@/app/footer";
-import { Button, Menu, MenuItem, ThemeProvider, Box } from "@mui/material";
+import {
+  Box,
+  Button,
+  Menu,
+  MenuItem,
+  ThemeProvider
+} from "@mui/material";
 import React, { useState } from "react";
 import "typeface-source-code-pro";
 import Header from "./header";
@@ -9,7 +15,7 @@ import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
 import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
 import { WoopDesignSystem } from "./pages/woop-design-system";
-import { lightTheme, darkTheme } from "./theme";
+import { darkTheme, lightTheme } from "./theme";
 
 export default function Home() {
   const versionMap = {

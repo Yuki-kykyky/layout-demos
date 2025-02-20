@@ -1,59 +1,31 @@
-import { Button } from "@mui/material";
+import { ButtonProps } from "@mui/material";
 import React from "react";
-import { WoopBtnStyles } from "./styles";
-
-export enum BtnType {
-  Primary = "Primary",
-  Secondary = "Secondary",
-  Tertiary = "Tertiary",
-}
-export enum BtnSize {
-  L = "L",
-  M = "M",
-  S = "S",
-  XS = "XS",
-}
+import { BtnSize, BtnType, WoopBtnBase } from "./woop-btn-base";
 
 export function WoopBtn({
   buttonText,
-  type = BtnType.Primary,
   size = BtnSize.L,
+  type = BtnType.Primary,
   startIcon,
   endIcon,
-  disabled = false,
+  ...props
 }: {
   buttonText: string;
-  type?: BtnType;
   size?: BtnSize;
+  type?: BtnType;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  disabled?: boolean;
+  props?: ButtonProps;
 }) {
   return (
-    <Button
-      disableRipple
-      disabled={disabled}
+    <WoopBtnBase
+      size={size}
+      type={type}
       startIcon={startIcon}
       endIcon={endIcon}
-      sx={{
-        ...WoopBtnStyles.baseStyles,
-        ...WoopBtnStyles.typeStyles[type],
-        ...WoopBtnStyles.sizeStyles[size],
-        "&:hover": {
-          ...WoopBtnStyles.typeStyles[type]["&:hover"],
-        },
-        "&:active": {
-          ...WoopBtnStyles.typeStyles[type]["&:active"],
-        },
-      }}
-      variant={
-        WoopBtnStyles.typeStyles[type].variant as
-          | "contained"
-          | "outlined"
-          | "text"
-      }
+      {...props}
     >
       {buttonText}
-    </Button>
+    </WoopBtnBase>
   );
 }

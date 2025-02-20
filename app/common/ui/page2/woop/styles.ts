@@ -1,6 +1,13 @@
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { CornerRadius, Shadows } from "@/app/common/styles/style-setting";
 
+const sizeAlign = {
+  L: 24,
+  M: 24,
+  S: 16,
+  XS: 16,
+};
+
 export const WoopBtnStyles = {
   baseStyles: {
     border: "none",
@@ -59,25 +66,31 @@ export const WoopBtnStyles = {
       py: "12px",
       px: "32px",
       fontSize: 18,
-      lineHeight: "24px",
+      lineHeight: sizeAlign.L,
     },
     M: {
       py: "10px",
       px: "32px",
       fontSize: 16,
-      lineHeight: "24px",
+      lineHeight: sizeAlign.M,
     },
     S: {
       py: "8px",
       px: "24px",
       fontSize: 14,
-      lineHeight: "16px",
+      lineHeight: sizeAlign.S,
     },
     XS: {
       py: "6px",
       px: "20px",
       fontSize: 14,
-      lineHeight: "16px",
+      lineHeight: sizeAlign.XS,
     },
+  },
+  iconBtnSizeStyles: {
+    L: { fontSize: sizeAlign.L },
+    M: { fontSize: sizeAlign.M },
+    S: { fontSize: sizeAlign.S },
+    XS: { fontSize: sizeAlign.XS },
   },
 };
