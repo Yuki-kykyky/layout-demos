@@ -1,5 +1,6 @@
-import { createTheme } from '@mui/material/styles';
-import { ColorPalette, ColorPaletteDark } from './common/styles/color-palette';
+import { createTheme } from "@mui/material/styles";
+import { ColorPalette, ColorPaletteDark } from "./common/styles/color-palette";
+
 const lightTheme = createTheme({
   palette: {
     mode: "light",
@@ -11,6 +12,9 @@ const lightTheme = createTheme({
       primary: ColorPalette.Greyscale.textPrimary,
       secondary: ColorPalette.Greyscale.textSecondary,
     },
+  },
+  typography: {
+    fontFamily: "Inter",
   },
 });
 
@@ -26,6 +30,9 @@ const darkTheme = createTheme({
       secondary: ColorPaletteDark.Greyscale.textSecondary,
     },
   },
+  typography: {
+    fontFamily: "Inter",
+  },
 });
 
-export { lightTheme, darkTheme }; 
+export { lightTheme, darkTheme };

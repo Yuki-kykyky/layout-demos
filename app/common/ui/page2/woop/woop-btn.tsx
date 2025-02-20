@@ -2,17 +2,29 @@ import { Button } from "@mui/material";
 import React from "react";
 import { WoopBtnStyles } from "./styles";
 
+export enum BtnType {
+  Primary = "Primary",
+  Secondary = "Secondary",
+  Tertiary = "Tertiary",
+}
+export enum BtnSize {
+  L = "L",
+  M = "M",
+  S = "S",
+  XS = "XS",
+}
+
 export function WoopBtn({
   buttonText,
-  type = "Primary",
-  size = "L",
+  type = BtnType.Primary,
+  size = BtnSize.L,
   startIcon,
   endIcon,
   disabled = false,
 }: {
   buttonText: string;
-  type?: "Primary" | "Secondary" | "Tertiary";
-  size?: "L" | "M" | "S" | "XS";
+  type?: BtnType;
+  size?: BtnSize;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   disabled?: boolean;

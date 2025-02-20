@@ -12,7 +12,7 @@ import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import React from "react";
-import { WoopBtn } from "../common/ui/page2/woop/woop-btn";
+import ButtonList from "../components/page2/button-list";
 
 export function WoopDesignSystem() {
   return (
@@ -132,79 +132,11 @@ export function WoopDesignSystem() {
                 pt: 2,
                 display: "flex",
                 flexDirection: "column",
-                gap: 2,
                 bgcolor: (theme) => theme.palette.background.default,
                 borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
               }}
             >
-              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
-                <WoopBtn
-                  buttonText="L size + Primary"
-                  size="L"
-                  type="Primary"
-                />
-                <WoopBtn
-                  buttonText="L size + Secondary"
-                  size="L"
-                  type="Secondary"
-                />
-                <WoopBtn
-                  buttonText="L size + Tertiary"
-                  size="L"
-                  type="Tertiary"
-                />
-              </Stack>
-              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
-                <WoopBtn
-                  buttonText="M size + Primary"
-                  size="M"
-                  type="Primary"
-                />
-                <WoopBtn
-                  buttonText="M size + Secondary"
-                  size="M"
-                  type="Secondary"
-                />
-                <WoopBtn
-                  buttonText="M size + Tertiary"
-                  size="M"
-                  type="Tertiary"
-                />
-              </Stack>
-              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
-                <WoopBtn
-                  buttonText="S size + Primary"
-                  size="S"
-                  type="Primary"
-                />
-                <WoopBtn
-                  buttonText="S size + Secondary"
-                  size="S"
-                  type="Secondary"
-                />
-                <WoopBtn
-                  buttonText="S size + Tertiary"
-                  size="S"
-                  type="Tertiary"
-                />
-              </Stack>
-              <Stack gap={2} flexDirection="row" justifyContent="space-evenly">
-                <WoopBtn
-                  buttonText="XS size + Primary"
-                  size="XS"
-                  type="Primary"
-                />
-                <WoopBtn
-                  buttonText="XS size + Secondary"
-                  size="XS"
-                  type="Secondary"
-                />
-                <WoopBtn
-                  buttonText="XS size + Tertiary"
-                  size="XS"
-                  type="Tertiary"
-                />
-              </Stack>
+              <ButtonList />
             </AccordionDetails>
           </Accordion>
         </Box>
