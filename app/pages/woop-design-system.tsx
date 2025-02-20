@@ -1,4 +1,3 @@
-import { HeartBrokenOutlined } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Accordion,
@@ -14,7 +13,7 @@ import ButtonList from "../components/page2/button-list";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import React from "react";
-import { WoopIconBtn } from "../common/ui/page2/woop/woop-icon-btn";
+
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">

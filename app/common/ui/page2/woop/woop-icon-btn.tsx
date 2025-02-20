@@ -1,6 +1,6 @@
+import { ButtonProps } from "@mui/material";
 import React, { useState } from "react";
 import { BtnSize, BtnType, WoopBtnBase } from "./woop-btn-base";
-import { ButtonProps, SxProps } from "@mui/material";
 
 export function WoopIconBtn({
   type = BtnType.Primary,
@@ -8,7 +8,6 @@ export function WoopIconBtn({
   disabled = false,
   icon,
   activeIcon,
-  sx,
   ...props
 }: {
   icon: React.ReactNode;
@@ -17,7 +16,6 @@ export function WoopIconBtn({
   size?: BtnSize;
   disabled?: boolean;
   props?: ButtonProps;
-  sx?: SxProps;
 }) {
   const [isActive, setIsActive] = useState(false);
 
