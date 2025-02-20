@@ -99,6 +99,7 @@ const WoopBtnStyles = {
 
 const WoopChipStyles = {
   baseStyles: {
+    height: "auto",
     px: 1.5,
     py: 1,
     fontSize: 14,
