@@ -2,7 +2,7 @@ import { ColorPalette } from "@/app/common/styles/color-palette";
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import { BtnSize, BtnType, WoopBtn } from "@/app/common/ui/page2/woop/woop-btn";
-import { useThemeMode } from "@/app/hooks/useThemeMode";
+import { switchColor, useThemeMode } from "@/app/hooks/useThemeMode";
 
 export default function ButtonList() {
   const themeMode = useThemeMode();
@@ -14,18 +14,13 @@ export default function ButtonList() {
           <Typography
             variant="h6"
             fontWeight="800"
-            color={
-              themeMode === "dark"
-                ? ColorPalette.Greyscale.white
-                : ColorPalette.AccentViolet.clickState
-            }
+            color={switchColor(themeMode, ColorPalette.AccentViolet.clickState)}
             align="center"
             sx={{
-              borderBottom: `1px solid ${
-                themeMode === "dark"
-                  ? ColorPalette.Greyscale.white
-                  : ColorPalette.AccentViolet.clickState
-              }`,
+              borderBottom: `1px solid ${switchColor(
+                themeMode,
+                ColorPalette.AccentViolet.clickState
+              )}`,
               mx: 4,
               py: 2,
               mb: 2,
