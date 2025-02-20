@@ -1,5 +1,7 @@
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { CornerRadius, Shadows } from "@/app/common/styles/style-setting";
+import { Theme } from "@mui/material";
+import { ChipType } from "./woop-chip";
 
 const sizeAlign = {
   L: 24,
@@ -8,7 +10,7 @@ const sizeAlign = {
   XS: 16,
 };
 
-export const WoopBtnStyles = {
+const WoopBtnStyles = {
   baseStyles: {
     border: "none",
     textTransform: "none",
@@ -94,3 +96,91 @@ export const WoopBtnStyles = {
     XS: { fontSize: sizeAlign.XS },
   },
 };
+
+const WoopChipStyles = {
+  baseStyles: {
+    px: 1.5,
+    py: 1,
+    fontSize: 14,
+    fontWeight: 600,
+    lineHeight: "18px",
+    borderRadius: 2,
+    "& .MuiSvgIcon-root": {
+      fontSize: 16,
+    },
+    "&:focus": {
+      boxShadow: Shadows.FocusBtn.style,
+    },
+  },
+  typeStyles: {
+    [ChipType.Primary]: {
+      bgcolor: (theme: Theme) => theme.palette.primary.light,
+      color: (theme: Theme) => theme.palette.primary.main,
+      border: (theme: Theme) => `1px solid ${theme.palette.primary.light}`,
+      "&:hover": {
+        color: (theme: Theme) => theme.palette.violet.main,
+        bgcolor: (theme: Theme) => theme.palette.primary.light,
+      },
+      "&:active": {
+        color: (theme: Theme) => theme.palette.violet.dark,
+      },
+      isClose: {
+        bgcolor: (theme: Theme) => theme.palette.primary.main,
+        color: (theme: Theme) => theme.palette.primary.contrastText,
+        border: (theme: Theme) => `1px solid ${theme.palette.primary.main}`,
+        "&:hover": {
+          bgcolor: (theme: Theme) => theme.palette.error.dark,
+          color: (theme: Theme) => theme.palette.error.contrastText,
+          border: (theme: Theme) => `1px solid ${theme.palette.error.main}`,
+        },
+        "&:active": {
+          bgcolor: (theme: Theme) => theme.palette.error.main,
+          color: (theme: Theme) => theme.palette.error.contrastText,
+          border: (theme: Theme) => `1px solid ${theme.palette.error.main}`,
+        },
+      },
+    },
+    [ChipType.Secondary]: {
+      bgcolor: (theme: Theme) => theme.palette.background.default,
+      color: (theme: Theme) => theme.palette.text.secondary,
+      border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+      "&:hover": {
+        bgcolor: (theme: Theme) => theme.palette.background.default,
+        color: (theme: Theme) => theme.palette.violet.main,
+        border: (theme: Theme) => `1px solid ${theme.palette.violet.main}`,
+      },
+      "&:active": {
+        bgcolor: (theme: Theme) => theme.palette.background.default,
+        color: (theme: Theme) => theme.palette.violet.main,
+        border: (theme: Theme) => `1px solid ${theme.palette.violet.dark}`,
+      },
+      isClose: {
+        color: (theme: Theme) => theme.palette.text.secondary,
+        border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+        "&:hover": {
+          color: (theme: Theme) => theme.palette.error.main,
+          bgcolor: (theme: Theme) => theme.palette.background.default,
+          border: (theme: Theme) => `1px solid ${theme.palette.error.main}`,
+        },
+        "&:active": {
+          color: (theme: Theme) => theme.palette.error.dark,
+          border: (theme: Theme) => `1px solid ${theme.palette.error.dark}`,
+        },
+      },
+    },
+  },
+  disabledStyles: {
+    bgcolor: ColorPalette.Greyscale.disabledBg,
+    color: ColorPalette.Greyscale.disabledText,
+    "&:hover": {
+      bgcolor: ColorPalette.Greyscale.disabledBg,
+      color: ColorPalette.Greyscale.disabledText,
+    },
+    "&:active": {
+      bgcolor: ColorPalette.Greyscale.disabledBg,
+      color: ColorPalette.Greyscale.disabledText,
+    },
+  },
+};
+
+export { WoopChipStyles, WoopBtnStyles };

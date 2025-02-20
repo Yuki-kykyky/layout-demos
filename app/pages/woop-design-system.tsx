@@ -10,10 +10,10 @@ import {
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
 import ButtonList from "../components/page2/button-list";
+import { ChipList } from "../components/page2/chip-list";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import React from "react";
-
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -137,6 +137,18 @@ export function WoopDesignSystem() {
               }}
             >
               <ButtonList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Chips
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <ChipList />
             </AccordionDetails>
           </Accordion>
         </Box>
