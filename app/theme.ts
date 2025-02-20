@@ -54,6 +54,12 @@ const lightTheme = createTheme({
       dark: ColorPalette.SystemColors.errorHover,
       contrastText: ColorPalette.Greyscale.white,
     },
+    success: {
+      main: ColorPalette.SystemColors.successful,
+      light: ColorPalette.SystemColors.successfulTertiary,
+      dark: ColorPalette.SystemColors.successfulHover,
+      contrastText: ColorPalette.Greyscale.white,
+    },
   },
   typography: {
     fontFamily: "Inter",

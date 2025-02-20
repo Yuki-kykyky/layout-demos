@@ -13,7 +13,9 @@ import ButtonList from "../components/page2/button-list";
 import { ChipList } from "../components/page2/chip-list";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
+import { SwitchList } from "../components/page2/switch-list";
 import React from "react";
+
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -149,6 +151,18 @@ export function WoopDesignSystem() {
             </AccordionSummary>
             <AccordionDetails>
               <ChipList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion expanded>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Switch
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <SwitchList />
             </AccordionDetails>
           </Accordion>
         </Box>
