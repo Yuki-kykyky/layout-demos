@@ -1,3 +1,4 @@
+import { HeartBroken, VisibilityOff } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Accordion,
@@ -9,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
+import { WoopInput } from "../common/ui/page2/woop/woop-input";
 import { AvatarList } from "../components/page2/avatar-list";
 import { BadgeList } from "../components/page2/badge-list";
 import ButtonList from "../components/page2/button-list";
@@ -203,7 +205,6 @@ export function WoopDesignSystem() {
         </Box>
         <Box sx={{ width: "49%" }}>
           <Accordion
-            expanded
             sx={{
               border: (theme) => `1px solid ${theme.palette.grey[200]}`,
             }}
@@ -217,6 +218,46 @@ export function WoopDesignSystem() {
               <Stack gap={2} alignItems="center">
                 <AvatarList />
                 <BadgeList />
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Accordion
+            expanded
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Text field
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                display: "flex",
+                flexDirection: "column",
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <Stack direction="row" gap={2}>
+                <WoopInput value="hello world" />
+                <WoopInput
+                  value="hello world"
+                  startAdornment={<HeartBroken />}
+                />
+                <WoopInput
+                  value="hello world"
+                  endAdornment={<VisibilityOff />}
+                />
+                <WoopInput
+                  value="hello world"
+                  startAdornment={<HeartBroken />}
+                  endAdornment={<VisibilityOff />}
+                />
               </Stack>
             </AccordionDetails>
           </Accordion>
