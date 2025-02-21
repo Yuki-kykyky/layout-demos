@@ -15,7 +15,7 @@ import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import { SwitchList } from "../components/page2/switch-list";
 import React from "react";
-
+import TabList from "../components/page2/tab-list";
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -143,7 +143,11 @@ export function WoopDesignSystem() {
           </Accordion>
         </Box>
         <Box sx={{ width: "49%" }}>
-          <Accordion>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h6" fontWeight="800">
                 Chips
@@ -155,7 +159,11 @@ export function WoopDesignSystem() {
           </Accordion>
         </Box>
         <Box sx={{ width: "49%" }}>
-          <Accordion expanded>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h6" fontWeight="800">
                 Switch
@@ -163,6 +171,30 @@ export function WoopDesignSystem() {
             </AccordionSummary>
             <AccordionDetails>
               <SwitchList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Tabs
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                display: "flex",
+                flexDirection: "column",
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <TabList />
             </AccordionDetails>
           </Accordion>
         </Box>

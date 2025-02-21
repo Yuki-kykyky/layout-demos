@@ -184,4 +184,31 @@ const WoopChipStyles = {
   },
 };
 
-export { WoopChipStyles, WoopBtnStyles };
+// 抽离样式配置
+const WoopTabStyles = {
+  outline: {
+    base: {
+      textTransform: "none",
+    },
+    focus: {
+      boxShadow: `inset ${Shadows.FocusBtn.style}`,
+    },
+    selected: {},
+  },
+  contained: {
+    base: {
+      textTransform: "none",
+      bgcolor: (theme: Theme) => theme.palette.background.paper,
+    },
+    selected: {
+      bgcolor: (theme: Theme) => theme.palette.primary.main,
+      boxShadow: (theme: Theme) => `inset 0px 0px 0px 6px ${theme.palette.background.paper}`,
+      color: (theme: Theme) => theme.palette.primary.contrastText,
+    },
+    focus: {
+      boxShadow: `inset ${Shadows.FocusBtn.style}`,
+    },
+  },
+};
+
+export { WoopChipStyles, WoopBtnStyles, WoopTabStyles };
