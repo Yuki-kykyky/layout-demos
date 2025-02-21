@@ -16,7 +16,7 @@ interface WoopBadgeBaseProps {
 
 interface StyledBadgeProps {
   size?: keyof typeof AvatarSize;
-  rippling?: boolean;
+  rippling?: string;
   badgecolor?: string;
 }
 
@@ -24,7 +24,7 @@ const StyledBadge = styled(Badge)<StyledBadgeProps>(
   ({
     theme,
     size = "M",
-    rippling = false,
+    rippling = "false",
     badgecolor = ColorPalette.SystemColors.successful,
   }) => ({
     "& .MuiBadge-badge": {
@@ -41,14 +41,14 @@ const StyledBadge = styled(Badge)<StyledBadgeProps>(
         width: "100%",
         height: "100%",
         borderRadius: "50%",
-        ...(rippling && {
+        ...(rippling === "true" && {
           animation: "ripple 1.2s infinite ease-in-out",
           border: "1px solid currentColor",
           content: '""',
         }),
       },
     },
-    ...(rippling && {
+    ...(rippling === "true" && {
       "@keyframes ripple": {
         "0%": {
           transform: "scale(.8)",

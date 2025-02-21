@@ -13,6 +13,7 @@ interface AvatarConfig {
     icon?: React.ReactNode;
     bgColor?: string;
     contentColor?: string;
+    rippling?: string;
   }[];
 }
 // 定义头像组配置
@@ -20,7 +21,7 @@ const avatarGroups: AvatarConfig[] = ["S", "M", "L", "XL"].map((size) => {
   return {
     size: size as keyof typeof AvatarSize,
     variants: [
-      { imgSrc: "/goooose14.jpg", rippling: true },
+      { imgSrc: "/goooose14.jpg", rippling: "true" },
       { text: "HL", badgecolor: ColorPalette.SystemColors.error },
       {
         icon: <AddBox />,
