@@ -9,13 +9,14 @@ import {
   Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
+import { BadgeList } from "../components/page2/badge-list";
 import ButtonList from "../components/page2/button-list";
 import { ChipList } from "../components/page2/chip-list";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import { SwitchList } from "../components/page2/switch-list";
-import React from "react";
 import TabList from "../components/page2/tab-list";
+import React from "react";
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -195,6 +196,23 @@ export function WoopDesignSystem() {
               }}
             >
               <TabList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            expanded
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Avatars & Badges
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <BadgeList />
             </AccordionDetails>
           </Accordion>
         </Box>

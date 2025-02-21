@@ -1,12 +1,11 @@
-import { NumberBadge } from "@/app/common/ui/page2/woop/common/common";
+import { WoopBadge } from "@/app/common/ui/page2/woop/woop-badge";
 import {
-    WoopTab,
-    WoopTabPanelWrapper,
+  WoopTab,
+  WoopTabPanelWrapper,
 } from "@/app/common/ui/page2/woop/woop-tab";
 import { DoNotTouch, NotificationsActive } from "@mui/icons-material";
 import { Box, Tabs } from "@mui/material";
 import React, { useState } from "react";
-
 
 export default function TabList() {
   const [outlineTab, setOutlineTab] = useState(0);
@@ -34,7 +33,7 @@ export default function TabList() {
           <WoopTab
             label="with suffix"
             value={2}
-            suffix={<NumberBadge number={99} />}
+            suffix={<WoopBadge content="99" />}
           />
           <WoopTab
             label="disabled"
@@ -80,7 +79,7 @@ export default function TabList() {
             type="contained"
             label="with suffix"
             value={2}
-            suffix={<NumberBadge number={99} />}
+            suffix={<WoopBadge content="99" />}
           />
           <WoopTab
             type="contained"

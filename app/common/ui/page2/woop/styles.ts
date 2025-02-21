@@ -202,7 +202,8 @@ const WoopTabStyles = {
     },
     selected: {
       bgcolor: (theme: Theme) => theme.palette.primary.main,
-      boxShadow: (theme: Theme) => `inset 0px 0px 0px 6px ${theme.palette.background.paper}`,
+      boxShadow: (theme: Theme) =>
+        `inset 0px 0px 0px 6px ${theme.palette.background.paper}`,
       color: (theme: Theme) => theme.palette.primary.contrastText,
     },
     focus: {
@@ -211,4 +212,44 @@ const WoopTabStyles = {
   },
 };
 
-export { WoopChipStyles, WoopBtnStyles, WoopTabStyles };
+const WoopBadgeStyles = {
+  baseStyles: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "4px",
+    px: "4px",
+    py: "2px",
+  },
+  sizeStyles: {
+    M: {
+      fontSize: 16,
+      lineHeight: "22px",
+    },
+    S: {
+      fontSize: 12,
+      lineHeight: "16px",
+    },
+  },
+  variantStyles: {
+    filled: (color: string) => ({
+      bgcolor: color,
+      boxShadow: "none",
+      "& .MuiTypography-root": {
+        color: ColorPalette.Greyscale.white,
+      },
+    }),
+    outlined: (color: string, textColor: string) => ({
+      bgcolor: ColorPalette.Greyscale.white,
+      boxShadow: `0px 0px 0px 2px ${color}`,
+      "& .MuiTypography-root": {
+        color: textColor,
+      },
+    }),
+  },
+  textStyles: {
+    fontWeight: 600,
+  },
+};
+
+export { WoopChipStyles, WoopBtnStyles, WoopTabStyles, WoopBadgeStyles };

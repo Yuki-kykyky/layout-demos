@@ -4,10 +4,12 @@ import { ColorPalette, ColorPaletteDark } from "./common/styles/color-palette";
 declare module "@mui/material/styles" {
   interface Palette {
     violet: Palette["primary"];
+    disabled: Palette["divider"];
   }
 
   interface PaletteOptions {
     violet?: PaletteOptions["primary"];
+    disabled?: PaletteOptions["divider"];
   }
 }
 
@@ -26,6 +28,7 @@ const lightTheme = createTheme({
       paper: ColorPalette.Background.bgDarken,
     },
     divider: ColorPalette.Greyscale.dividers,
+    disabled: ColorPalette.Greyscale.disabledText,
     text: {
       primary: ColorPalette.Greyscale.textPrimary,
       secondary: ColorPalette.Greyscale.textSecondary,
