@@ -15,9 +15,8 @@ interface AvatarConfig {
     contentColor?: string;
   }[];
 }
-
 // 定义头像组配置
-const avatarGroups: AvatarConfig[] = Object.keys(AvatarSize).map((size) => {
+const avatarGroups: AvatarConfig[] = ["S", "M", "L", "XL"].map((size) => {
   return {
     size: size as keyof typeof AvatarSize,
     variants: [
@@ -44,11 +43,11 @@ const VerticalDivider = () => (
 // 头像列表组件
 export const AvatarList = () => {
   // 渲染单个头像组
-  const renderAvatarGroup = (config: AvatarConfig, badged: boolean = false) => (
+  const renderAvatarGroup = (config: AvatarConfig, badged: boolean) => (
     <>
       {config.variants.map((variant, index) => (
         <WoopAvatar
-          key={`${config.size}-${index}-${badged}`}
+          key={`${config.size}-${index}-${badged.toString()}`}
           size={config.size}
           badged={badged}
           {...variant}
@@ -59,7 +58,7 @@ export const AvatarList = () => {
   );
 
   // 渲染所有头像组
-  const renderAvatarGroups = (badged: boolean = false) => (
+  const renderAvatarGroups = (badged: boolean) => (
     <Stack
       direction="row"
       gap={2}
@@ -67,10 +66,13 @@ export const AvatarList = () => {
       borderBottom={`2px solid ${ColorPalette.Greyscale.dividers}`}
       pb={2}
     >
-      {avatarGroups.map((group) => renderAvatarGroup(group, badged))}
+      {avatarGroups.map((group) => (
+        <Stack direction="row" gap={2} key={group.size}>
+          {renderAvatarGroup(group, badged)}
+        </Stack>
+      ))}
     </Stack>
   );
-
   return (
     <>
       {renderAvatarGroups(false)} {/* 无徽章版本 */}
