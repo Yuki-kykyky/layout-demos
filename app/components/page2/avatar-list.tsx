@@ -20,8 +20,8 @@ const avatarGroups: AvatarConfig[] = ["S", "M", "L", "XL"].map((size) => {
   return {
     size: size as keyof typeof AvatarSize,
     variants: [
-      { imgSrc: "/goooose14.jpg" },
-      { text: "HL" },
+      { imgSrc: "/goooose14.jpg", rippling: true },
+      { text: "HL", badgecolor: ColorPalette.SystemColors.error },
       {
         icon: <AddBox />,
         bgColor: ColorPalette.AccentViolet.accent1Primary,

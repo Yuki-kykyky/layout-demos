@@ -17,16 +17,22 @@ interface WoopBadgeBaseProps {
 interface StyledBadgeProps {
   size?: keyof typeof AvatarSize;
   rippling?: boolean;
+  badgecolor?: string;
 }
 
 const StyledBadge = styled(Badge)<StyledBadgeProps>(
-  ({ theme, size = "M", rippling = false }) => ({
+  ({
+    theme,
+    size = "M",
+    rippling = false,
+    badgecolor = ColorPalette.SystemColors.successful,
+  }) => ({
     "& .MuiBadge-badge": {
       width: size === "S" ? "8px" : AvatarSize[size] / 4,
       height: size === "S" ? "8px" : AvatarSize[size] / 4,
       borderRadius: "50%",
-      backgroundColor: "#44b700",
-      color: "#44b700",
+      backgroundColor: badgecolor,
+      color: badgecolor,
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",

@@ -18,6 +18,8 @@ export const WoopAvatar = ({
   bgColor = ColorPalette.Greyscale.disabledBg,
   contentColor = ColorPalette.Greyscale.disabledText,
   badged = false,
+  badgecolor,
+  rippling = false,
 }: {
   size?: keyof typeof AvatarSize;
   imgSrc?: string;
@@ -26,6 +28,8 @@ export const WoopAvatar = ({
   bgColor?: string;
   contentColor?: string;
   badged?: boolean;
+  badgecolor?: string;
+  rippling?: boolean;
 }) => {
   const getAvatarStyle = (
     size: keyof typeof AvatarSize,
@@ -64,13 +68,14 @@ export const WoopAvatar = ({
       {badged ? (
         <StyledBadge
           size={size}
-          rippling
+          rippling={rippling}
           overlap="circular"
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "right",
           }}
           variant="dot"
+          badgecolor={badgecolor}
         >
           {renderAvatar()}
         </StyledBadge>
