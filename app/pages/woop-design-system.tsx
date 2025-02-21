@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
+import { AvatarList } from "../components/page2/avatar-list";
 import { BadgeList } from "../components/page2/badge-list";
 import ButtonList from "../components/page2/button-list";
 import { ChipList } from "../components/page2/chip-list";
@@ -17,6 +18,7 @@ import { ShadowList } from "../components/page2/shadow-list";
 import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import React from "react";
+
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -212,7 +214,10 @@ export function WoopDesignSystem() {
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <BadgeList />
+              <Stack gap={2} alignItems="center">
+                <AvatarList />
+                <BadgeList />
+              </Stack>
             </AccordionDetails>
           </Accordion>
         </Box>

@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Badge, Box, styled, Typography } from "@mui/material";
 import React from "react";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { WoopBadgeStyles } from "./styles";
+import { AvatarSize } from "./woop-avatar";
 
 interface WoopBadgeBaseProps {
   content: React.ReactNode;
@@ -13,6 +14,48 @@ interface WoopBadgeBaseProps {
   outlined?: boolean;
 }
 
+interface StyledBadgeProps {
+  size?: keyof typeof AvatarSize;
+  rippling?: boolean;
+}
+
+const StyledBadge = styled(Badge)<StyledBadgeProps>(
+  ({ theme, size = "M", rippling = false }) => ({
+    "& .MuiBadge-badge": {
+      width: size === "S" ? "8px" : AvatarSize[size] / 4,
+      height: size === "S" ? "8px" : AvatarSize[size] / 4,
+      borderRadius: "50%",
+      backgroundColor: "#44b700",
+      color: "#44b700",
+      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+      "&::after": {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        borderRadius: "50%",
+        ...(rippling && {
+          animation: "ripple 1.2s infinite ease-in-out",
+          border: "1px solid currentColor",
+          content: '""',
+        }),
+      },
+    },
+    ...(rippling && {
+      "@keyframes ripple": {
+        "0%": {
+          transform: "scale(.8)",
+          opacity: 1,
+        },
+        "100%": {
+          transform: "scale(2.4)",
+          opacity: 0,
+        },
+      },
+    }),
+  })
+);
 // 基础徽章组件
 const WoopBadgeBase = ({
   content,
@@ -65,4 +108,4 @@ const WoopBadge = ({ content, ...props }: WoopBadgeBaseProps) => (
   <WoopBadgeBase content={content} {...props} />
 );
 
-export { WoopBadge, WoopNumberBadge };
+export { WoopBadge, WoopNumberBadge, StyledBadge };
