@@ -35,6 +35,10 @@ export const Shadows = {
     description: "hover",
     style: "0px 0px 0px 1px #1B4AF0",
   },
+  Error: {
+    description: "error",
+    style: "0px 0px 0px 2px #FF3030",
+  },
 };
 
 export const CornerRadius = {

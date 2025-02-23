@@ -119,6 +119,104 @@ export const TextFieldList = () => {
       value: "hello world with label and helper text",
       disabled: true,
     },
+
+    // error
+    { error: true, value: "hello world with error" },
+    {
+      error: true,
+      startAdornment: <HeartBroken />,
+      value: "hello world with error",
+    },
+    {
+      error: true,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with error",
+    },
+    {
+      error: true,
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with error",
+    },
+
+    // 带 label 和 helperText 和 error
+    {
+      label: "Label",
+      helperText: "Description",
+      error: true,
+      value: "hello world with label and helper text and error",
+    },
+    {
+      startAdornment: <HeartBroken />,
+      label: "Label",
+      helperText: "Description",
+      error: true,
+      value: "hello world with label and helper text and error",
+    },
+    {
+      endAdornment: <VisibilityOff />,
+      label: "Label",
+      helperText: "Description",
+      error: true,
+      value: "hello world with label and helper text and error",
+    },
+    {
+      label: "Label",
+      helperText: "Description",
+      error: true,
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with label and helper text and error",
+    },
+
+    // success
+    { success: true, value: "hello world with success" },
+    {
+      success: true,
+      startAdornment: <HeartBroken />,
+      value: "hello world with success",
+    },
+    {
+      success: true,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with success",
+    },
+    {
+      success: true,
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with success",
+    },
+
+    // 带 label 和 helperText 和 success
+    {
+      label: "Label",
+      helperText: "Description",
+      success: true,
+      value: "hello world with label and helper text and success",
+    },
+    {
+      startAdornment: <HeartBroken />,
+      label: "Label",
+      helperText: "Description",
+      success: true,
+      value: "hello world with label and helper text and success",
+    },
+    {
+      endAdornment: <VisibilityOff />,
+      label: "Label",
+      helperText: "Description",
+      success: true,
+      value: "hello world with label and helper text and success",
+    },
+    {
+      label: "Label",
+      helperText: "Description",
+      success: true,
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      value: "hello world with label and helper text and success",
+    },
   ];
 
   return (

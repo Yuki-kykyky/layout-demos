@@ -53,15 +53,15 @@ const lightTheme = createTheme({
     },
     error: {
       main: ColorPalette.SystemColors.error,
-      light: ColorPalette.SystemColors.errorTertiary,
+      light: ColorPalette.SystemColors.errorSecondary,
       dark: ColorPalette.SystemColors.errorHover,
-      contrastText: ColorPalette.Greyscale.white,
+      contrastText: ColorPalette.SystemColors.errorTertiary,
     },
     success: {
       main: ColorPalette.SystemColors.successful,
-      light: ColorPalette.SystemColors.successfulTertiary,
+      light: ColorPalette.SystemColors.successfulSecondary,
       dark: ColorPalette.SystemColors.successfulHover,
-      contrastText: ColorPalette.Greyscale.white,
+      contrastText: ColorPalette.SystemColors.successfulTertiary,
     },
   },
   typography: {
@@ -98,6 +98,18 @@ const darkTheme = createTheme({
       light: ColorPaletteDark.AccentOrange.accent2Quaternary,
       dark: ColorPaletteDark.AccentOrange.accent2Tertiary,
       contrastText: ColorPaletteDark.Greyscale.white,
+    },
+    error: {
+      main: ColorPaletteDark.SystemColors.error,
+      light: ColorPaletteDark.SystemColors.errorSecondary,
+      dark: ColorPaletteDark.SystemColors.errorHover,
+      contrastText: ColorPaletteDark.SystemColors.errorTertiary,
+    },
+    success: {
+      main: ColorPaletteDark.SystemColors.successful,
+      light: ColorPaletteDark.SystemColors.successfulSecondary,
+      dark: ColorPaletteDark.SystemColors.successfulHover,
+      contrastText: ColorPaletteDark.SystemColors.successfulTertiary,
     },
   },
   typography: {
