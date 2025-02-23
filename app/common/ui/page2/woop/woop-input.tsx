@@ -16,12 +16,14 @@ export const WoopInput = ({
   endAdornment,
   label,
   helperText,
+  disabled = false,
 }: {
   value: string;
   startAdornment?: React.ReactNode;
   endAdornment?: React.ReactNode;
   label?: string;
   helperText?: string;
+  disabled?: boolean;
 }) => {
   return (
     <Box>
@@ -32,11 +34,20 @@ export const WoopInput = ({
           width: "250px",
           overflow: "hidden",
           "&:hover": {
-            boxShadow: Shadows.Focus.style,
+            boxShadow: Shadows.Hover.style,
           },
           "&:focus-within": {
             boxShadow: Shadows.FocusBtn.style,
           },
+          ...(disabled && {
+            boxShadow: Shadows.Disabled.style,
+            "&:hover": {
+              boxShadow: Shadows.Disabled.style,
+            },
+            "&:focus-within": {
+              boxShadow: Shadows.Disabled.style,
+            },
+          }),
         }}
       >
         {startAdornment && (
@@ -59,6 +70,7 @@ export const WoopInput = ({
 
         {label ? (
           <TextField
+            disabled={disabled}
             label={label}
             variant="filled"
             value={value}
@@ -70,6 +82,12 @@ export const WoopInput = ({
                 top: "4px",
                 lineHeight: "16px",
                 fontWeight: 800,
+                "&:hover": {
+                  color: (theme) => theme.palette.text.secondary,
+                },
+                "&:focus": {
+                  color: (theme) => theme.palette.text.secondary,
+                },
               },
             }}
             slotProps={{
@@ -91,6 +109,12 @@ export const WoopInput = ({
                     bgcolor: (theme) =>
                       `${theme.palette.background.paper} !important`,
                   },
+                  ...(disabled && {
+                    boxShadow: Shadows.Disabled.style,
+                    color: (theme) => theme.palette.text.disabled,
+                    bgcolor: (theme) =>
+                      `${theme.palette.background.paper} !important`,
+                  }),
                 },
                 endAdornment: (
                   <InputAdornment
@@ -111,6 +135,7 @@ export const WoopInput = ({
           />
         ) : (
           <InputBase
+            disabled={disabled}
             placeholder="Placeholder"
             value={value}
             endAdornment={

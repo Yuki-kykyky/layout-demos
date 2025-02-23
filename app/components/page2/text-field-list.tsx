@@ -15,6 +15,17 @@ export const TextFieldList = () => {
       value: "hello world",
     },
 
+    // 禁用
+    { disabled: true, value: "hello world" },
+    { disabled: true, startAdornment: <HeartBroken />, value: "hello world" },
+    { disabled: true, endAdornment: <VisibilityOff />, value: "hello world" },
+    {
+      disabled: true,
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      value: "hello world",
+    },
+
     // 带 helperText
     { helperText: "Description", value: "hello world with helper text" },
     {
@@ -77,6 +88,36 @@ export const TextFieldList = () => {
       label: "Label",
       helperText: "Description",
       value: "hello world with label and helper text",
+    },
+
+    // 带 label 和 helptext 被禁用
+    {
+      label: "Label",
+      helperText: "Description",
+      value: "hello world with label and helper text",
+      disabled: true,
+    },
+    {
+      startAdornment: <HeartBroken />,
+      label: "Label",
+      helperText: "Description",
+      value: "hello world with label and helper text",
+      disabled: true,
+    },
+    {
+      endAdornment: <VisibilityOff />,
+      label: "Label",
+      helperText: "Description",
+      value: "hello world with label and helper text",
+      disabled: true,
+    },
+    {
+      startAdornment: <HeartBroken />,
+      endAdornment: <VisibilityOff />,
+      label: "Label",
+      helperText: "Description",
+      value: "hello world with label and helper text",
+      disabled: true,
     },
   ];
 
