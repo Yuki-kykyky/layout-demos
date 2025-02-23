@@ -85,9 +85,10 @@ export const WoopInput = ({
                 "&:hover": {
                   color: (theme) => theme.palette.text.secondary,
                 },
-                "&:focus": {
-                  color: (theme) => theme.palette.text.secondary,
-                },
+                "&:focus, &:active, &:focus-visible, &:focus-within, &:focus-within-content":
+                  {
+                    color: (theme) => theme.palette.text.secondary,
+                  },
               },
             }}
             slotProps={{
