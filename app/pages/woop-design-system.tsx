@@ -1,4 +1,3 @@
-import { HeartBroken, VisibilityOff } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Accordion,
@@ -10,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
-import { WoopInput } from "../common/ui/page2/woop/woop-input";
 import { AvatarList } from "../components/page2/avatar-list";
 import { BadgeList } from "../components/page2/badge-list";
 import ButtonList from "../components/page2/button-list";
@@ -19,6 +17,7 @@ import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
+import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
 
 export function WoopDesignSystem() {
@@ -243,22 +242,7 @@ export function WoopDesignSystem() {
                 borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
               }}
             >
-              <Stack direction="row" gap={2}>
-                <WoopInput value="hello world" />
-                <WoopInput
-                  value="hello world"
-                  startAdornment={<HeartBroken />}
-                />
-                <WoopInput
-                  value="hello world"
-                  endAdornment={<VisibilityOff />}
-                />
-                <WoopInput
-                  value="hello world"
-                  startAdornment={<HeartBroken />}
-                  endAdornment={<VisibilityOff />}
-                />
-              </Stack>
+              <TextFieldList />
             </AccordionDetails>
           </Accordion>
         </Box>
