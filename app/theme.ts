@@ -66,6 +66,16 @@ const lightTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter",
+    subtitle2: {
+      fontSize: "24px",
+      lineHeight: "30px",
+      fontWeight: 800,
+    },
+    body1: {
+      fontSize: "16px",
+      lineHeight: "20px",
+      fontWeight: 400,
+    },
   },
 });
 
@@ -114,6 +124,16 @@ const darkTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter",
+    subtitle2: {
+      fontSize: "24px",
+      lineHeight: "30px",
+      fontWeight: 800,
+    },
+    body1: {
+      fontSize: "16px",
+      lineHeight: "20px",
+      fontWeight: 400,
+    },
   },
 });
 

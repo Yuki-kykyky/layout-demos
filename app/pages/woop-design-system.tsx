@@ -19,6 +19,7 @@ import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
+import { CardList } from "../components/page2/card-list";
 
 export function WoopDesignSystem() {
   return (
@@ -29,6 +30,31 @@ export function WoopDesignSystem() {
         flexWrap="wrap"
         justifyContent="space-between"
       >
+        <Box sx={{ width: "100%" }}>
+          <Accordion
+            expanded
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Cards
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                display: "flex",
+                flexDirection: "column",
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <CardList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
         <Box sx={{ width: "49%" }}>
           <Accordion
             sx={{
@@ -223,7 +249,6 @@ export function WoopDesignSystem() {
         </Box>
         <Box sx={{ width: "100%" }}>
           <Accordion
-            expanded
             sx={{
               border: (theme) => `1px solid ${theme.palette.grey[200]}`,
             }}
