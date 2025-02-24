@@ -1,11 +1,11 @@
 import { Shadows } from "@/app/common/styles/style-setting";
 import {
-    Box,
-    Card,
-    CardContent,
-    CardMedia,
-    IconButton,
-    Typography
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
 } from "@mui/material";
 import React from "react";
 

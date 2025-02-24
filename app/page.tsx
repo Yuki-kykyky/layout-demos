@@ -1,12 +1,6 @@
 "use client";
 import Footer from "@/app/footer";
-import {
-  Box,
-  Button,
-  Menu,
-  MenuItem,
-  ThemeProvider
-} from "@mui/material";
+import { Box, Button, Menu, MenuItem, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import "typeface-source-code-pro";
 import Header from "./header";
@@ -16,6 +10,7 @@ import { ImageGeneration } from "./pages/image-generation";
 import { ImageCodeGeneration } from "./pages/image-with-code-generation";
 import { WoopDesignSystem } from "./pages/woop-design-system";
 import { darkTheme, lightTheme } from "./theme";
+import { Test } from "./pages/test";
 
 export default function Home() {
   const versionMap = {
@@ -38,6 +33,10 @@ export default function Home() {
     v5: {
       label: "woop design system generation",
       content: <WoopDesignSystem />,
+    },
+    v6: {
+      label: "test",
+      content: <Test />,
     },
   };
 

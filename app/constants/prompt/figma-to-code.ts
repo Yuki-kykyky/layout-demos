@@ -15,7 +15,11 @@ export const singleFigmaToUI = `
 export const reorgnizeFigmaWithWoopUI = `
 根据当前代码块各元素的嵌套层级，修改当前代码，要求：
 
-1. 保持原代码中各元素之间的 margin、padding 等间距，必要时保留 absolute 绝对定位布局。替换原代码为 mui 组件;
-2. 寻找匹配的 woop-ui 组件，替换当前代码块中的 mui 组件;
-3. 替换后的组件样式与原代码块样式保持一致;
+1. 保留所有的的宽高设置 maxHeight、maxWidth;
+2. 如果不存在absolute布局, 则跳过此条指令。存在absolute布局, 则移除现有代码中的 absolute 样式设置，根据目标布局，用 flexbox 实现;
+3. 参考 data-layer 属性，优先寻找匹配的 woop-ui 组件, 填充所有props, 必要时调整组件的宽高，图片替换为'/goooose30.jpg';
+4. 如果 svg 元素可以用 mui-icon 组件替换，请替换;
+5. 用 mui 组件替换原代码块中的 html 元素;
+6. 替换后的组件样式与原代码块样式保持一致, 若最终宽高超过第1步设定的 maxHeight、maxWidth, 设置 overflow: hidden;
+7. 移除作为分区提示的背景色块和辅助线；
 `;
