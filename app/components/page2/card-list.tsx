@@ -4,7 +4,7 @@ import { WoopBtn } from "@/app/common/ui/page2/woop/woop-btn";
 import { BtnSize, BtnType } from "@/app/common/ui/page2/woop/woop-btn-base";
 import { ChipType, WoopChip } from "@/app/common/ui/page2/woop/woop-chip";
 import { AccessTime, FavoriteOutlined, Star } from "@mui/icons-material";
-import { Divider, Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography, Box } from "@mui/material";
 import React from "react";
 
 export const floatIcon = (
@@ -46,9 +46,7 @@ export const getFooter = (type: "vertical" | "horizontal") => (
   </Stack>
 );
 
-
 export const CardList = () => {
-
   const verticalCards = [
     { description: "just a card content" },
     {
@@ -107,13 +105,15 @@ export const CardList = () => {
       ))}
       <Divider sx={{ width: "100%", my: 2 }} />
       {horizontalCards.map((cardProps, index) => (
-        <HorizontalCard
-          key={index}
-          image="/goooose30.jpg"
-          pictureSize={240}
-          title="Card title"
-          {...cardProps}
-        />
+        <Box key={index}>
+          <HorizontalCard
+            key={index}
+            image="/goooose30.jpg"
+            pictureSize={180}
+            title="Card title"
+            {...cardProps}
+          />
+        </Box>
       ))}
     </Stack>
   );
