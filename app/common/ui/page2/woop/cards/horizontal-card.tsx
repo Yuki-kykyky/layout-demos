@@ -35,6 +35,7 @@ export const HorizontalCard = ({
         bgcolor: (theme) => theme.palette.background.default,
         boxShadow: Shadows.Z100.style,
         position: "relative",
+        width: "100%",
       }}
     >
       <IconButton
@@ -46,7 +47,14 @@ export const HorizontalCard = ({
       >
         {floatIcon}
       </IconButton>
-      <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
         <CardMedia
           sx={{
             width: pictureSize,
@@ -61,10 +69,10 @@ export const HorizontalCard = ({
         <CardContent
           sx={{
             px: 4,
-            maxWidth: 384,
-            maxHeight: 240,
+            maxHeight: pictureSize,
             gap: 1,
             display: "flex",
+            flexGrow: 1,
             flexDirection: "column",
           }}
           style={{

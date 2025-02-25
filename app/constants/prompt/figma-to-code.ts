@@ -23,3 +23,13 @@ export const reorgnizeFigmaWithWoopUI = `
 6. 替换后的组件样式与原代码块样式保持一致, 若最终宽高超过第1步设定的 maxHeight、maxWidth, 设置 overflow: hidden;
 7. 移除作为分区提示的背景色块和辅助线；
 `;
+
+export const fillFigmaLayoutWithWoopUI = `
+根据当前代码块各元素的嵌套层级，修改当前代码，要求：
+
+1. 保留当前 box 的宽高设置;
+2. 参考 data-layer 属性, 匹配的 [参考图文] 中对应的元素;
+3. 根据第2步的匹配结果, 优先寻找匹配的 woop-ui 组件, 并根据匹配结果填充组件 props;
+4. 替换组件中的基础 html 元素为 mui 组件， 例如<Box>, <Stack>, <Typography>, tailwind 样式以 sx 属性替代;
+5. 移除作为分区提示的背景色块和辅助线;
+`;

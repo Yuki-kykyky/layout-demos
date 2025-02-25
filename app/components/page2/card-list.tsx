@@ -7,45 +7,47 @@ import { AccessTime, FavoriteOutlined, Star } from "@mui/icons-material";
 import { Divider, Stack, Typography } from "@mui/material";
 import React from "react";
 
-export const CardList = () => {
-  const floatIcon = (
-    <FavoriteOutlined
-      sx={{ color: (theme) => theme.palette.primary.contrastText }}
-    />
-  );
+export const floatIcon = (
+  <FavoriteOutlined
+    sx={{ color: (theme) => theme.palette.primary.contrastText }}
+  />
+);
 
-  const tags = (
-    <Stack direction="row" gap={1} mb={0.5} flexWrap="wrap">
-      <WoopChip label="Tag 1" type={ChipType.Secondary} />
-      <WoopChip label="Tag 2" type={ChipType.Secondary} />
-      <WoopChip label="Tag 3" type={ChipType.Secondary} />
-    </Stack>
-  );
+export const tags = (
+  <Stack direction="row" gap={1} mb={0.5} flexWrap="wrap">
+    <WoopChip label="Tag 1" type={ChipType.Secondary} />
+    <WoopChip label="Tag 2" type={ChipType.Secondary} />
+    <WoopChip label="Tag 3" type={ChipType.Secondary} />
+  </Stack>
+);
 
-  const getFooter = (type: "vertical" | "horizontal") => (
-    <Stack
-      direction="row"
-      mt={0.5}
-      justifyContent="space-between"
-      flexDirection={type === "vertical" ? "row" : "row-reverse"}
-    >
-      <WoopBtn buttonText="2500" size={BtnSize.S} type={BtnType.Primary} />
-      <Stack direction="row" spacing={2}>
-        <Stack direction="row" spacing={1} alignItems="center">
-          <AccessTime sx={{ color: "#2D5BFF" }} />
-          <Typography variant="body1" color="text.secondary">
-            4 years
-          </Typography>
-        </Stack>
-        <Stack direction="row" spacing={1} alignItems="center">
-          <Star sx={{ color: "#F7D523" }} />
-          <Typography variant="body1" color="text.secondary">
-            4.9
-          </Typography>
-        </Stack>
+export const getFooter = (type: "vertical" | "horizontal") => (
+  <Stack
+    direction="row"
+    mt={0.5}
+    justifyContent="space-between"
+    flexDirection={type === "vertical" ? "row" : "row-reverse"}
+  >
+    <WoopBtn buttonText="2500" size={BtnSize.S} type={BtnType.Primary} />
+    <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={1} alignItems="center">
+        <AccessTime sx={{ color: "#2D5BFF" }} />
+        <Typography variant="body1" color="text.secondary">
+          4 years
+        </Typography>
+      </Stack>
+      <Stack direction="row" spacing={1} alignItems="center">
+        <Star sx={{ color: "#F7D523" }} />
+        <Typography variant="body1" color="text.secondary">
+          4.9
+        </Typography>
       </Stack>
     </Stack>
-  );
+  </Stack>
+);
+
+
+export const CardList = () => {
 
   const verticalCards = [
     { description: "just a card content" },

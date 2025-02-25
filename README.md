@@ -186,6 +186,16 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 
 !['woop free design system'](./public/readme/figma-design-system.jpg)
 
+根据设计系统抽取的组件具有多项可传参项。
+
+!['v6-figma'](./public/readme/v6-figma-pair-with-tsx.jpg)
+
+在 figma 中仅提供了区域布局信息，而在对应的传参图文信息中，提供了组件的各项可传参项。在 **布局-图文** 中优先达成匹配，在 **图文-代码** 中进行信息传递。
+
+最终输出效果：
+
+!['v6-output'](./public/readme/v6-output.jpg)
+
 ### todo
 
-- [ ] V6 能同步生成测试代码，保证代码质量...
+- [ ] V7 能同步生成测试代码，保证代码质量...
