@@ -5,11 +5,13 @@ declare module "@mui/material/styles" {
   interface Palette {
     violet: Palette["primary"];
     disabled: Palette["divider"];
+    white: Palette["divider"];
   }
 
   interface PaletteOptions {
     violet?: PaletteOptions["primary"];
     disabled?: PaletteOptions["divider"];
+    white?: PaletteOptions["divider"];
   }
 }
 
@@ -29,21 +31,22 @@ const lightTheme = createTheme({
     },
     divider: ColorPalette.Greyscale.dividers,
     disabled: ColorPalette.Greyscale.disabledText,
+    white: ColorPalette.Greyscale.white,
     text: {
       primary: ColorPalette.Greyscale.textPrimary,
       secondary: ColorPalette.Greyscale.textSecondary,
     },
     primary: {
       main: ColorPalette.AccentViolet.accent1Primary,
-      light: ColorPalette.AccentViolet.accent1Quaternary,
+      light: ColorPalette.AccentViolet.accent1Secondary,
       dark: ColorPalette.AccentViolet.clickState,
-      contrastText: ColorPalette.Greyscale.white,
+      contrastText: ColorPalette.AccentViolet.accent1Quaternary,
     },
     violet: {
       main: ColorPalette.AccentViolet.hoverState,
       light: ColorPalette.AccentViolet.accent1Primary,
       dark: ColorPalette.AccentViolet.clickState,
-      contrastText: ColorPalette.Greyscale.white,
+      contrastText: ColorPalette.AccentViolet.accent1Tertiary,
     },
     secondary: {
       main: ColorPalette.AccentOrange.accent2Primary,
@@ -87,21 +90,23 @@ const darkTheme = createTheme({
       paper: ColorPaletteDark.Background.bgLight,
     },
     divider: ColorPaletteDark.Greyscale.dividers,
+    disabled: ColorPaletteDark.Greyscale.disabledText,
+    white: ColorPaletteDark.Greyscale.white,
     text: {
       primary: ColorPaletteDark.Greyscale.white,
       secondary: ColorPaletteDark.Greyscale.textSecondary,
     },
     primary: {
       main: ColorPaletteDark.AccentViolet.accent1Primary,
-      light: ColorPaletteDark.AccentViolet.accent1Quaternary,
+      light: ColorPaletteDark.AccentViolet.accent1Secondary,
       dark: ColorPaletteDark.AccentViolet.clickState,
-      contrastText: ColorPaletteDark.Greyscale.white,
+      contrastText: ColorPaletteDark.AccentViolet.accent1Quaternary,
     },
     violet: {
       main: ColorPaletteDark.AccentViolet.hoverState,
       light: ColorPaletteDark.AccentViolet.accent1Primary,
       dark: ColorPaletteDark.AccentViolet.clickState,
-      contrastText: ColorPaletteDark.Greyscale.white,
+      contrastText: ColorPaletteDark.AccentViolet.accent1Tertiary,
     },
     secondary: {
       main: ColorPaletteDark.AccentOrange.accent2Primary,

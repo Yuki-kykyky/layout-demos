@@ -19,9 +19,7 @@ import { Divider, Stack, Typography, Box } from "@mui/material";
 import React from "react";
 
 export const floatIcon = (
-  <FavoriteOutlined
-    sx={{ color: (theme) => theme.palette.primary.contrastText }}
-  />
+  <FavoriteOutlined sx={{ color: (theme) => theme.palette.white }} />
 );
 
 export const tags = (
@@ -87,33 +85,37 @@ const iconsAttachment = (
     />
   </Stack>
 );
-const iconTextAttachment = <Stack
-  sx={{
-    borderLeft: (theme) => `1px solid ${theme.palette.grey[200]}`,
-    gap: 1,
-  }}
->
-  <WoopBtn
-    buttonText="Action"
-    size={BtnSize.S}
-    type={BtnType.Tertiary}
-    startIcon={<CopyAll />} />
-  <WoopBtn
-    buttonText="Cancel"
+const iconTextAttachment = (
+  <Stack
     sx={{
-      color: ColorPalette.SystemColors.error,
-      "&:hover": {
-        bgcolor: ColorPalette.Background.bgLight,
-      },
-      "&:active": {
-        color: ColorPalette.SystemColors.error,
-        bgcolor: ColorPalette.Background.bgLight,
-      },
+      borderLeft: (theme) => `1px solid ${theme.palette.grey[200]}`,
+      gap: 1,
     }}
-    size={BtnSize.S}
-    type={BtnType.Tertiary}
-    startIcon={<Close sx={{ color: ColorPalette.SystemColors.error }} />} />
-</Stack>;
+  >
+    <WoopBtn
+      buttonText="Action"
+      size={BtnSize.S}
+      type={BtnType.Tertiary}
+      startIcon={<CopyAll />}
+    />
+    <WoopBtn
+      buttonText="Cancel"
+      sx={{
+        color: ColorPalette.SystemColors.error,
+        "&:hover": {
+          bgcolor: ColorPalette.Background.bgLight,
+        },
+        "&:active": {
+          color: ColorPalette.SystemColors.error,
+          bgcolor: ColorPalette.Background.bgLight,
+        },
+      }}
+      size={BtnSize.S}
+      type={BtnType.Tertiary}
+      startIcon={<Close sx={{ color: ColorPalette.SystemColors.error }} />}
+    />
+  </Stack>
+);
 export const CardList = () => {
   const verticalCards = [
     { description: "just a card content" },

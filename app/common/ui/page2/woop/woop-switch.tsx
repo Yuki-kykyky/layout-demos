@@ -43,7 +43,7 @@ export const WoopSwitch = ({
     if (!hasIcon) {
       return isChecked
         ? checkedColor || theme.palette.primary.main
-        : uncheckedColor || theme.palette.primary.light;
+        : uncheckedColor || theme.palette.primary.contrastText;
     }
     return isChecked
       ? checkedColor || theme.palette.success.main

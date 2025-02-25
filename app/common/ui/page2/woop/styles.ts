@@ -118,19 +118,19 @@ const WoopChipStyles = {
   },
   typeStyles: {
     [ChipType.Primary]: {
-      bgcolor: (theme: Theme) => theme.palette.primary.light,
+      bgcolor: (theme: Theme) => theme.palette.primary.contrastText,
       color: (theme: Theme) => theme.palette.primary.main,
-      border: (theme: Theme) => `1px solid ${theme.palette.primary.light}`,
+      border: (theme: Theme) => `1px solid ${theme.palette.primary.contrastText}`,
       "&:hover": {
         color: (theme: Theme) => theme.palette.violet.main,
-        bgcolor: (theme: Theme) => theme.palette.primary.light,
+        bgcolor: (theme: Theme) => theme.palette.primary.contrastText,
       },
       "&:active": {
         color: (theme: Theme) => theme.palette.violet.dark,
       },
       isClose: {
         bgcolor: (theme: Theme) => theme.palette.primary.main,
-        color: (theme: Theme) => theme.palette.primary.contrastText,
+        color: (theme: Theme) => theme.palette.white,
         border: (theme: Theme) => `1px solid ${theme.palette.primary.main}`,
         "&:hover": {
           bgcolor: (theme: Theme) => theme.palette.error.dark,
@@ -207,7 +207,7 @@ const WoopTabStyles = {
       bgcolor: (theme: Theme) => theme.palette.primary.main,
       boxShadow: (theme: Theme) =>
         `inset 0px 0px 0px 6px ${theme.palette.background.paper}`,
-      color: (theme: Theme) => theme.palette.primary.contrastText,
+      color: (theme: Theme) => theme.palette.white,
     },
     focus: {
       boxShadow: `inset ${Shadows.FocusBtn.style}`,
