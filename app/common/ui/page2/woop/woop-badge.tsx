@@ -4,7 +4,7 @@ import { ColorPalette } from "@/app/common/styles/color-palette";
 import { WoopBadgeStyles } from "./styles";
 import { AvatarSize } from "./woop-avatar";
 
-interface WoopBadgeBaseProps {
+export interface WoopBadgeBaseProps {
   content: React.ReactNode;
   width?: number;
   height?: number;
@@ -14,7 +14,7 @@ interface WoopBadgeBaseProps {
   outlined?: boolean;
 }
 
-interface StyledBadgeProps {
+export interface StyledBadgeProps {
   size?: keyof typeof AvatarSize;
   rippling?: string;
   badgecolor?: string;
