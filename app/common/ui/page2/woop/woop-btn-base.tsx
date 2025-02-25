@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@mui/material";
+import { Button, ButtonProps, SxProps } from "@mui/material";
 import React from "react";
 import { WoopBtnStyles } from "./styles";
 
@@ -23,6 +23,7 @@ export function WoopBtnBase({
   endIcon,
   onFocus,
   onBlur,
+  sx,
   ...props
 }: {
   children: React.ReactNode;
@@ -33,13 +34,14 @@ export function WoopBtnBase({
   endIcon?: React.ReactNode;
   onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+  sx?: SxProps;
   props?: ButtonProps;
 }) {
+  WoopBtnStyles.userDefinedStyles = { ...sx };
   return (
     <Button
       disableRipple
       disabled={disabled}
-      {...props}
       sx={{
         ...WoopBtnStyles.baseStyles,
         ...WoopBtnStyles.typeStyles[type],
@@ -53,6 +55,7 @@ export function WoopBtnBase({
         "& .MuiSvgIcon-root": {
           ...WoopBtnStyles.iconBtnSizeStyles[size],
         },
+        ...WoopBtnStyles.userDefinedStyles,
       }}
       variant={
         WoopBtnStyles.typeStyles[type].variant as
@@ -62,6 +65,7 @@ export function WoopBtnBase({
       }
       onFocus={onFocus}
       onBlur={onBlur}
+      {...props}
     >
       {startIcon && <span style={{ marginRight: "8px" }}>{startIcon}</span>}
       {children}

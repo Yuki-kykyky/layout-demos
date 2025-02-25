@@ -1,9 +1,20 @@
+import { ColorPalette } from "@/app/common/styles/color-palette";
 import { HorizontalCard } from "@/app/common/ui/page2/woop/cards/horizontal-card";
 import { VerticalCard } from "@/app/common/ui/page2/woop/cards/vertical-card";
 import { WoopBtn } from "@/app/common/ui/page2/woop/woop-btn";
 import { BtnSize, BtnType } from "@/app/common/ui/page2/woop/woop-btn-base";
 import { ChipType, WoopChip } from "@/app/common/ui/page2/woop/woop-chip";
-import { AccessTime, FavoriteOutlined, Star } from "@mui/icons-material";
+import { WoopIconBtn } from "@/app/common/ui/page2/woop/woop-icon-btn";
+import {
+  AccessTime,
+  DeleteOutline,
+  EditOutlined,
+  FavoriteOutlined,
+  Star,
+  CalendarMonthOutlined,
+  CopyAll,
+  Close,
+} from "@mui/icons-material";
 import { Divider, Stack, Typography, Box } from "@mui/material";
 import React from "react";
 
@@ -46,6 +57,63 @@ export const getFooter = (type: "vertical" | "horizontal") => (
   </Stack>
 );
 
+const iconsAttachment = (
+  <Stack gap={1}>
+    <WoopIconBtn
+      sx={{
+        px: "10px",
+      }}
+      type={BtnType.Secondary}
+      icon={<EditOutlined />}
+      size={BtnSize.S}
+    />
+    <WoopIconBtn
+      sx={{
+        px: "10px",
+      }}
+      type={BtnType.Secondary}
+      icon={<CalendarMonthOutlined />}
+      size={BtnSize.S}
+    />
+    <WoopIconBtn
+      sx={{
+        p: 1,
+        bgcolor: ColorPalette.SystemColors.errorTertiary,
+        color: ColorPalette.SystemColors.error,
+      }}
+      type={BtnType.Secondary}
+      icon={<DeleteOutline />}
+      size={BtnSize.S}
+    />
+  </Stack>
+);
+const iconTextAttachment = <Stack
+  sx={{
+    borderLeft: (theme) => `1px solid ${theme.palette.grey[200]}`,
+    gap: 1,
+  }}
+>
+  <WoopBtn
+    buttonText="Action"
+    size={BtnSize.S}
+    type={BtnType.Tertiary}
+    startIcon={<CopyAll />} />
+  <WoopBtn
+    buttonText="Cancel"
+    sx={{
+      color: ColorPalette.SystemColors.error,
+      "&:hover": {
+        bgcolor: ColorPalette.Background.bgLight,
+      },
+      "&:active": {
+        color: ColorPalette.SystemColors.error,
+        bgcolor: ColorPalette.Background.bgLight,
+      },
+    }}
+    size={BtnSize.S}
+    type={BtnType.Tertiary}
+    startIcon={<Close sx={{ color: ColorPalette.SystemColors.error }} />} />
+</Stack>;
 export const CardList = () => {
   const verticalCards = [
     { description: "just a card content" },
@@ -115,6 +183,29 @@ export const CardList = () => {
           />
         </Box>
       ))}
+      <Divider sx={{ width: "100%", my: 2 }} />
+      <Box>
+        <HorizontalCard
+          image="/goooose30.jpg"
+          pictureSize={180}
+          headerSlot={tags}
+          footerSlot={getFooter("horizontal")}
+          title="Card title"
+          description="Card description with right attached section here"
+          rightAttachedSlot={iconsAttachment}
+        />
+      </Box>
+      <Box>
+        <HorizontalCard
+          image="/goooose30.jpg"
+          pictureSize={180}
+          headerSlot={tags}
+          footerSlot={getFooter("horizontal")}
+          title="Card title"
+          description="Card description"
+          rightAttachedSlot={iconTextAttachment}
+        />
+      </Box>
     </Stack>
   );
 };

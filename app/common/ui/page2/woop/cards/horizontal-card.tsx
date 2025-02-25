@@ -5,7 +5,7 @@ import {
   CardContent,
   CardMedia,
   IconButton,
-  Typography,
+  Typography
 } from "@mui/material";
 import React from "react";
 
@@ -17,6 +17,7 @@ export const HorizontalCard = ({
   headerSlot,
   floatIcon,
   pictureSize = 240,
+  rightAttachedSlot,
 }: {
   image?: string;
   title?: string;
@@ -25,6 +26,7 @@ export const HorizontalCard = ({
   headerSlot?: React.ReactNode;
   floatIcon?: React.ReactNode;
   pictureSize?: number;
+  rightAttachedSlot?: React.ReactNode;
 }) => {
   return (
     <Card
@@ -96,6 +98,7 @@ export const HorizontalCard = ({
           </Typography>
           {footerSlot}
         </CardContent>
+        {rightAttachedSlot}
       </Box>
     </Card>
   );

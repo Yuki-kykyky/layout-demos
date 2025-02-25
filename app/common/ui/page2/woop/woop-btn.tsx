@@ -1,4 +1,4 @@
-import { ButtonProps } from "@mui/material";
+import { ButtonProps, SxProps } from "@mui/material";
 import React from "react";
 import { BtnSize, BtnType, WoopBtnBase } from "./woop-btn-base";
 
@@ -8,6 +8,7 @@ export function WoopBtn({
   type = BtnType.Primary,
   startIcon,
   endIcon,
+  sx,
   ...props
 }: {
   buttonText: string;
@@ -15,6 +16,7 @@ export function WoopBtn({
   type?: BtnType;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  sx?: SxProps;
   props?: ButtonProps;
 }) {
   return (
@@ -23,6 +25,7 @@ export function WoopBtn({
       type={type}
       startIcon={startIcon}
       endIcon={endIcon}
+      sx={sx}
       {...props}
     >
       {buttonText}

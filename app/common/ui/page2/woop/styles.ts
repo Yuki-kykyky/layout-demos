@@ -17,6 +17,8 @@ const WoopBtnStyles = {
     textAlign: "center",
     borderRadius: CornerRadius.Buttons.style,
     fontWeight: 600,
+    minWidth: "0px",
+
     "&:focus": {
       boxShadow: Shadows.FocusBtn.style,
     },
@@ -95,6 +97,7 @@ const WoopBtnStyles = {
     S: { fontSize: sizeAlign.S },
     XS: { fontSize: sizeAlign.XS },
   },
+  userDefinedStyles: {},
 };
 
 const WoopChipStyles = {
