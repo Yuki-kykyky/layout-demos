@@ -6,9 +6,10 @@ import {
   Box,
   Container,
   Stack,
-  Typography
+  Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
+import { AlertList } from "../components/page2/alert-list";
 import { AvatarList } from "../components/page2/avatar-list";
 import { BadgeList } from "../components/page2/badge-list";
 import ButtonList from "../components/page2/button-list";
@@ -18,11 +19,12 @@ import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ProgressList } from "../components/page2/progress-list";
 import { ShadowList } from "../components/page2/shadow-list";
 import { SliderList } from "../components/page2/slider-list";
+import { StepList } from "../components/page2/step-list";
 import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
-import { StepList } from "../components/page2/step-list";
+
 export function WoopDesignSystem() {
   return (
     <Container maxWidth="xl">
@@ -35,6 +37,28 @@ export function WoopDesignSystem() {
         <Box sx={{ width: "49%" }}>
           <Accordion
             expanded
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Notice
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <AlertList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
             sx={{
               border: (theme) => `1px solid ${theme.palette.grey[200]}`,
             }}

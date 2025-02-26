@@ -66,6 +66,12 @@ const lightTheme = createTheme({
       dark: ColorPalette.SystemColors.successfulHover,
       contrastText: ColorPalette.SystemColors.successfulTertiary,
     },
+    warning: {
+      main: ColorPalette.SystemColors.attention,
+      light: ColorPalette.SystemColors.attentionSecondary,
+      dark: ColorPalette.SystemColors.attentionHover,
+      contrastText: ColorPalette.SystemColors.attentionTertiary,
+    },
   },
   typography: {
     fontFamily: "Inter",

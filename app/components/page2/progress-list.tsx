@@ -27,7 +27,7 @@ export const WoopCircularProgress = ({
       <CircularProgressWithLabel
         value={value}
         size={size}
-        displayColor={color}
+        displaycolor={color}
       />
     </Box>
   );
@@ -37,7 +37,7 @@ function CircularProgressWithLabel(
   props: CircularProgressProps & {
     value: number;
     size?: number;
-    displayColor?: string;
+    displaycolor?: string;
   }
 ) {
   return (
@@ -54,7 +54,7 @@ function CircularProgressWithLabel(
         thickness={props.size ? props.size / 12 : 5}
         variant="determinate"
         sx={{
-          color: props.displayColor,
+          color: props.displaycolor,
         }}
         {...props}
       />
@@ -76,7 +76,7 @@ function CircularProgressWithLabel(
           fontSize={props.size ? props.size / 4 : 12}
           sx={{
             color: (theme: Theme) =>
-              props.displayColor || theme.palette.primary.main,
+              props.displaycolor || theme.palette.primary.main,
           }}
         >
           {Math.round(props.value)}%
