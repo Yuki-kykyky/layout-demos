@@ -6,7 +6,7 @@ import {
   Box,
   Container,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
 import { AvatarList } from "../components/page2/avatar-list";
@@ -17,14 +17,13 @@ import { ChipList } from "../components/page2/chip-list";
 import { ColorPaletteList } from "../components/page2/color-palette-list";
 import { ProgressList } from "../components/page2/progress-list";
 import { ShadowList } from "../components/page2/shadow-list";
+import { SliderList } from "../components/page2/slider-list";
 import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
-import { SliderList } from "../components/page2/slider-list";
+import { StepList } from "../components/page2/step-list";
 export function WoopDesignSystem() {
-
-
   return (
     <Container maxWidth="xl">
       <Stack
@@ -55,6 +54,7 @@ export function WoopDesignSystem() {
               <Stack direction="row" spacing={2}>
                 <ProgressList />
                 <SliderList />
+                <StepList />
               </Stack>
             </AccordionDetails>
           </Accordion>

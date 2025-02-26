@@ -23,6 +23,7 @@ export function WoopBtnBase({
   endIcon,
   onFocus,
   onBlur,
+  onClick,
   sx,
   ...props
 }: {
@@ -34,6 +35,7 @@ export function WoopBtnBase({
   endIcon?: React.ReactNode;
   onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
   sx?: SxProps;
   props?: ButtonProps;
 }) {
@@ -65,6 +67,7 @@ export function WoopBtnBase({
       }
       onFocus={onFocus}
       onBlur={onBlur}
+      onClick={onClick}
       {...props}
     >
       {startIcon && <span style={{ marginRight: "8px" }}>{startIcon}</span>}

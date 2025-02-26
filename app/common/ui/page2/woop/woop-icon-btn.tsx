@@ -9,6 +9,7 @@ export function WoopIconBtn({
   icon,
   activeIcon,
   sx,
+  onClick,
   ...props
 }: {
   icon: React.ReactNode;
@@ -17,6 +18,7 @@ export function WoopIconBtn({
   size?: BtnSize;
   disabled?: boolean;
   sx?: SxProps;
+  onClick?: () => void;
   props?: ButtonProps;
 }) {
   const [isActive, setIsActive] = useState(false);
@@ -36,9 +38,10 @@ export function WoopIconBtn({
       onFocus={handleFocus}
       onBlur={handleBlur}
       sx={sx}
+      onClick={onClick}
       {...props}
     >
-      {isActive ? activeIcon : icon}
+      {activeIcon && isActive ? activeIcon : icon}
     </WoopBtnBase>
   );
 }
