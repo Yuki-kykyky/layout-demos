@@ -36,55 +36,6 @@ export function WoopDesignSystem() {
       >
         <Box sx={{ width: "49%" }}>
           <Accordion
-            expanded
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Notice
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <AlertList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Progress Bar, slider, range
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <Stack direction="row" spacing={2}>
-                <ProgressList />
-                <SliderList />
-                <StepList />
-              </Stack>
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
             sx={{
               bgcolor: ColorPalette.Background.bgLight,
             }}
@@ -271,6 +222,54 @@ export function WoopDesignSystem() {
               <Stack gap={2} alignItems="center">
                 <AvatarList />
                 <BadgeList />
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Notice Alert
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <AlertList />
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+        <Box sx={{ width: "49%" }}>
+          <Accordion
+            sx={{
+              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="800">
+                Progress Bar, slider, range
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                pt: 2,
+                bgcolor: (theme) => theme.palette.background.default,
+                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
+              }}
+            >
+              <Stack direction="row" spacing={2}>
+                <ProgressList />
+                <SliderList />
+                <StepList />
               </Stack>
             </AccordionDetails>
           </Accordion>

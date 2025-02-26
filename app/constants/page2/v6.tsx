@@ -1,4 +1,4 @@
-import { floatIcon, tags, getFooter } from "@/app/components/page2/card-list";
+import { floatIcon, getFooter, tags } from "@/app/common/section/common-section";
 
 export const v6 = {
   image: "/goooose14.jpg",
