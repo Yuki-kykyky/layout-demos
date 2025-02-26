@@ -55,7 +55,7 @@ export const getFooter = (type: "vertical" | "horizontal") => (
   </Stack>
 );
 
-const iconsAttachment = (
+export const iconsAttachment = (
   <Stack gap={1}>
     <WoopIconBtn
       sx={{

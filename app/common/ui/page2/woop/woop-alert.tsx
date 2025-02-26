@@ -4,8 +4,9 @@ import { CheckCircle, Info, Warning, Error } from "@mui/icons-material";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { WoopBtn, WoopBtnProps } from "./woop-btn";
 import { BtnSize, BtnType } from "./woop-btn-base";
+import { Shadows } from "@/app/common/styles/style-setting";
 
-type Severity = "success" | "info" | "warning" | "error";
+type Severity = "success" | "info" | "warning" | "error" | "default";
 
 interface ActionButton extends Omit<WoopBtnProps, "buttonText"> {
   buttonText: string;
@@ -18,9 +19,9 @@ interface WoopAlertProps {
   severity: Severity;
   onClose?: () => void;
   icon?: React.ReactNode;
-  alertText?: string;
   actionButtons?: ActionButton[];
   displayIcon?: boolean;
+  children?: React.ReactNode;
 }
 
 const severityColors = {
@@ -29,24 +30,28 @@ const severityColors = {
     info: ColorPalette.Background.bgDarken,
     warning: ColorPalette.SystemColors.attentionSecondary,
     error: ColorPalette.SystemColors.errorSecondary,
+    default: ColorPalette.Background.bgLight,
   },
   icon: {
     success: ColorPalette.SystemColors.successful,
     info: ColorPalette.AccentViolet.accent1Primary,
     warning: ColorPalette.SystemColors.attention,
     error: ColorPalette.SystemColors.error,
+    default: ColorPalette.Greyscale.icons,
   },
   button: {
     success: ColorPalette.SystemColors.successful,
     info: ColorPalette.AccentViolet.accent1Primary,
     warning: ColorPalette.AccentViolet.accent1Primary,
     error: ColorPalette.SystemColors.error,
+    default: ColorPalette.Greyscale.icons,
   },
   buttonHover: {
     success: ColorPalette.SystemColors.successfulHover,
     info: ColorPalette.AccentViolet.hoverState,
     warning: ColorPalette.AccentViolet.hoverState,
     error: ColorPalette.SystemColors.errorHover,
+    default: ColorPalette.Greyscale.icons,
   },
 };
 
@@ -55,13 +60,14 @@ const severityIcons = {
   info: <Info />,
   warning: <Warning />,
   error: <Error />,
+  default: <Info />,
 };
 
 export const WoopAlert: React.FC<WoopAlertProps> = ({
   severity,
   onClose,
   icon,
-  alertText,
+  children,
   actionButtons,
   displayIcon = true,
 }) => {
@@ -97,7 +103,7 @@ export const WoopAlert: React.FC<WoopAlertProps> = ({
         "&.MuiPaper-root": {
           alignItems: "center",
         },
-        "& .MuiButtonBase-root .MuiSvgIcon-root": {
+        "& .action-buttons .MuiSvgIcon-root": {
           color: ColorPalette.Greyscale.icons,
         },
         "& .MuiAlert-icon .MuiSvgIcon-root": {
@@ -105,12 +111,20 @@ export const WoopAlert: React.FC<WoopAlertProps> = ({
         },
         bgcolor: severityColors.background[severity],
         color: ColorPalette.Greyscale.textPrimary,
+        boxShadow: Shadows.Z100.style,
       }}
     >
-      <Stack direction="row" alignItems="center">
-        {alertText}
+      <Stack
+        direction="row"
+        alignItems="center"
+        sx={{
+          my: 0.5,
+        }}
+      >
+        {children}
         {actionButtons && actionButtons.length > 0 && (
           <Stack
+            className="action-buttons"
             direction="row"
             spacing={2}
             sx={{
