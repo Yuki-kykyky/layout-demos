@@ -1,31 +1,14 @@
 import { LinearProgress, linearProgressClasses } from "@mui/material";
 import { Theme } from "@mui/material/styles";
 import React from "react";
-
-export enum ProgressBarType {
-  Primary = "Primary",
-  Secondary = "Secondary",
-  Tertiary = "Tertiary",
-}
-
+import { ELevelType, getColor } from "@/app/common/styles/types";
 export const WoopProgressBar = ({
   progress,
   type,
 }: {
   progress: number;
-  type: ProgressBarType;
+  type: ELevelType;
 }) => {
-  const getColor = (type: ProgressBarType) => {
-    switch (type) {
-      case ProgressBarType.Primary:
-        return (theme: Theme) => theme.palette.primary.main;
-      case ProgressBarType.Secondary:
-        return (theme: Theme) => theme.palette.primary.light;
-      case ProgressBarType.Tertiary:
-        return (theme: Theme) => theme.palette.violet.contrastText;
-    }
-  };
-
   return (
     <LinearProgress
       variant="determinate"

@@ -103,10 +103,10 @@ const darkTheme = createTheme({
       contrastText: ColorPaletteDark.AccentViolet.accent1Quaternary,
     },
     violet: {
-      main: ColorPaletteDark.AccentViolet.hoverState,
-      light: ColorPaletteDark.AccentViolet.accent1Primary,
-      dark: ColorPaletteDark.AccentViolet.clickState,
-      contrastText: ColorPaletteDark.AccentViolet.accent1Tertiary,
+      main: ColorPalette.AccentViolet.hoverState,
+      light: ColorPalette.AccentViolet.accent1Primary,
+      dark: ColorPalette.AccentViolet.clickState,
+      contrastText: ColorPalette.AccentViolet.accent1Tertiary,
     },
     secondary: {
       main: ColorPaletteDark.AccentOrange.accent2Primary,

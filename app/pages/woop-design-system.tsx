@@ -21,8 +21,10 @@ import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
-
+import { SliderList } from "../components/page2/slider-list";
 export function WoopDesignSystem() {
+
+
   return (
     <Container maxWidth="xl">
       <Stack
@@ -40,7 +42,7 @@ export function WoopDesignSystem() {
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h6" fontWeight="800">
-                Progress Bar, scroll bar, range
+                Progress Bar, slider, range
               </Typography>
             </AccordionSummary>
             <AccordionDetails
@@ -50,7 +52,10 @@ export function WoopDesignSystem() {
                 borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
               }}
             >
-              <ProgressList />
+              <Stack direction="row" spacing={2}>
+                <ProgressList />
+                <SliderList />
+              </Stack>
             </AccordionDetails>
           </Accordion>
         </Box>

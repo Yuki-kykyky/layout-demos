@@ -1,9 +1,7 @@
-import {
-  WoopProgressBar,
-  ProgressBarType,
-} from "@/app/common/ui/page2/woop/woop-progress";
+import { WoopProgressBar } from "@/app/common/ui/page2/woop/woop-progress";
 import { Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { ELevelType } from "@/app/common/styles/types";
 
 export const ProgressList = () => {
   const [progress, setProgress] = useState(0);
@@ -25,9 +23,9 @@ export const ProgressList = () => {
   }, []);
   return (
     <Stack gap={4} sx={{ width: "200px" }}>
-      <WoopProgressBar progress={progress} type={ProgressBarType.Primary} />
-      <WoopProgressBar progress={progress} type={ProgressBarType.Secondary} />
-      <WoopProgressBar progress={progress} type={ProgressBarType.Tertiary} />
+      <WoopProgressBar progress={progress} type={ELevelType.Primary} />
+      <WoopProgressBar progress={progress} type={ELevelType.Secondary} />
+      <WoopProgressBar progress={progress} type={ELevelType.Tertiary} />
     </Stack>
   );
 };
