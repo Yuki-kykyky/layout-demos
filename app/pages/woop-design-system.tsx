@@ -221,6 +221,9 @@ export function WoopDesignSystem() {
         </Box>
       </Drawer>
       <Stack
+        sx={{
+          px: 4,
+        }}
         direction="row"
         gap={2}
         flexWrap="wrap"

@@ -64,11 +64,12 @@ export const AvatarList = () => {
       direction="row"
       gap={2}
       alignItems="center"
+      justifyContent="center"
       borderBottom={`2px solid ${ColorPalette.Greyscale.dividers}`}
       pb={2}
     >
       {avatarGroups.map((group) => (
-        <Stack direction="row" gap={2} key={group.size}>
+        <Stack direction="row" gap={1.5} key={group.size}>
           {renderAvatarGroup(group, badged)}
         </Stack>
       ))}
