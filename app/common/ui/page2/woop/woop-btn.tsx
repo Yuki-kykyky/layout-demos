@@ -9,6 +9,7 @@ export interface WoopBtnProps {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   sx?: SxProps;
+  onClick?: () => void;
   props?: ButtonProps;
 }
 
@@ -19,6 +20,7 @@ export function WoopBtn({
   startIcon,
   endIcon,
   sx,
+  onClick,
   ...props
 }: WoopBtnProps) {
   return (
@@ -28,6 +30,7 @@ export function WoopBtn({
       startIcon={startIcon}
       endIcon={endIcon}
       sx={sx}
+      onClick={onClick}
       {...props}
     >
       {buttonText}

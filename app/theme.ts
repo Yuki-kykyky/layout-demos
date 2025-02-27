@@ -75,6 +75,11 @@ const lightTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter",
+    h6: {
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: 600,
+    },
     subtitle2: {
       fontSize: "24px",
       lineHeight: "30px",
@@ -135,6 +140,11 @@ const darkTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter",
+    h6: {
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: 600,
+    },
     subtitle2: {
       fontSize: "24px",
       lineHeight: "30px",

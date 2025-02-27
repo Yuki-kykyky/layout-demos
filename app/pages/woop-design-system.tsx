@@ -24,10 +24,16 @@ import { StepList } from "../components/page2/step-list";
 import { SwitchList } from "../components/page2/switch-list";
 import TabList from "../components/page2/tab-list";
 import { TextFieldList } from "../components/page2/text-field-list";
+import ModalList from "../components/page2/modal-list";
 import React from "react";
 
 export function WoopDesignSystem() {
   const accordionItems = [
+    {
+      id: "modal",
+      title: "Modal",
+      content: <ModalList />,
+    },
     {
       id: "color-palette-light",
       title: "Color Palette - Light",
@@ -154,6 +160,7 @@ export function WoopDesignSystem() {
                   `1px solid ${theme.palette.grey[200]}`,
                 ...item?.customStyles,
               }}
+              expanded={item.id === "modal"}
             >
               <AccordionSummary
                 expandIcon={
