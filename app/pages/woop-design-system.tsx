@@ -1,14 +1,7 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Container,
-  Stack,
-  Theme,
-  Typography,
-} from "@mui/material";
+  ColorPalette,
+  ColorPaletteDark,
+} from "@/app/common/styles/color-palette";
 import {
   AlertList,
   AvatarList,
@@ -26,22 +19,48 @@ import {
   TabList,
   TextFieldList,
 } from "@/app/components/woop";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import FiberSmartRecordIcon from "@mui/icons-material/FiberSmartRecord";
+import InterestsIcon from "@mui/icons-material/Interests";
+import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import {
-  ColorPalette,
-  ColorPaletteDark,
-} from "@/app/common/styles/color-palette";
-import React from "react";
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Stack,
+  Theme,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
+
+enum Level {
+  ATOM = "atom",
+  MOLECULE = "molecule",
+  ORGANISM = "organism",
+}
 
 export function WoopDesignSystem() {
+  const [selectedLevel, setSelectedLevel] = useState<Level>(Level.ATOM);
+  const levels = Object.values(Level);
   const accordionItems = [
     {
       id: "modal",
       title: "Modal",
+      level: "molecule",
       content: <ModalList />,
     },
     {
       id: "color-palette-light",
       title: "Color Palette - Light",
+      level: "atom",
       customStyles: {
         bgcolor: ColorPalette.Background.bgLight,
       },
@@ -62,7 +81,7 @@ export function WoopDesignSystem() {
     {
       id: "color-palette-dark",
       title: "Color Palette - Dark",
-      width: "49%",
+      level: "atom",
       customStyles: {
         bgcolor: ColorPaletteDark.Background.bgDarken,
         border: (theme: Theme) => `1px solid ${theme.palette.grey[200]}`,
@@ -86,31 +105,37 @@ export function WoopDesignSystem() {
     {
       id: "shadow",
       title: "Shadow",
+      level: "atom",
       content: <ShadowList />,
     },
     {
       id: "buttons",
       title: "Buttons",
+      level: "molecule",
       content: <ButtonList />,
     },
     {
       id: "chips",
       title: "Chips",
+      level: "molecule",
       content: <ChipList />,
     },
     {
       id: "switch",
       title: "Switch",
+      level: "molecule",
       content: <SwitchList />,
     },
     {
       id: "tabs",
       title: "Tabs",
+      level: "molecule",
       content: <TabList />,
     },
     {
       id: "avatars-badges",
       title: "Avatars & Badges",
+      level: "molecule",
       content: (
         <Stack gap={2} alignItems="center">
           <AvatarList />
@@ -121,11 +146,13 @@ export function WoopDesignSystem() {
     {
       id: "notice-alert",
       title: "Notice Alert",
+      level: "molecule",
       content: <AlertList />,
     },
     {
       id: "progress-slider-range",
       title: "Progress Bar, slider, range",
+      level: "molecule",
       content: (
         <Stack direction="row" spacing={2}>
           <ProgressList />
@@ -137,67 +164,111 @@ export function WoopDesignSystem() {
     {
       id: "text-field",
       title: "Text field",
+      level: "molecule",
       width: "100%",
       content: <TextFieldList />,
     },
     {
       id: "cards",
       title: "Cards",
+      level: "organism",
       width: "100%",
       content: <CardList />,
     },
   ];
 
+  const groupedItems = levels.map((level) => ({
+    level,
+    items: accordionItems.filter((item) => item.level === level),
+  }));
+
+  const icons = {
+    [Level.ATOM]: <FiberSmartRecordIcon />,
+    [Level.MOLECULE]: <ScatterPlotIcon />,
+    [Level.ORGANISM]: <InterestsIcon />,
+  };
+
   return (
-    <Container maxWidth="xl">
+    <Box sx={{ display: "flex" }}>
+      <Drawer
+        variant="permanent"
+        sx={{
+          width: 240,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: {
+            width: 240,
+            boxSizing: "border-box",
+          },
+        }}
+      >
+        <Toolbar />
+        <Box sx={{ overflow: "auto" }}>
+          <List>
+            {levels.map((level) => (
+              <ListItem key={level} disablePadding>
+                <ListItemButton
+                  selected={selectedLevel === level}
+                  onClick={() => setSelectedLevel(level as Level)}
+                >
+                  <ListItemIcon>{icons[level as Level]}</ListItemIcon>
+                  <ListItemText
+                    primary={level.charAt(0).toUpperCase() + level.slice(1)}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
       <Stack
         direction="row"
         gap={2}
         flexWrap="wrap"
         justifyContent="space-between"
       >
-        {accordionItems.map((item) => (
-          <Box key={item.id} sx={{ width: item?.width || "49%" }}>
-            <Accordion
-              id={`${item.id}-list`}
-              sx={{
-                border: (theme: Theme) =>
-                  `1px solid ${theme.palette.grey[200]}`,
-                ...item?.customStyles,
-              }}
-              expanded={item.id === "modal"}
-            >
-              <AccordionSummary
-                expandIcon={
-                  item.customSummary?.expandIcon || <ExpandMoreIcon />
-                }
-                aria-controls={`${item.id}-list`}
+        {groupedItems
+          .find((group) => group.level === selectedLevel)
+          ?.items.map((item) => (
+            <Box key={item.id} sx={{ width: item?.width || "49%" }}>
+              <Accordion
                 id={`${item.id}-list`}
-              >
-                <Typography
-                  component="span"
-                  variant="h6"
-                  fontWeight="800"
-                  {...item.customSummary?.typography}
-                >
-                  {item.title}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails
                 sx={{
-                  pt: 2,
-                  bgcolor: (theme: Theme) => theme.palette.background.default,
-                  borderTop: (theme: Theme) =>
+                  border: (theme: Theme) =>
                     `1px solid ${theme.palette.grey[200]}`,
-                  ...item.customDetails,
+                  ...item?.customStyles,
                 }}
               >
-                {item.content}
-              </AccordionDetails>
-            </Accordion>
-          </Box>
-        ))}
+                <AccordionSummary
+                  expandIcon={
+                    item.customSummary?.expandIcon || <ExpandMoreIcon />
+                  }
+                  aria-controls={`${item.id}-list`}
+                  id={`${item.id}-list`}
+                >
+                  <Typography
+                    component="span"
+                    variant="h6"
+                    fontWeight="800"
+                    {...item.customSummary?.typography}
+                  >
+                    {item.title}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails
+                  sx={{
+                    pt: 2,
+                    bgcolor: (theme: Theme) => theme.palette.background.default,
+                    borderTop: (theme: Theme) =>
+                      `1px solid ${theme.palette.grey[200]}`,
+                    ...item.customDetails,
+                  }}
+                >
+                  {item.content}
+                </AccordionDetails>
+              </Accordion>
+            </Box>
+          ))}
       </Stack>
-    </Container>
+    </Box>
   );
 }

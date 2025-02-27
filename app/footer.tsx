@@ -1,33 +1,24 @@
-import { Box, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import React from "react";
+
 export default function Footer() {
   return (
-    <Box
-      component="footer"
+    <Stack
       sx={{
-        bgcolor: "white",
-        pt: 8,
-        pb: 0,
-        mt: "auto",
-        borderTop: 1,
-        borderColor: "grey.200",
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        position: "fixed",
+        bottom: 0,
+        width: "100%",
+        bgcolor: (theme) => theme.palette.background.default,
+        borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+        height: 64,
+        textAlign: "center",
+        justifyContent: "center",
       }}
     >
-      {/* Copyright */}
-      <Box
-        sx={{
-          bgcolor: "black",
-          mt: 6,
-          py: 3,
-          borderTop: 1,
-          borderColor: "grey.200",
-          textAlign: "center",
-        }}
-      >
-        <Typography variant="body2" color="white">
-          © 2024 Trek Travel Experience. All rights reserved.
-        </Typography>
-      </Box>
-    </Box>
+      <Typography variant="body2" color="text.primary">
+        © 2024 Trek Travel Experience. All rights reserved.
+      </Typography>
+    </Stack>
   );
 }
