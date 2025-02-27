@@ -3,7 +3,7 @@ import { WoopDialog } from "@/app/common/ui/page2/woop/woop-dialog";
 import { Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 
-export default function ModalList() {
+export const ModalList = () => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -27,4 +27,4 @@ export default function ModalList() {
       />
     </Stack>
   );
-}
+};

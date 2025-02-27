@@ -7,7 +7,7 @@ import { DoNotTouch, NotificationsActive } from "@mui/icons-material";
 import { Box, Tabs } from "@mui/material";
 import React, { useState } from "react";
 
-export default function TabList() {
+export const TabList = () => {
   const [outlineTab, setOutlineTab] = useState(0);
   const [containedTab, setContainedTab] = useState(0);
 
@@ -107,4 +107,4 @@ export default function TabList() {
       </WoopTabPanelWrapper>
     </Box>
   );
-}
+};

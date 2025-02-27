@@ -9,22 +9,27 @@ import {
   Theme,
   Typography,
 } from "@mui/material";
-import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
-import { AlertList } from "../components/page2/alert-list";
-import { AvatarList } from "../components/page2/avatar-list";
-import { BadgeList } from "../components/page2/badge-list";
-import ButtonList from "../components/page2/button-list";
-import { CardList } from "../components/page2/card-list";
-import { ChipList } from "../components/page2/chip-list";
-import { ColorPaletteList } from "../components/page2/color-palette-list";
-import { ProgressList } from "../components/page2/progress-list";
-import { ShadowList } from "../components/page2/shadow-list";
-import { SliderList } from "../components/page2/slider-list";
-import { StepList } from "../components/page2/step-list";
-import { SwitchList } from "../components/page2/switch-list";
-import TabList from "../components/page2/tab-list";
-import { TextFieldList } from "../components/page2/text-field-list";
-import ModalList from "../components/page2/modal-list";
+import {
+  AlertList,
+  AvatarList,
+  BadgeList,
+  ButtonList,
+  CardList,
+  ChipList,
+  ColorPaletteList,
+  ModalList,
+  ProgressList,
+  ShadowList,
+  SliderList,
+  StepList,
+  SwitchList,
+  TabList,
+  TextFieldList,
+} from "@/app/components/woop";
+import {
+  ColorPalette,
+  ColorPaletteDark,
+} from "@/app/common/styles/color-palette";
 import React from "react";
 
 export function WoopDesignSystem() {
