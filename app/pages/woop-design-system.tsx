@@ -6,6 +6,7 @@ import {
   Box,
   Container,
   Stack,
+  Theme,
   Typography,
 } from "@mui/material";
 import { ColorPalette, ColorPaletteDark } from "../common/styles/color-palette";
@@ -26,6 +27,116 @@ import { TextFieldList } from "../components/page2/text-field-list";
 import React from "react";
 
 export function WoopDesignSystem() {
+  const accordionItems = [
+    {
+      id: "color-palette-light",
+      title: "Color Palette - Light",
+      customStyles: {
+        bgcolor: ColorPalette.Background.bgLight,
+      },
+      customSummary: {
+        expandIcon: (
+          <ExpandMoreIcon sx={{ color: ColorPalette.Greyscale.textPrimary }} />
+        ),
+        typography: {
+          color: ColorPalette.Greyscale.textPrimary,
+        },
+      },
+      customDetails: {
+        bgcolor: ColorPalette.Background.bgLight,
+        borderTop: `1px solid ${ColorPalette.Greyscale.dividers}`,
+      },
+      content: <ColorPaletteList colorPalette={ColorPalette} />,
+    },
+    {
+      id: "color-palette-dark",
+      title: "Color Palette - Dark",
+      width: "49%",
+      customStyles: {
+        bgcolor: ColorPaletteDark.Background.bgDarken,
+        border: (theme: Theme) => `1px solid ${theme.palette.grey[200]}`,
+      },
+      customSummary: {
+        expandIcon: (
+          <ExpandMoreIcon
+            sx={{ color: ColorPaletteDark.Greyscale.textPrimary }}
+          />
+        ),
+        typography: {
+          color: ColorPaletteDark.Greyscale.textPrimary,
+        },
+      },
+      customDetails: {
+        bgcolor: ColorPaletteDark.Background.bgDarken,
+        borderTop: (theme: Theme) => `1px solid ${theme.palette.grey[200]}`,
+      },
+      content: <ColorPaletteList colorPalette={ColorPaletteDark} />,
+    },
+    {
+      id: "shadow",
+      title: "Shadow",
+      content: <ShadowList />,
+    },
+    {
+      id: "buttons",
+      title: "Buttons",
+      content: <ButtonList />,
+    },
+    {
+      id: "chips",
+      title: "Chips",
+      content: <ChipList />,
+    },
+    {
+      id: "switch",
+      title: "Switch",
+      content: <SwitchList />,
+    },
+    {
+      id: "tabs",
+      title: "Tabs",
+      content: <TabList />,
+    },
+    {
+      id: "avatars-badges",
+      title: "Avatars & Badges",
+      content: (
+        <Stack gap={2} alignItems="center">
+          <AvatarList />
+          <BadgeList />
+        </Stack>
+      ),
+    },
+    {
+      id: "notice-alert",
+      title: "Notice Alert",
+      content: <AlertList />,
+    },
+    {
+      id: "progress-slider-range",
+      title: "Progress Bar, slider, range",
+      content: (
+        <Stack direction="row" spacing={2}>
+          <ProgressList />
+          <SliderList />
+          <StepList />
+        </Stack>
+      ),
+    },
+    {
+      id: "text-field",
+      title: "Text field",
+      width: "100%",
+      content: <TextFieldList />,
+    },
+    {
+      id: "cards",
+      title: "Cards",
+      width: "100%",
+      content: <CardList />,
+    },
+  ];
+
   return (
     <Container maxWidth="xl">
       <Stack
@@ -34,294 +145,46 @@ export function WoopDesignSystem() {
         flexWrap="wrap"
         justifyContent="space-between"
       >
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              bgcolor: ColorPalette.Background.bgLight,
-            }}
-            id="color-palette-light-list"
-          >
-            <AccordionSummary
-              expandIcon={
-                <ExpandMoreIcon
-                  sx={{ color: ColorPalette.Greyscale.textPrimary }}
-                />
-              }
-              aria-controls="color-palette-light-list"
-              id="color-palette-light-list"
+        {accordionItems.map((item) => (
+          <Box key={item.id} sx={{ width: item?.width || "49%" }}>
+            <Accordion
+              id={`${item.id}-list`}
+              sx={{
+                border: (theme: Theme) =>
+                  `1px solid ${theme.palette.grey[200]}`,
+                ...item?.customStyles,
+              }}
             >
-              <Typography
-                component="span"
-                variant="h6"
-                fontWeight="800"
-                color={ColorPalette.Greyscale.textPrimary}
+              <AccordionSummary
+                expandIcon={
+                  item.customSummary?.expandIcon || <ExpandMoreIcon />
+                }
+                aria-controls={`${item.id}-list`}
+                id={`${item.id}-list`}
               >
-                Color Palette - Light
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                bgcolor: ColorPalette.Background.bgLight,
-                borderTop: `1px solid ${ColorPalette.Greyscale.dividers}`,
-              }}
-            >
-              <ColorPaletteList colorPalette={ColorPalette} />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            id="color-palette-dark-list"
-            sx={{
-              bgcolor: ColorPaletteDark.Background.bgDarken,
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary
-              expandIcon={
-                <ExpandMoreIcon
-                  sx={{ color: ColorPaletteDark.Greyscale.textPrimary }}
-                />
-              }
-              aria-controls="color-palette-dark-list"
-              id="color-palette-dark-list"
-            >
-              <Typography
-                component="span"
-                variant="h6"
-                fontWeight="800"
-                color={ColorPaletteDark.Greyscale.textPrimary}
+                <Typography
+                  component="span"
+                  variant="h6"
+                  fontWeight="800"
+                  {...item.customSummary?.typography}
+                >
+                  {item.title}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails
+                sx={{
+                  pt: 2,
+                  bgcolor: (theme: Theme) => theme.palette.background.default,
+                  borderTop: (theme: Theme) =>
+                    `1px solid ${theme.palette.grey[200]}`,
+                  ...item.customDetails,
+                }}
               >
-                Color Palette - Dark
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                bgcolor: ColorPaletteDark.Background.bgDarken,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <ColorPaletteList colorPalette={ColorPaletteDark} />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Shadow
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <ShadowList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Buttons
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                display: "flex",
-                flexDirection: "column",
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <ButtonList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Chips
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ChipList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Switch
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <SwitchList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Tabs
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                display: "flex",
-                flexDirection: "column",
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <TabList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Avatars & Badges
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Stack gap={2} alignItems="center">
-                <AvatarList />
-                <BadgeList />
-              </Stack>
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Notice Alert
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <AlertList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "49%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Progress Bar, slider, range
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <Stack direction="row" spacing={2}>
-                <ProgressList />
-                <SliderList />
-                <StepList />
-              </Stack>
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "100%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Text field
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                display: "flex",
-                flexDirection: "column",
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <TextFieldList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
-        <Box sx={{ width: "100%" }}>
-          <Accordion
-            sx={{
-              border: (theme) => `1px solid ${theme.palette.grey[200]}`,
-            }}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="800">
-                Cards
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                pt: 2,
-                display: "flex",
-                flexDirection: "column",
-                bgcolor: (theme) => theme.palette.background.default,
-                borderTop: (theme) => `1px solid ${theme.palette.grey[200]}`,
-              }}
-            >
-              <CardList />
-            </AccordionDetails>
-          </Accordion>
-        </Box>
+                {item.content}
+              </AccordionDetails>
+            </Accordion>
+          </Box>
+        ))}
       </Stack>
     </Container>
   );
