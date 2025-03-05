@@ -33,3 +33,12 @@ export const fillFigmaLayoutWithWoopUI = `
 4. 替换组件中的基础 html 元素为 mui 组件， 例如<Box>, <Stack>, <Typography>, tailwind 样式以 sx 属性替代;
 5. 移除作为分区提示的背景色块和辅助线;
 `;
+
+export const fillTemplateLayoutWithWoopUI = `
+根据当前代码块各元素的嵌套层级，修改当前代码，要求：
+
+1. 参考 template 中的文字描述, 匹配的 [参考图文] 中对应的元素;
+2. 根据第1步的匹配结果, 优先寻找匹配的 woop-ui 组件, 并根据匹配结果填充组件 props;
+3. 替换组件中的基础 html 元素为 mui 组件， 例如<Box>, <Stack>, <Typography>, tailwind 样式以 sx 属性替代;
+4. 移除作为分区提示的背景色块和辅助线;
+`;
