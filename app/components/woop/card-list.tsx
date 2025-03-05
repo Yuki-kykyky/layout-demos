@@ -2,7 +2,13 @@ import { HorizontalCard } from "@/app/common/ui/page2/woop/cards/horizontal-card
 import { VerticalCard } from "@/app/common/ui/page2/woop/cards/vertical-card";
 import { Box, Divider, Stack } from "@mui/material";
 import React from "react";
-import { floatIcon, getFooter, iconsAttachment, iconTextAttachment, tags } from "@/app/common/section/common-section";
+import {
+  floatIcon,
+  getFooter,
+  iconsAttachment,
+  iconTextAttachment,
+  tags,
+} from "@/app/common/section/common-section";
 
 export const CardList = () => {
   const verticalCards = [
@@ -56,7 +62,7 @@ export const CardList = () => {
         <VerticalCard
           key={index}
           image="/goooose30.jpg"
-          pictureSize={312}
+          pictureSize={300}
           title="Card title"
           {...cardProps}
         />

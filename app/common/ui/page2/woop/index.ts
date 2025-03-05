@@ -23,7 +23,3 @@ export { WoopSwitch } from "./woop-switch";
 
 // Tab 相关
 export { WoopTab, WoopTabPanelWrapper } from "./woop-tab";
-
-// Card 相关
-export { HorizontalCard } from "./cards/horizontal-card";
-export { VerticalCard } from "./cards/vertical-card";
