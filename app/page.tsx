@@ -6,12 +6,12 @@ import "typeface-source-code-pro";
 import Header from "./header";
 
 import { darkTheme, lightTheme } from "./theme";
-import { Version1 } from "./pages/versionPage/version1";
-import { Version4 } from "./pages/versionPage/version4";
-import { Version3 } from "./pages/versionPage/version3";
-import { Version2 } from "./pages/versionPage/version2";
-import { WoopDesignSystem } from "./pages/uiPage/woop-design-system";
-import { Test } from "./pages/testPage/test";
+import { Version1 } from "./pages/version-page/version1";
+import { Version4 } from "./pages/version-page/version4";
+import { Version3 } from "./pages/version-page/version3";
+import { Version2 } from "./pages/version-page/version2";
+import { WoopDesignSystem } from "./pages/ui-page/woop-design-system";
+import { Test } from "./pages/test-page/test";
 
 export default function Home() {
   const versionMap = {

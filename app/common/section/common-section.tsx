@@ -6,7 +6,7 @@ import {
   WoopBtn,
   WoopChip,
   WoopIconBtn,
-} from "@/app/common/ui/page2/woop";
+} from "@/app/common/woop-ui";
 import React from "react";
 import {
   AccessTime,
