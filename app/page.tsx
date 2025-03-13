@@ -42,7 +42,7 @@ export default function Home() {
   };
 
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [version, setVersion] = useState("v5");
+  const [version, setVersion] = useState("v6");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
