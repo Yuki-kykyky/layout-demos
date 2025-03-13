@@ -49,7 +49,7 @@ export const buttonGroup = (
   >
     <WoopBtn
       buttonText={"Primary Button"}
-      type={BtnType.Primary}
+      type={BtnType.Filled}
       size={BtnSize.L}
       sx={{
         fontWeight: 800,
@@ -57,7 +57,7 @@ export const buttonGroup = (
     />
     <WoopBtn
       buttonText={"Secondary Button"}
-      type={BtnType.Secondary}
+      type={BtnType.Outlined}
       size={BtnSize.L}
       sx={{
         fontWeight: 800,
@@ -99,7 +99,7 @@ export const getFooter = (type: "vertical" | "horizontal") => (
     justifyContent="space-between"
     flexDirection={type === "vertical" ? "row" : "row-reverse"}
   >
-    <WoopBtn buttonText="2500" size={BtnSize.S} type={BtnType.Primary} />
+    <WoopBtn buttonText="2500" size={BtnSize.S} type={BtnType.Filled} />
     <Stack direction="row" spacing={2}>
       <Stack direction="row" spacing={1} alignItems="center">
         <AccessTime sx={{ color: "#2D5BFF" }} />
@@ -122,7 +122,7 @@ export const iconsAttachment = (
       sx={{
         px: "10px",
       }}
-      type={BtnType.Secondary}
+      type={BtnType.Outlined}
       icon={<EditOutlined />}
       size={BtnSize.S}
     />
@@ -130,7 +130,7 @@ export const iconsAttachment = (
       sx={{
         px: "10px",
       }}
-      type={BtnType.Secondary}
+      type={BtnType.Outlined}
       icon={<CalendarMonthOutlined />}
       size={BtnSize.S}
     />
@@ -140,7 +140,7 @@ export const iconsAttachment = (
         bgcolor: ColorPalette.SystemColors.errorTertiary,
         color: ColorPalette.SystemColors.error,
       }}
-      type={BtnType.Secondary}
+      type={BtnType.Outlined}
       icon={<DeleteOutline />}
       size={BtnSize.S}
     />
@@ -156,7 +156,7 @@ export const iconTextAttachment = (
     <WoopBtn
       buttonText="Action"
       size={BtnSize.S}
-      type={BtnType.Tertiary}
+      type={BtnType.Text}
       startIcon={<CopyAll />}
     />
     <WoopBtn
@@ -172,7 +172,7 @@ export const iconTextAttachment = (
         },
       }}
       size={BtnSize.S}
-      type={BtnType.Tertiary}
+      type={BtnType.Text}
       startIcon={<Close sx={{ color: ColorPalette.SystemColors.error }} />}
     />
   </Stack>

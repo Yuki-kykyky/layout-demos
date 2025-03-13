@@ -75,7 +75,7 @@ export const WoopAlert: React.FC<WoopAlertProps> = ({
     <WoopBtn
       key={index}
       size={button.size ?? BtnSize.XS}
-      type={button.type ?? (index === 0 ? BtnType.Primary : BtnType.Secondary)}
+      type={button.type ?? (index === 0 ? BtnType.Filled : BtnType.Outlined)}
       sx={{
         ml: 2,
         ...(index === 0 && {

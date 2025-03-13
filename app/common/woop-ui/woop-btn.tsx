@@ -16,7 +16,7 @@ export interface WoopBtnProps {
 export function WoopBtn({
   buttonText,
   size = BtnSize.L,
-  type = BtnType.Primary,
+  type = BtnType.Filled,
   startIcon,
   endIcon,
   sx,

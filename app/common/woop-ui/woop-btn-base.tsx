@@ -3,9 +3,9 @@ import React from "react";
 import { WoopBtnStyles } from "./styles";
 
 export enum BtnType {
-  Primary = "Primary",
-  Secondary = "Secondary",
-  Tertiary = "Tertiary",
+  Filled = "Filled",
+  Outlined = "Outlined",
+  Text = "Text",
 }
 export enum BtnSize {
   L = "L",
@@ -16,7 +16,7 @@ export enum BtnSize {
 
 export function WoopBtnBase({
   children,
-  type = BtnType.Primary,
+  type = BtnType.Filled,
   size = BtnSize.L,
   disabled = false,
   startIcon,

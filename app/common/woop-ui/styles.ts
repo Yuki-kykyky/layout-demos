@@ -28,7 +28,7 @@ const WoopBtnStyles = {
     },
   },
   typeStyles: {
-    Primary: {
+    Filled: {
       bgcolor: ColorPalette.AccentViolet.accent1Primary,
       variant: "contained",
       "&:hover": {
@@ -38,7 +38,7 @@ const WoopBtnStyles = {
         bgcolor: ColorPalette.AccentViolet.clickState,
       },
     },
-    Secondary: {
+    Outlined: {
       bgcolor: ColorPalette.AccentViolet.accent1Quaternary,
       color: ColorPalette.AccentViolet.accent1Primary,
       variant: "outlined",
@@ -51,7 +51,7 @@ const WoopBtnStyles = {
         color: ColorPalette.Background.bgLight,
       },
     },
-    Tertiary: {
+    Text: {
       bgcolor: ColorPalette.Background.bgLight,
       color: ColorPalette.AccentViolet.accent1Primary,
       variant: "text",
@@ -120,7 +120,8 @@ const WoopChipStyles = {
     [ChipType.Primary]: {
       bgcolor: (theme: Theme) => theme.palette.primary.contrastText,
       color: (theme: Theme) => theme.palette.primary.main,
-      border: (theme: Theme) => `1px solid ${theme.palette.primary.contrastText}`,
+      border: (theme: Theme) =>
+        `1px solid ${theme.palette.primary.contrastText}`,
       "&:hover": {
         color: (theme: Theme) => theme.palette.violet.main,
         bgcolor: (theme: Theme) => theme.palette.primary.contrastText,

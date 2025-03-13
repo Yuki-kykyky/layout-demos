@@ -48,7 +48,7 @@ export function WoopStepper({
             px: 1,
             mx: 2,
           }}
-          type={BtnType.Tertiary}
+          type={BtnType.Text}
           size={BtnSize.XS}
           icon={<KeyboardArrowRight />}
           onClick={handleNext}
@@ -61,7 +61,7 @@ export function WoopStepper({
             px: 1,
             mx: 2,
           }}
-          type={BtnType.Tertiary}
+          type={BtnType.Text}
           size={BtnSize.XS}
           onClick={handleBack}
           disabled={activeStep === 0}

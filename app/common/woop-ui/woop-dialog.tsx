@@ -65,7 +65,7 @@ export function WoopDialog({
           <Typography variant="h6">{title}</Typography>
           <WoopIconBtn
             aria-label="close"
-            type={BtnType.Tertiary}
+            type={BtnType.Text}
             sx={{
               p: 0,
               borderRadius: "50%",

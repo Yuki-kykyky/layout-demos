@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { BtnSize, BtnType, WoopBtnBase } from "./woop-btn-base";
 
 export function WoopIconBtn({
-  type = BtnType.Primary,
+  type = BtnType.Filled,
   size = BtnSize.L,
   disabled = false,
   icon,
