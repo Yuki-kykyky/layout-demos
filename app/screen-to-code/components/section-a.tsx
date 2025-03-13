@@ -1,166 +1,79 @@
 import React from "react";
+import { Container, Typography, Stack, Grid2, Box } from "@mui/material";
+import { HorizontalCard } from "@/app/common/woop-ui/cards/horizontal-card";
+import { VerticalCard } from "@/app/common/woop-ui/cards/vertical-card";
+import { WoopBtn } from "@/app/common/woop-ui/woop-btn";
+import { sectionAProps } from "../reference/match-props";
 
 export const SectionA = () => {
+  const { title, subtitle, horizontalCard, verticalCards, buttonGroup } =
+    sectionAProps;
+
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-2">
-          This is the Section A part title
-        </h2>
-        <p className="text-gray-600 text-center mb-8">
-          And this will be the subtitle, let&apos;s write something here.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <p className="text-gray-700 mb-4">Copy Paste from Figma</p>
-            <p className="text-gray-600">
-              Install the Figma plugin and you&apos;re ready to convert your
-              designs to a responsive site.
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://placehold.co/600x400"
-              alt="Section A Image"
-              className="rounded-lg shadow-md"
-              style={{ objectFit: "cover", width: "100%", height: "auto" }}
+    <Box py={8}>
+      <Container>
+        <Typography variant={title.variant} align="center" gutterBottom>
+          {title.content}
+        </Typography>
+        <Typography
+          variant={subtitle.variant}
+          align="center"
+          color="text.secondary"
+          sx={{ mb: 4 }}
+        >
+          {subtitle.content}
+        </Typography>
+
+        {/* Horizontal Card */}
+        <Grid2 container spacing={4}>
+          <HorizontalCard
+            image={horizontalCard.image}
+            pictureSize={horizontalCard.pictureSize}
+            title={horizontalCard.title}
+            headerSlot={horizontalCard.headerSlot}
+            description={horizontalCard.description}
+            footerSlot={horizontalCard.footerSlot}
+          />
+        </Grid2>
+
+        {/* Vertical Cards Section */}
+        <Box sx={{ py: 8 }}>
+          <Grid2 container spacing={4}>
+            {verticalCards.map((card, index) => (
+              <Grid2 key={index} size={{ xs: 12, lg: 4, md: 6 }}>
+                <VerticalCard
+                  image={card.image}
+                  headerSlot={card.headerSlot}
+                  description={card.description}
+                  footerSlot={card.footerSlot}
+                  floatIcon={card.floatIcon}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </Grid2>
+            ))}
+          </Grid2>
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            sx={{ mt: 4 }}
+          >
+            <WoopBtn
+              buttonText={buttonGroup.first.buttonText}
+              size={buttonGroup.first.size}
+              type={buttonGroup.first.type}
             />
-          </div>
-        </div>
-      </div>
-      {/* Card Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 1 Image"
-              className="w-full h-48 object-cover"
+            <WoopBtn
+              buttonText={buttonGroup.second.buttonText}
+              size={buttonGroup.second.size}
+              type={buttonGroup.second.type}
             />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Default Title
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-          {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 2 Image"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Hello Piggy
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-          {/* Card 3 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 3 Image"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Hello Cute :)
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-          {/* Card 4 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 4 Image"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Hello Doggy
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-          {/* Card 5 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 5 Image"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Kappa WOW
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-          {/* Card 6 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://placehold.co/400x300"
-              alt="Card 6 Image"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Aba Aba
-              </h3>
-              <p className="text-gray-600 mb-4">
-                there will be filled with card&apos;s description, fill it fill
-                it over
-              </p>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-                Read More
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center mt-8">
-          <button className="bg-gray-200 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-300 focus:outline-none mr-4">
-            button left
-          </button>
-          <button className="bg-gray-800 text-white px-6 py-2 rounded-md hover:bg-gray-900 focus:outline-none">
-            button right
-          </button>
-        </div>
-      </div>
-    </div>
+          </Stack>
+        </Box>
+      </Container>
+    </Box>
   );
 };

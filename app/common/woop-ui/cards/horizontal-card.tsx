@@ -5,7 +5,7 @@ import {
   CardContent,
   CardMedia,
   IconButton,
-  Typography
+  Typography,
 } from "@mui/material";
 import React from "react";
 
@@ -62,6 +62,7 @@ export const HorizontalCard = ({
             width: pictureSize,
             height: pictureSize,
             borderRadius: 2,
+            flexShrink: 0,
           }}
           component="img"
           image={image}

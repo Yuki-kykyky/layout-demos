@@ -62,7 +62,7 @@ export const CardList = () => {
         <VerticalCard
           key={index}
           image="/goooose30.jpg"
-          pictureSize={300}
+          pictureSize={280}
           title="Card title"
           {...cardProps}
         />

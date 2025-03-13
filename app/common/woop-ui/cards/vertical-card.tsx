@@ -5,6 +5,7 @@ import {
   CardMedia,
   IconButton,
   Typography,
+  SxProps,
 } from "@mui/material";
 import React from "react";
 
@@ -15,7 +16,8 @@ export const VerticalCard = ({
   description,
   footerSlot,
   floatIcon,
-  pictureSize = 350,
+  pictureSize = 324,
+  sx,
 }: {
   image?: string;
   headerSlot?: React.ReactNode;
@@ -24,6 +26,7 @@ export const VerticalCard = ({
   footerSlot?: React.ReactNode;
   floatIcon?: React.ReactNode;
   pictureSize?: number;
+  sx?: SxProps;
 }) => {
   return (
     <Card
@@ -39,6 +42,7 @@ export const VerticalCard = ({
         boxShadow: Shadows.Z100.style,
         width: pictureSize + 32,
         borderRadius: 2,
+        ...sx,
       }}
     >
       <IconButton
@@ -56,7 +60,6 @@ export const VerticalCard = ({
         alt="green iguana"
         sx={{
           height: pictureSize,
-          width: pictureSize,
           borderRadius: 2,
         }}
       />
