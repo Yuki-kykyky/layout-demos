@@ -4,31 +4,32 @@ import { Box, Button, Menu, MenuItem, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import "typeface-source-code-pro";
 import Header from "./header";
-import { FigmaWithCodeAndTextGeneration } from "./pages/figma-with-code-and-text-generation";
-import { FigmaCodeGeneration } from "./pages/figma-with-code-generation";
-import { ImageGeneration } from "./pages/image-generation";
-import { ImageCodeGeneration } from "./pages/image-with-code-generation";
-import { WoopDesignSystem } from "./pages/woop-design-system";
+
 import { darkTheme, lightTheme } from "./theme";
-import { Test } from "./pages/test";
+import { Version1 } from "./pages/versionPage/version1";
+import { Version4 } from "./pages/versionPage/version4";
+import { Version3 } from "./pages/versionPage/version3";
+import { Version2 } from "./pages/versionPage/version2";
+import { WoopDesignSystem } from "./pages/uiPage/woop-design-system";
+import { Test } from "./pages/testPage/test";
 
 export default function Home() {
   const versionMap = {
     v1: {
       label: "image",
-      content: <ImageGeneration />,
+      content: <Version1 />,
     },
     v2: {
       label: "image + code",
-      content: <ImageCodeGeneration />,
+      content: <Version2 />,
     },
     v3: {
       label: "figma layout + components",
-      content: <FigmaCodeGeneration />,
+      content: <Version3 />,
     },
     v4: {
       label: "figma layout + components + json",
-      content: <FigmaWithCodeAndTextGeneration />,
+      content: <Version4 />,
     },
     v5: {
       label: "woop design system generation",
