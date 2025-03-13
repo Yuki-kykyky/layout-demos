@@ -74,18 +74,32 @@ const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Inter",
+    h3: {
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "36px",
+      lineHeight: "48px",
+      fontWeight: 600,
+    },
     h6: {
+      fontFamily: "Montserrat, sans-serif",
       fontSize: "18px",
       lineHeight: "24px",
       fontWeight: 600,
     },
+    subtitle1: {
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "32px",
+      lineHeight: "40px",
+      fontWeight: 600,
+    },
     subtitle2: {
+      fontFamily: "Montserrat, sans-serif",
       fontSize: "24px",
       lineHeight: "30px",
-      fontWeight: 800,
+      fontWeight: 500,
     },
     body1: {
+      fontFamily: "Roboto, sans-serif",
       fontSize: "16px",
       lineHeight: "20px",
       fontWeight: 400,
@@ -139,18 +153,32 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Inter",
+    h3: {
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "36px",
+      lineHeight: "48px",
+      fontWeight: 600,
+    },
     h6: {
+      fontFamily: "Montserrat, sans-serif",
       fontSize: "18px",
       lineHeight: "24px",
       fontWeight: 600,
     },
+    subtitle1: {
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "32px",
+      lineHeight: "40px",
+      fontWeight: 600,
+    },
     subtitle2: {
+      fontFamily: "Montserrat, sans-serif",
       fontSize: "24px",
       lineHeight: "30px",
-      fontWeight: 800,
+      fontWeight: 500,
     },
     body1: {
+      fontFamily: "Roboto, sans-serif",
       fontSize: "16px",
       lineHeight: "20px",
       fontWeight: 400,
