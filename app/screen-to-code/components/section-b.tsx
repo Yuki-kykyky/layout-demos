@@ -3,10 +3,11 @@ import { VerticalCard } from "@/app/common/woop-ui";
 import { HorizontalCard } from "@/app/common/woop-ui";
 import React from "react";
 import { sectionBProps } from "../reference/match-props";
-
+import { useScreenSize } from "@/app/hooks/useScreenSize";
 export const SectionB = () => {
   const { title, subtitle, verticalCard, horizontalCard } = sectionBProps;
-
+  const { isSmall, isMedium } = useScreenSize();
+  const columnLength = isSmall ? 1 : isMedium ? 2 : 3;
   return (
     <Box py={8}>
       <Container>
@@ -27,12 +28,18 @@ export const SectionB = () => {
         >
           {subtitle.content}
         </Typography>
-
-        {/* Vertical Card Groups */}
-        <Grid2 container spacing={4} gap={3}>
-          {verticalCard.map((card, index) => (
-            <Grid2 key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <VerticalCard {...card} />
+        <Grid2 container spacing={4} gap={3} flexWrap="wrap">
+          {Array.from({ length: columnLength }).map((_, columnIndex) => (
+            <Grid2 key={columnIndex} size={{ xs: 12, sm: 6, md: 4 }}>
+              {verticalCard
+                .filter((_, index) => index % columnLength === columnIndex)
+                .map((card, index) => (
+                  <VerticalCard
+                    key={index}
+                    {...card}
+                    sx={{ mb: 2, width: "100%" }}
+                  />
+                ))}
             </Grid2>
           ))}
         </Grid2>
