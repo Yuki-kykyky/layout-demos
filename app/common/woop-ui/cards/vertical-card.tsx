@@ -18,6 +18,8 @@ export type VerticalCardProps = {
   footerSlot?: React.ReactNode;
   floatIcon?: React.ReactNode;
   pictureSize?: number;
+  isTruncated?: boolean;
+  lineClamp?: number;
   sx?: SxProps;
 };
 
@@ -30,6 +32,8 @@ export const VerticalCard = ({
   floatIcon,
   pictureSize = 324,
   sx,
+  isTruncated = true,
+  lineClamp = 4,
 }: VerticalCardProps) => {
   return (
     <Card
@@ -96,13 +100,17 @@ export const VerticalCard = ({
         <Typography
           variant="body1"
           color="text.secondary"
-          sx={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            display: "-webkit-box",
-            WebkitLineClamp: 4,
-            WebkitBoxOrient: "vertical",
-          }}
+          sx={
+            isTruncated
+              ? {
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "-webkit-box",
+                  WebkitLineClamp: lineClamp,
+                  WebkitBoxOrient: "vertical",
+                }
+              : {}
+          }
         >
           {description}
         </Typography>

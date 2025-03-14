@@ -8,6 +8,7 @@ import {
   getRandomJob,
   getRandomText,
   getRandomTitle,
+  getRandomDate,
 } from "./random-const";
 import React from "react";
 
@@ -79,13 +80,23 @@ export const getVerticalCardGroups = () => {
 };
 
 export const getVerticalCardWithoutImageGroups = () => {
-  const groupCount = Math.floor(Math.random() * 7) + 4;
+  const groupCount = Math.floor(Math.random() * 12) + 4;
+
+  const dates = Array.from({ length: groupCount }, () => getRandomDate()).sort(
+    (a, b) => new Date(b).getTime() - new Date(a).getTime()
+  );
 
   const verticalCardGroups: VerticalCardProps[] = Array.from(
     { length: groupCount },
-    () => ({
+    (_, index) => ({
       description: getRandomText(),
       headerSlot: getRandomAvatarInfo(),
+      isTruncated: false,
+      footerSlot: (
+        <Typography variant="body2" color="text.secondary">
+          {dates[index]}
+        </Typography>
+      ),
     })
   );
 

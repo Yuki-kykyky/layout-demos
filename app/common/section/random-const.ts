@@ -2,6 +2,41 @@ const getRandom = (array: string[]) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+export const getRandomDate = () => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // 获取当前日期
+  const today = new Date();
+  // 获取一年前的日期
+  const oneYearAgo = new Date();
+  oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+  // 生成一个随机时间戳，范围在一年前到现在之间
+  const randomTimestamp =
+    oneYearAgo.getTime() +
+    Math.random() * (today.getTime() - oneYearAgo.getTime());
+  const randomDate = new Date(randomTimestamp);
+
+  const month = months[randomDate.getMonth()];
+  const day = randomDate.getDate();
+  const year = randomDate.getFullYear();
+
+  return `${month} ${day}, ${year}`;
+};
+
 export const ImageSet = [
   "/goooose9.jpg",
   "/goooose14.jpg",
