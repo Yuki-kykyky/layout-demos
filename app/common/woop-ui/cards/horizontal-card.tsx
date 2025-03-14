@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   IconButton,
+  Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -97,7 +98,7 @@ export const HorizontalCard = ({
           >
             {description}
           </Typography>
-          {footerSlot}
+          {footerSlot && <Stack mt={1}>{footerSlot}</Stack>}
         </CardContent>
         {rightAttachedSlot}
       </Box>

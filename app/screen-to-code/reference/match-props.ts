@@ -1,5 +1,13 @@
-import { getFooter, tags } from "@/app/common/section/common-section";
-import { getVerticalCardGroups } from "@/app/common/section/random-groups";
+import {
+  getRandomImage,
+  getRandomText,
+  getRandomTitle,
+} from "@/app/common/section/random-const";
+import {
+  getBtnFooter,
+  getTags,
+  getVerticalCardGroups,
+} from "@/app/common/section/random-groups";
 import { BtnSize, BtnType } from "@/app/common/woop-ui";
 import { Variant } from "@mui/material/styles/createTypography";
 
@@ -38,21 +46,19 @@ export const headerBannerProps = {
 export const sectionAProps = {
   title: {
     variant: "h3" as Variant,
-    content: "Place to set Section A headline",
+    content: getRandomTitle(),
   },
   subtitle: {
     variant: "body1" as Variant,
-    content:
-      "Place to set Section A subtitle, Install the Figma plugin and you're ready to convert your designs to a responsive site.",
+    content: getRandomText(),
   },
   horizontalCard: {
-    image: "/goooose9.jpg",
+    image: getRandomImage(),
     pictureSize: 450,
-    title: "Card title",
-    headerSlot: tags,
-    description:
-      "A quick word about @framer. Framer is forever changing the experience of designing for the web. Forget about a design tool. Once you get the basics, you're not on a design tool anymore. You're creating your product/story in the medium itself. As friendly & powerful as it is.",
-    footerSlot: getFooter("horizontal"),
+    title: getRandomTitle(),
+    headerSlot: getTags(),
+    description: getRandomText(),
+    footerSlot: getBtnFooter(),
   },
   verticalCards: getVerticalCardGroups(),
   buttonGroup: {
@@ -66,5 +72,16 @@ export const sectionAProps = {
       size: BtnSize.S,
       type: BtnType.Filled,
     },
+  },
+};
+
+export const sectionBProps = {
+  title: {
+    variant: "h3" as Variant,
+    content: getRandomTitle(),
+  },
+  subtitle: {
+    variant: "body1" as Variant,
+    content: getRandomText(),
   },
 };

@@ -6,7 +6,9 @@ export const ImageSet = [
   "/goooose30.jpg",
 ];
 
-
+export const getRandomImage = () => {
+  return ImageSet[Math.floor(Math.random() * ImageSet.length)];
+};
 
 export const TitleSet = [
   "Default",
@@ -15,6 +17,10 @@ export const TitleSet = [
   "Maybe you can set this as a title",
   "Oh! This title is too long, it will be cut off in the middle I guess",
 ];
+
+export const getRandomTitle = () => {
+  return TitleSet[Math.floor(Math.random() * TitleSet.length)];
+};
 
 export const TextSet = [
   "Sales dashboards are a common example of analytical dashboards.",
@@ -29,3 +35,10 @@ export const TextSet = [
   "As the name implies, analytical dashboards provide information for analysis, investigation, research, and thoughtful decision-making.",
   "They provide thought information for sales managers about fluctuating sales data that may require thoughtful analysis rather than rapid intervention.",
 ];
+
+export const getRandomText = () => {
+  return Array.from(
+    { length: Math.floor(Math.random() * 3) + 1 },
+    () => TextSet[Math.floor(Math.random() * TextSet.length)]
+  ).join(" ");
+};

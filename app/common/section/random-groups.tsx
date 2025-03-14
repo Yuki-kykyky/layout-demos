@@ -2,12 +2,13 @@ import { Stack } from "@mui/material";
 import { BtnSize, BtnType, WoopBtn, WoopChip } from "../woop-ui";
 import { VerticalCardProps } from "../woop-ui/cards/vertical-card";
 import { ChipType } from "../woop-ui/woop-chip";
-import { ImageSet, TextSet, TitleSet } from "./random-const";
+import { getRandomImage, getRandomText, getRandomTitle } from "./random-const";
 import React from "react";
 
 export const getTags = () => {
   const tagCount = Math.floor(Math.random() * 4);
-  return (
+
+  return tagCount > 0 ? (
     <Stack direction="row" gap={1} mb={0.5} flexWrap="wrap">
       {Array.from({ length: tagCount }, (_, index) => (
         <WoopChip
@@ -17,12 +18,13 @@ export const getTags = () => {
         />
       ))}
     </Stack>
-  );
+  ) : null;
 };
 
-export const getFooter = () => {
+export const getBtnFooter = () => {
   const footerCount = Math.floor(Math.random() * 3);
-  return (
+
+  return footerCount > 0 ? (
     <Stack direction="row" gap={1} mb={0.5} flexWrap="wrap">
       {Array.from({ length: footerCount }, (_, index) => (
         <WoopBtn
@@ -33,7 +35,7 @@ export const getFooter = () => {
         />
       ))}
     </Stack>
-  );
+  ) : null;
 };
 
 export const getVerticalCardGroups = () => {
@@ -43,17 +45,11 @@ export const getVerticalCardGroups = () => {
   const verticalCardGroups: VerticalCardProps[] = Array.from(
     { length: groupCount },
     () => ({
-      // 随机选择一张图片
-      image: ImageSet[Math.floor(Math.random() * ImageSet.length)],
-      // 随机选择1-3段文本并拼接
-      description: Array.from(
-        { length: Math.floor(Math.random() * 3) + 1 },
-        () => TextSet[Math.floor(Math.random() * TextSet.length)]
-      ).join(" "),
-      // 随机选择一个标题
-      title: TitleSet[Math.floor(Math.random() * TitleSet.length)],
+      image: getRandomImage(),
+      description: getRandomText(),
+      title: getRandomTitle(),
       headerSlot: getTags(),
-      footerSlot: getFooter(),
+      footerSlot: getBtnFooter(),
     })
   );
 

@@ -26,14 +26,7 @@ export const SectionA = () => {
 
         {/* Horizontal Card */}
         <Grid2 container spacing={4}>
-          <HorizontalCard
-            image={horizontalCard.image}
-            pictureSize={horizontalCard.pictureSize}
-            title={horizontalCard.title}
-            headerSlot={horizontalCard.headerSlot}
-            description={horizontalCard.description}
-            footerSlot={horizontalCard.footerSlot}
-          />
+          <HorizontalCard {...horizontalCard} />
         </Grid2>
 
         {/* Vertical Cards Section */}
