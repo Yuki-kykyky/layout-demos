@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const roboto = Roboto({

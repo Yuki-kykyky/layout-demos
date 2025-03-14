@@ -8,7 +8,7 @@ import { Variant } from "@mui/material/styles/createTypography";
 
 export const headerBannerProps = {
   title: {
-    variant: "h3" as Variant,
+    variant: "h2" as Variant,
     content: "Place to set headline",
   },
   subtitle: {
