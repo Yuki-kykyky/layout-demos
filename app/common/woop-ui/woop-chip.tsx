@@ -5,13 +5,13 @@ import React from "react";
 import { WoopChipStyles } from "./styles";
 
 export enum ChipType {
-  Primary = "Primary",
-  Secondary = "Secondary",
+  Filled = "Filled",
+  Outlined = "Outlined",
 }
 
 export function WoopChip({
   label,
-  type = ChipType.Primary,
+  type = ChipType.Filled,
   isClose = false,
   startIcon,
   endIcon,

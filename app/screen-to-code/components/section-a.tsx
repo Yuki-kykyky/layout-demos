@@ -42,15 +42,11 @@ export const SectionA = () => {
             {verticalCards.map((card, index) => (
               <Grid2 key={index} size={{ xs: 12, lg: 4, md: 6 }}>
                 <VerticalCard
-                  image={card.image}
-                  headerSlot={card.headerSlot}
-                  description={card.description}
-                  footerSlot={card.footerSlot}
-                  floatIcon={card.floatIcon}
                   sx={{
                     width: "100%",
                     height: "100%",
                   }}
+                  {...card}
                 />
               </Grid2>
             ))}

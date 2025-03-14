@@ -78,7 +78,7 @@ const lightTheme = createTheme({
       fontFamily: "Montserrat, sans-serif",
       fontSize: "48px",
       lineHeight: "60px",
-      fontWeight: 700,
+      fontWeight: 800,
     },
     h3: {
       fontFamily: "Montserrat, sans-serif",
@@ -100,9 +100,9 @@ const lightTheme = createTheme({
     },
     subtitle2: {
       fontFamily: "Montserrat, sans-serif",
-      fontSize: "24px",
-      lineHeight: "30px",
-      fontWeight: 500,
+      fontSize: "20px",
+      lineHeight: "28px",
+      fontWeight: 600,
     },
     body1: {
       fontFamily: "Roboto, sans-serif",
@@ -159,6 +159,12 @@ const darkTheme = createTheme({
     },
   },
   typography: {
+    h2: {
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "48px",
+      lineHeight: "60px",
+      fontWeight: 800,
+    },
     h3: {
       fontFamily: "Montserrat, sans-serif",
       fontSize: "36px",
@@ -179,9 +185,9 @@ const darkTheme = createTheme({
     },
     subtitle2: {
       fontFamily: "Montserrat, sans-serif",
-      fontSize: "24px",
-      lineHeight: "30px",
-      fontWeight: 500,
+      fontSize: "20px",
+      lineHeight: "28px",
+      fontWeight: 600,
     },
     body1: {
       fontFamily: "Roboto, sans-serif",

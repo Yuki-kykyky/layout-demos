@@ -17,7 +17,7 @@ export const ChipList = () => {
       <WoopChip
         endIcon={<HourglassBottom />}
         label="Secondary"
-        type={ChipType.Secondary}
+        type={ChipType.Outlined}
         onClick={() => {
           console.log("clicked");
         }}
@@ -48,7 +48,7 @@ export const ChipList = () => {
       <WoopChip
         label="Secondary Close"
         isClose
-        type={ChipType.Secondary}
+        type={ChipType.Outlined}
         onClick={() => {
           console.log("clicked");
         }}

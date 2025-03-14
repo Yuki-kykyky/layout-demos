@@ -117,7 +117,7 @@ const WoopChipStyles = {
     },
   },
   typeStyles: {
-    [ChipType.Primary]: {
+    [ChipType.Filled]: {
       bgcolor: (theme: Theme) => theme.palette.primary.contrastText,
       color: (theme: Theme) => theme.palette.primary.main,
       border: (theme: Theme) =>
@@ -145,7 +145,7 @@ const WoopChipStyles = {
         },
       },
     },
-    [ChipType.Secondary]: {
+    [ChipType.Outlined]: {
       bgcolor: (theme: Theme) => theme.palette.background.default,
       color: (theme: Theme) => theme.palette.text.secondary,
       border: (theme: Theme) => `1px solid ${theme.palette.divider}`,

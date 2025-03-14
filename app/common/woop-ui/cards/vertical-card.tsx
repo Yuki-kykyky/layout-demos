@@ -6,8 +6,20 @@ import {
   IconButton,
   Typography,
   SxProps,
+  Stack,
 } from "@mui/material";
 import React from "react";
+
+export type VerticalCardProps = {
+  image?: string;
+  headerSlot?: React.ReactNode;
+  title?: string;
+  description?: string;
+  footerSlot?: React.ReactNode;
+  floatIcon?: React.ReactNode;
+  pictureSize?: number;
+  sx?: SxProps;
+};
 
 export const VerticalCard = ({
   image,
@@ -18,16 +30,7 @@ export const VerticalCard = ({
   floatIcon,
   pictureSize = 324,
   sx,
-}: {
-  image?: string;
-  headerSlot?: React.ReactNode;
-  title?: string;
-  description?: string;
-  footerSlot?: React.ReactNode;
-  floatIcon?: React.ReactNode;
-  pictureSize?: number;
-  sx?: SxProps;
-}) => {
+}: VerticalCardProps) => {
   return (
     <Card
       sx={{
@@ -68,19 +71,42 @@ export const VerticalCard = ({
           display: "flex",
           flexDirection: "column",
           gap: 1,
-
-          justifyContent: "space-between",
+          flex: 1,
+          justifyContent: "flex-start",
         }}
         style={{
           padding: "0px",
         }}
       >
         {headerSlot}
-        <Typography variant="subtitle2">{title}</Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="subtitle2" sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
           {description}
         </Typography>
-        {footerSlot}
+        {footerSlot && (
+          <Stack sx={{ flex: 1, mt: 2 }} justifyContent="flex-end">
+            {footerSlot}
+          </Stack>
+        )}
       </CardContent>
     </Card>
   );

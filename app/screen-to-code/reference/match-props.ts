@@ -1,8 +1,5 @@
-import {
-  floatIcon,
-  getFooter,
-  tags,
-} from "@/app/common/section/common-section";
+import { getFooter, tags } from "@/app/common/section/common-section";
+import { getVerticalCardGroups } from "@/app/common/section/random-groups";
 import { BtnSize, BtnType } from "@/app/common/woop-ui";
 import { Variant } from "@mui/material/styles/createTypography";
 
@@ -57,52 +54,7 @@ export const sectionAProps = {
       "A quick word about @framer. Framer is forever changing the experience of designing for the web. Forget about a design tool. Once you get the basics, you're not on a design tool anymore. You're creating your product/story in the medium itself. As friendly & powerful as it is.",
     footerSlot: getFooter("horizontal"),
   },
-  verticalCards: [
-    {
-      image: "/goooose9.jpg",
-      description: "just a card content",
-    },
-    {
-      image: "/goooose9.jpg",
-      headerSlot: tags,
-      description: "card content with header tags, with float icon",
-      floatIcon,
-    },
-    {
-      image: "/goooose9.jpg",
-      description: "card content with footer",
-      footerSlot: getFooter("vertical"),
-    },
-    {
-      image: "/goooose9.jpg",
-      floatIcon,
-      headerSlot: tags,
-      description: "card content with header tags and footer, with float icon",
-      footerSlot: getFooter("vertical"),
-    },
-    {
-      image: "/goooose9.jpg",
-      description: "just a card content",
-    },
-    {
-      image: "/goooose9.jpg",
-      headerSlot: tags,
-      description: "card content with header tags, with float icon",
-      floatIcon,
-    },
-    {
-      image: "/goooose9.jpg",
-      description: "card content with footer",
-      footerSlot: getFooter("vertical"),
-    },
-    {
-      image: "/goooose9.jpg",
-      floatIcon,
-      headerSlot: tags,
-      description: "card content with header tags and footer, with float icon",
-      footerSlot: getFooter("vertical"),
-    },
-  ],
+  verticalCards: getVerticalCardGroups(),
   buttonGroup: {
     first: {
       buttonText: "button left",

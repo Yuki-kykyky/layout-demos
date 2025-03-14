@@ -87,9 +87,9 @@ export const floatIcon = (
 );
 export const tags = (
   <Stack direction="row" gap={1} mb={0.5} flexWrap="wrap">
-    <WoopChip label="Tag 1" type={ChipType.Secondary} />
-    <WoopChip label="Tag 2" type={ChipType.Secondary} />
-    <WoopChip label="Tag 3" type={ChipType.Secondary} />
+    <WoopChip label="Tag 1" type={ChipType.Outlined} />
+    <WoopChip label="Tag 2" type={ChipType.Outlined} />
+    <WoopChip label="Tag 3" type={ChipType.Outlined} />
   </Stack>
 );
 export const getFooter = (type: "vertical" | "horizontal") => (
