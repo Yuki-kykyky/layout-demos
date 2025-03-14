@@ -1,3 +1,7 @@
+const getRandom = (array: string[]) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
 export const ImageSet = [
   "/goooose9.jpg",
   "/goooose14.jpg",
@@ -7,7 +11,7 @@ export const ImageSet = [
 ];
 
 export const getRandomImage = () => {
-  return ImageSet[Math.floor(Math.random() * ImageSet.length)];
+  return getRandom(ImageSet);
 };
 
 export const TitleSet = [
@@ -19,7 +23,38 @@ export const TitleSet = [
 ];
 
 export const getRandomTitle = () => {
-  return TitleSet[Math.floor(Math.random() * TitleSet.length)];
+  return getRandom(TitleSet);
+};
+
+export const NameSet = [
+  "Ava Doe",
+  "Jane Smith",
+  "Olivia Wilson",
+  "Matthew Taylor",
+  "Anderson Martinez",
+  "Maximilian Zachariah",
+  "Montgomery Bartholomew",
+];
+
+export const getRandomName = () => {
+  return getRandom(NameSet);
+};
+
+export const JobSet = [
+  "Surveyor",
+  "Economist",
+  "Sales Manager",
+  "Product Manager",
+  "Customer Support",
+  "Software Engineer",
+  "Recreational Therapist",
+  "Public Relations Specialist",
+  "Maintenance & Repair Worker",
+  "Computer Systems Administrator",
+];
+
+export const getRandomJob = () => {
+  return getRandom(JobSet);
 };
 
 export const TextSet = [
@@ -37,8 +72,7 @@ export const TextSet = [
 ];
 
 export const getRandomText = () => {
-  return Array.from(
-    { length: Math.floor(Math.random() * 3) + 1 },
-    () => TextSet[Math.floor(Math.random() * TextSet.length)]
+  return Array.from({ length: Math.floor(Math.random() * 3) + 1 }, () =>
+    getRandom(TextSet)
   ).join(" ");
 };

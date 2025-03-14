@@ -57,15 +57,17 @@ export const VerticalCard = ({
       >
         {floatIcon}
       </IconButton>
-      <CardMedia
-        component="img"
-        image={image}
-        alt="green iguana"
-        sx={{
-          height: pictureSize,
-          borderRadius: 2,
-        }}
-      />
+      {image && (
+        <CardMedia
+          component="img"
+          image={image}
+          alt="green iguana"
+          sx={{
+            height: pictureSize,
+            borderRadius: 2,
+          }}
+        />
+      )}
       <CardContent
         sx={{
           display: "flex",
@@ -79,7 +81,9 @@ export const VerticalCard = ({
         }}
       >
         {headerSlot}
-        <Typography variant="subtitle2" sx={{
+        <Typography
+          variant="subtitle2"
+          sx={{
             overflow: "hidden",
             textOverflow: "ellipsis",
             display: "-webkit-box",

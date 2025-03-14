@@ -1,9 +1,31 @@
-import { Stack } from "@mui/material";
-import { BtnSize, BtnType, WoopBtn, WoopChip } from "../woop-ui";
+import { Stack, Typography } from "@mui/material";
+import { BtnSize, BtnType, WoopAvatar, WoopBtn, WoopChip } from "../woop-ui";
 import { VerticalCardProps } from "../woop-ui/cards/vertical-card";
 import { ChipType } from "../woop-ui/woop-chip";
-import { getRandomImage, getRandomText, getRandomTitle } from "./random-const";
+import {
+  getRandomImage,
+  getRandomName,
+  getRandomJob,
+  getRandomText,
+  getRandomTitle,
+} from "./random-const";
 import React from "react";
+
+export const getRandomAvatarInfo = () => {
+  const avatar = getRandomImage();
+  const name = getRandomName();
+  const job = getRandomJob();
+
+  return (
+    <Stack direction="row" spacing={2}>
+      <WoopAvatar size="L" imgSrc={avatar} text={name} />
+      <Stack>
+        <Typography variant="body1">{name}</Typography>
+        <Typography variant="body2">{job}</Typography>
+      </Stack>
+    </Stack>
+  );
+};
 
 export const getTags = () => {
   const tagCount = Math.floor(Math.random() * 4);
@@ -54,4 +76,29 @@ export const getVerticalCardGroups = () => {
   );
 
   return verticalCardGroups;
+};
+
+export const getVerticalCardWithoutImageGroups = () => {
+  const groupCount = Math.floor(Math.random() * 7) + 4;
+
+  const verticalCardGroups: VerticalCardProps[] = Array.from(
+    { length: groupCount },
+    () => ({
+      description: getRandomText(),
+      headerSlot: getRandomAvatarInfo(),
+    })
+  );
+
+  return verticalCardGroups;
+};
+
+export const getHorizontalCard = () => {
+  return {
+    image: getRandomImage(),
+    pictureSize: 450,
+    title: getRandomTitle(),
+    headerSlot: getTags(),
+    description: getRandomText(),
+    footerSlot: getBtnFooter(),
+  };
 };

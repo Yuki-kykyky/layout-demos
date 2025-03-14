@@ -1,12 +1,11 @@
 import {
-  getRandomImage,
   getRandomText,
-  getRandomTitle,
+  getRandomTitle
 } from "@/app/common/section/random-const";
 import {
-  getBtnFooter,
-  getTags,
+  getHorizontalCard,
   getVerticalCardGroups,
+  getVerticalCardWithoutImageGroups
 } from "@/app/common/section/random-groups";
 import { BtnSize, BtnType } from "@/app/common/woop-ui";
 import { Variant } from "@mui/material/styles/createTypography";
@@ -52,14 +51,7 @@ export const sectionAProps = {
     variant: "body1" as Variant,
     content: getRandomText(),
   },
-  horizontalCard: {
-    image: getRandomImage(),
-    pictureSize: 450,
-    title: getRandomTitle(),
-    headerSlot: getTags(),
-    description: getRandomText(),
-    footerSlot: getBtnFooter(),
-  },
+  horizontalCard: getHorizontalCard(),
   verticalCards: getVerticalCardGroups(),
   buttonGroup: {
     first: {
@@ -84,4 +76,6 @@ export const sectionBProps = {
     variant: "body1" as Variant,
     content: getRandomText(),
   },
+  verticalCard: getVerticalCardWithoutImageGroups(),
+  horizontalCard: getHorizontalCard(),
 };
