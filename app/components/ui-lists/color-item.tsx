@@ -47,7 +47,7 @@ const ColorItem: React.FC<ColorItemProps> = ({
         }}
       >
         <Typography
-          variant="subtitle1"
+          variant="body1"
           component="div"
           data-layer={colorName.replace(/\s+/g, "")}
           sx={{

@@ -33,7 +33,7 @@ export default function EmailConnect() {
         </Typography>
 
         <Typography
-          variant="h4"
+          variant="h3"
           sx={{
             fontWeight: 700,
             mb: 4,

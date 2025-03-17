@@ -213,7 +213,7 @@ export default function LatestStories() {
                     {story.category}
                   </Typography>
                   <Typography
-                    variant="subtitle1"
+                    variant="body1"
                     sx={{
                       fontWeight: 600,
                       display: "-webkit-box",

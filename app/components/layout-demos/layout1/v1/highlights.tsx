@@ -177,7 +177,7 @@ export default function Highlights() {
 
           {/* Content */}
           <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
               {highlightData.videoSection.title}
             </Typography>
             <Typography

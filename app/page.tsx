@@ -1,35 +1,20 @@
 "use client";
-import Footer from "@/app/footer";
-import { Box, Button, Menu, MenuItem, ThemeProvider } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Fab, Menu, MenuItem, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import "typeface-source-code-pro";
-import Header from "./header";
 
-import { darkTheme, lightTheme } from "./theme";
-import { Version1 } from "./pages/version-page/version1";
-import { Version4 } from "./pages/version-page/version4";
-import { Version3 } from "./pages/version-page/version3";
-import { Version2 } from "./pages/version-page/version2";
-import { WoopDesignSystem } from "./pages/ui-page/woop-design-system";
 import { Test } from "./pages/test-page/test";
+import { WoopDesignSystem } from "./pages/ui-page/woop-design-system";
+import { ExperimentVersions } from "./pages/version-page/experiment-versions";
+import { lightTheme, darkTheme } from "./theme";
+import { useThemeStore } from "./store/theme-store";
 
 export default function Home() {
   const versionMap = {
     v1: {
-      label: "image",
-      content: <Version1 />,
-    },
-    v2: {
-      label: "image + code",
-      content: <Version2 />,
-    },
-    v3: {
-      label: "figma layout + components",
-      content: <Version3 />,
-    },
-    v4: {
-      label: "figma layout + components + json",
-      content: <Version4 />,
+      label: "Experimental Field",
+      content: <ExperimentVersions />,
     },
     v5: {
       label: "woop design system generation",
@@ -41,9 +26,9 @@ export default function Home() {
     },
   };
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [version, setVersion] = useState("v6");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const isDarkMode = useThemeStore((state) => state.isDarkMode);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -54,50 +39,60 @@ export default function Home() {
     setAnchorEl(null);
   };
 
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
-
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Box
         sx={{
           width: "100%",
-          minHeight: "100vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           bgcolor: (theme) => theme.palette.background.default,
+          position: "relative",
+          overflowY: "auto",
         }}
       >
-        <Header
-          slot={
-            <>
-              <Button variant="contained" onClick={handleClick}>
-                version selector
-              </Button>
-              {version === "v5" && (
-                <Button variant="contained" onClick={toggleTheme}>
-                  {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </Button>
-              )}
-              <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={() => handleClose(version)}
-              >
-                {Object.keys(versionMap).map((key) => (
-                  <MenuItem key={key} onClick={() => handleClose(key)}>
-                    {versionMap[key as keyof typeof versionMap].label}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </>
-          }
-        />
-        <main className="flex-1 flex flex-col my-16 py-6">
+        <Box
+          component="main"
+          sx={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            overflowY: "auto",
+          }}
+        >
           {versionMap[version as keyof typeof versionMap].content}
-        </main>
-        <Footer />
+        </Box>
+        <Fab
+          color="primary"
+          sx={{
+            position: "fixed",
+            bottom: 96,
+            right: 32,
+          }}
+          onClick={handleClick}
+        >
+          <MenuIcon />
+        </Fab>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          onClose={() => handleClose(version)}
+        >
+          {Object.keys(versionMap).map((key) => (
+            <MenuItem key={key} onClick={() => handleClose(key)}>
+              {versionMap[key as keyof typeof versionMap].label}
+            </MenuItem>
+          ))}
+        </Menu>
       </Box>
     </ThemeProvider>
   );

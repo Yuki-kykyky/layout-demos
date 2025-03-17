@@ -18,7 +18,7 @@ import {
   SwitchList,
   TabList,
   TextFieldList,
-} from "@/app/components/ui-lists";
+} from "@/app/components/ui-lists/index";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FiberSmartRecordIcon from "@mui/icons-material/FiberSmartRecord";
 import InterestsIcon from "@mui/icons-material/Interests";
@@ -36,10 +36,13 @@ import {
   ListItemText,
   Stack,
   Theme,
-  Toolbar,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useThemeStore } from "@/app/store/theme-store";
+import { BtnType, WoopBtn } from "@/app/common/woop-ui";
 
 enum Level {
   ATOM = "atom",
@@ -49,6 +52,7 @@ enum Level {
 
 export function WoopDesignSystem() {
   const [selectedLevel, setSelectedLevel] = useState<Level>(Level.ATOM);
+  const { isDarkMode, toggleTheme } = useThemeStore();
   const levels = Object.values(Level);
   const accordionItems = [
     {
@@ -195,14 +199,26 @@ export function WoopDesignSystem() {
         sx={{
           width: 240,
           flexShrink: 0,
+          position: "relative",
           [`& .MuiDrawer-paper`]: {
             width: 240,
             boxSizing: "border-box",
           },
         }}
       >
-        <Toolbar />
-        <Box sx={{ overflow: "auto" }}>
+        <WoopBtn
+          buttonText={isDarkMode ? "Switch Light" : "Switch Dark"}
+          onClick={toggleTheme}
+          type={BtnType.Text}
+          startIcon={isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          sx={{
+            mx: 2,
+            mb: 2,
+            position: "absolute",
+            bottom: 0,
+          }}
+        />
+        <Box sx={{ overflow: "auto", pt: 4 }}>
           <List>
             {levels.map((level) => (
               <ListItem key={level} disablePadding>
@@ -222,7 +238,7 @@ export function WoopDesignSystem() {
       </Drawer>
       <Stack
         sx={{
-          px: 4,
+          p: 4,
         }}
         direction="row"
         gap={2}
