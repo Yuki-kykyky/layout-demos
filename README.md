@@ -8,6 +8,11 @@
 
 ## 实验记录
 
+### Experimental Field (V1 - V6)
+
+<details>
+<summary><i>点击查看详情</i></summary>
+
 ### V1 手动辅助线引导 + 对话调整最终效果
 
 <details>
@@ -198,6 +203,22 @@ figma 的信息导入能提供一定的布局生成上的指导。常量图文�
 
 > 可以考虑利用 email template 来生成可以展示 layout 布局信息的 html
 
+</details>
+
+
+
+### V7 利用 screenshot-to-code 生成拥有 flex 布局关系的代码
+
+[screenshot-to-code 开源代码仓库](https://github.com/abi/screenshot-to-code)
+
+
+[screenshot-to-code 付费托管平台](https://screenshottocode.com/)
+
+![screenshot-to-code 网页](/public/readme/v7/screenshot-to-code.jpg)
+
+经由大模型识别转换后的代码具有良好的层级结构，导入代码库中加上简单的注释标识，在 cursor 中执行一次 prompt 便可生成符合预期的布局关系代码。
+
 ### todo
 
-- [ ] V7 能同步生成测试代码，保证代码质量...
+- [ ] V8 能实现 onClick 事件匹配，页面跳转，滚动条等功能 ...
+- [ ] V9 能同步生成测试代码，保证代码质量...
