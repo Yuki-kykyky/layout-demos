@@ -4,29 +4,34 @@ import { Box, Fab, Menu, MenuItem, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import "typeface-source-code-pro";
 
-import { Test } from "./pages/test-page/test";
 import { WoopDesignSystem } from "./pages/ui-page/woop-design-system";
 import { ExperimentVersions } from "./pages/version-page/experiment-versions";
 import { lightTheme, darkTheme } from "./theme";
+import { STCv1 } from "./screen-to-code/stc-v1";
 import { useThemeStore } from "./store/theme-store";
+import { STCv2 } from "./screen-to-code/stc-v2";
 
 export default function Home() {
   const versionMap = {
-    v1: {
-      label: "Experimental Field",
-      content: <ExperimentVersions />,
-    },
     v5: {
       label: "woop design system generation",
       content: <WoopDesignSystem />,
     },
+    v1: {
+      label: "Experimental Field",
+      content: <ExperimentVersions />,
+    },
     v6: {
-      label: "test",
-      content: <Test />,
+      label: "screenshot-to-code-v1",
+      content: <STCv1 />,
+    },
+    v7: {
+      label: "screenshot-to-code-v2",
+      content: <STCv2 />,
     },
   };
 
-  const [version, setVersion] = useState("v6");
+  const [version, setVersion] = useState("v7");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const isDarkMode = useThemeStore((state) => state.isDarkMode);
 

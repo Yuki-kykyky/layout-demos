@@ -2,7 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import { VerticalCard } from "@/app/common/woop-ui";
 import { HorizontalCard } from "@/app/common/woop-ui";
 import React from "react";
-import { sectionBProps } from "../reference/match-props";
+import { sectionBProps } from "../../reference/match-props";
 import { useScreenSize } from "@/app/hooks/useScreenSize";
 import { createColumnLayout } from "@/app/utils/layout-utils";
 

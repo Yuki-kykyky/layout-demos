@@ -3,7 +3,7 @@ import { Container, Typography, Stack, Grid2, Box } from "@mui/material";
 import { HorizontalCard } from "@/app/common/woop-ui/cards/horizontal-card";
 import { VerticalCard } from "@/app/common/woop-ui/cards/vertical-card";
 import { WoopBtn } from "@/app/common/woop-ui/woop-btn";
-import { sectionAProps } from "../reference/match-props";
+import { sectionAProps } from "../../reference/match-props";
 
 export const SectionA = () => {
   const { title, subtitle, horizontalCard, verticalCards, buttonGroup } =
