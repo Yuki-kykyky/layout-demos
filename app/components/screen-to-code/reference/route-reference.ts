@@ -27,7 +27,6 @@ export const STCV2Routes = {
         card_item: { dynamic_path: "/properties/:id" },
       },
       blogs: {
-        list_page: { path: "/blogs" },
         card_item: { dynamic_path: "/blogs/:post_id" },
       },
     },

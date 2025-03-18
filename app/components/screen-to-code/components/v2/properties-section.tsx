@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Stack, Typography, Grid2, Box } from "@mui/material";
 import { WoopBadge, WoopBtn, VerticalCard } from "@/app/common/woop-ui";
-import { PropertiesSectionMatchProps } from "../../reference/v2/match-props";
+import { propertiesSectionMatchProps } from "../../reference/v2/match-props";
 import { STCV2Routes } from "../../reference/route-reference";
 import { useRouter } from "next/navigation";
 
 export const PropertiesSection = () => {
   const { eyebrowBadge, title, button, verticalCards } =
-    PropertiesSectionMatchProps;
+    propertiesSectionMatchProps;
   const { properties } = STCV2Routes.routes.modules;
 
   const router = useRouter();

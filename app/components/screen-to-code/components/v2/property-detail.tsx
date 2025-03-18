@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Stack, Typography, Box } from "@mui/material";
 import { WoopBadge } from "@/app/common/woop-ui";
-import { PropertiesSectionMatchProps } from "../../reference/v2/match-props";
+import { propertiesSectionMatchProps } from "../../reference/v2/match-props";
 
 export const PropertyDetail = ({ id }: { id: string }) => {
-  const { eyebrowBadge, title } = PropertiesSectionMatchProps;
+  const { eyebrowBadge, title } = propertiesSectionMatchProps;
 
   return (
     <Box sx={{ bgcolor: "background.paper", py: 8 }}>

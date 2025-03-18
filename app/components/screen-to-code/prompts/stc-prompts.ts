@@ -38,10 +38,44 @@ ${fixGrid}
 3. 按钮先匹配现有组件，若匹配失败，则使用 <Button>
 `;
 
+export const initializePage = `
+如果是静态路由匹配，初始页面代码参考结构如下：
+---
+      <Container maxWidth="lg">
+        <Box py={8}>
+          <Typography variant="h2" component="h1" gutterBottom>
+            {pathName}
+          </Typography>
+          <BlogsSection />
+        </Box>
+      </Container>
+---
+
+如果是动态路由匹配，初识页面代码参考结构如下：
+---
+interface Params {
+  id: string;
+}
+
+interface PageProps {
+  params: Promise<Params>;
+}
+
+export default async function PropertyPage({
+  params,
+}: PageProps) {
+  const resolvedParams = await params;
+  return (
+      <div>{resolvedParams.id}</div>
+  );
+}
+---
+`;
+
 export const matchCTACN = `
 你需要从提供的 references 文件中获取对应特殊事件。
 
-- 例如：
+- 案例一，例如：
 
 { cta_button: { path: '/properties'} },
 
@@ -63,6 +97,34 @@ const handleClick = () => {
   All Properties
 </WoopBtn>
 ---
+
+- 案例二，例如：
+
+card_item: { dynamic_path: "/properties/:id" },
+
+即需要寻找匹配的 card item 并传递 路由跳转至对应的 path 的 onClick 事件。
+
+如果 dynamic_path 对应的路径文件尚未存在，执行${initializePage},
+
+匹配返回的代码结果应该如下：
+---
+const router = useRouter();
+
+const handleCardClick = (id: string) => {
+  router.push(properties.card_item.dynamic_path.replace(":id", id));
+};
+
+...
+
+<Box
+  onClick={() => handleCardClick(card.id)}
+  sx={{ cursor: "pointer" }}
+>
+  <VerticalCard {...card} />
+</Box>
+---
+
+
 `;
 
 const fixGridEN = `
