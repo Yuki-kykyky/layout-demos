@@ -5,13 +5,6 @@ Grid 组件已弃用，请使用 Grid2 代替，参考 https://mui.com/material-
 - 不被识别的写法：<Grid2 xs={12}></Grid2>
 `;
 
-const fixGridEN = `
-Grid components are deprecated. Please use Grid2 instead. Refer to https://mui.com/material-ui/react-grid2/ to find the usage of Grid2.
-
-- Recognized writing: <Grid2 size={{ xs:12 }}></Grid2>
-- Unrecognized writing: <Grid2 xs={12}></Grid2>
-`;
-
 const matchProps = `
 你需要从提供的 props 文件中获取对应的填充图文信息，并对 props 进行解构。
 
@@ -22,22 +15,6 @@ const { title, subtitle, verticalCard, horizontalCard } = sectionBProps;
 你需要将这些信息填充到对应的组件中。
 
 - 例如：
-
-<Typography variant={title.variant} textAlign="center" color="text.primary" fontWeight={600} mb={1}>
-  {title.content}
-</Typography>
-`;
-
-const matchPropsEN = `
-You need to get the corresponding fill-in information from the provided props file and destructure the props.
-
-- For example:
-
-const { title, subtitle, verticalCard, horizontalCard } = sectionBProps;
-
-You need to fill these information into the corresponding components.
-
-- For example:
 
 <Typography variant={title.variant} textAlign="center" color="text.primary" fontWeight={600} mb={1}>
   {title.content}
@@ -59,6 +36,56 @@ ${fixGrid}
 2. 文本使用 <Typography>；
 
 3. 按钮先匹配现有组件，若匹配失败，则使用 <Button>
+`;
+
+export const matchCTACN = `
+你需要从提供的 references 文件中获取对应特殊事件。
+
+- 例如：
+
+{ cta_button: { path: '/properties'} },
+
+即需要寻找匹配的 button 并传递 路由跳转至对应的 path 的 onClick 事件。
+
+你需要将这些信息填充到对应的组件中。
+
+匹配返回的代码结果应该如下：
+---
+const router = useRouter();
+
+const handleClick = () => {
+  router.push(properties.cta_button.path);
+};
+
+...
+
+<WoopBtn onClick={handleClick}>
+  All Properties
+</WoopBtn>
+---
+`;
+
+const fixGridEN = `
+Grid components are deprecated. Please use Grid2 instead. Refer to https://mui.com/material-ui/react-grid2/ to find the usage of Grid2.
+
+- Recognized writing: <Grid2 size={{ xs:12 }}></Grid2>
+- Unrecognized writing: <Grid2 xs={12}></Grid2>
+`;
+
+const matchPropsEN = `
+You need to get the corresponding fill-in information from the provided props file and destructure the props.
+
+- For example:
+
+const { title, subtitle, verticalCard, horizontalCard } = sectionBProps;
+
+You need to fill these information into the corresponding components.
+
+- For example:
+
+<Typography variant={title.variant} textAlign="center" color="text.primary" fontWeight={600} mb={1}>
+  {title.content}
+</Typography>
 `;
 
 export const replaceWithMUIEN = `

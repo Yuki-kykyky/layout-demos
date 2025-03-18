@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, Stack, Grid2, Box } from "@mui/material";
 import { WoopBtn } from "@/app/common/woop-ui";
-import { headerBannerProps } from "../../reference/match-props";
+import { headerBannerProps } from "../../reference/v1/match-props";
 
 export const HeaderBanner = () => {
   const { title, subtitle, buttonGroup, image } = headerBannerProps;

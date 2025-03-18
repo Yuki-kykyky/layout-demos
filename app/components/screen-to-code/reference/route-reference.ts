@@ -23,8 +23,8 @@ export const STCV2Routes = {
         cta_button: { label: "Learn More", path: "/about" },
       },
       properties: {
-        list_page: { path: "/properties" },
-        detail_page: { dynamic_path: "/properties/:id" },
+        cta_button: { path: "/properties" },
+        card_item: { dynamic_path: "/properties/:id" },
       },
       blogs: {
         list_page: { path: "/blogs" },
