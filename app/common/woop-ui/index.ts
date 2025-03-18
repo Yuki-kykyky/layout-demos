@@ -1,3 +1,4 @@
+"use client";
 // Avatar 相关
 export { WoopAvatar } from "./woop-avatar";
 export { type AvatarSize } from "./woop-avatar";

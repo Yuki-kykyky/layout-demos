@@ -1,3 +1,4 @@
+"use client";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { CornerRadius, Shadows } from "@/app/common/styles/style-setting";
 import { Theme } from "@mui/material";

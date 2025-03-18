@@ -76,7 +76,10 @@ export const getVerticalCardGroups = () => {
     })
   );
 
-  return verticalCardGroups;
+  return verticalCardGroups.map((item, index) => ({
+    id: "vertical-card-" + index,
+    ...item,
+  }));
 };
 
 export const getVerticalCardWithoutImageGroups = () => {

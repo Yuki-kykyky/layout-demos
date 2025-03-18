@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Stack, Typography, Grid2, Box, Link } from "@mui/material";
+import { Container, Stack, Typography, Grid2, Box } from "@mui/material";
 import { WoopBadge, WoopBtn, VerticalCard } from "@/app/common/woop-ui";
 import { PropertiesSectionMatchProps } from "../../reference/v2/match-props";
 import { STCV2Routes } from "../../reference/route-reference";
@@ -9,11 +9,15 @@ export const PropertiesSection = () => {
   const { eyebrowBadge, title, button, verticalCards } =
     PropertiesSectionMatchProps;
   const { properties } = STCV2Routes.routes.modules;
- 
+
   const router = useRouter();
 
   const handleClick = () => {
     router.push(properties.cta_button.path);
+  };
+
+  const handleCardClick = (id: string) => {
+    router.push(properties.card_item.dynamic_path.replace(":id", id));
   };
 
   return (
@@ -40,7 +44,12 @@ export const PropertiesSection = () => {
         <Grid2 container spacing={4} sx={{ mt: 6 }}>
           {verticalCards.map((card, index) => (
             <Grid2 key={index} size={{ xs: 12, md: 4 }}>
-              <VerticalCard {...card} />
+              <Box
+                onClick={() => handleCardClick(card.id)}
+                sx={{ cursor: "pointer" }}
+              >
+                <VerticalCard {...card} />
+              </Box>
             </Grid2>
           ))}
         </Grid2>
