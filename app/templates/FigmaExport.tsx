@@ -1,4 +1,4 @@
-import { v6 } from "@/app/reference-const/v6";
+import { v6 } from "@/app/components/reference-const/v6";
 import { Box, Stack } from "@mui/material";
 import { HorizontalCard } from "@/app/common/woop-ui/cards/horizontal-card";
 import { VerticalCard } from "@/app/common/woop-ui/cards/vertical-card";

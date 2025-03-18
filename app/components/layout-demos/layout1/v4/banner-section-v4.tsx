@@ -3,7 +3,7 @@ import { Container, Box, Stack } from "@mui/material";
 import { DetailTitle } from "@/app/common/components/titles";
 import { InputButton } from "@/app/common/components/buttons";
 import { BaseDescription } from "@/app/common/components/descriptions";
-import { v4 } from "@/app/reference-const/v4";
+import { v4 } from "@/app/components/reference-const/v4";
 
 export default function BannerSectionV4() {
   return (

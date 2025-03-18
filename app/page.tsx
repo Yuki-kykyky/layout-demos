@@ -7,9 +7,9 @@ import "typeface-source-code-pro";
 import { WoopDesignSystem } from "./pages/ui-page/woop-design-system";
 import { ExperimentVersions } from "./pages/version-page/experiment-versions";
 import { lightTheme, darkTheme } from "./theme";
-import { STCv1 } from "./screen-to-code/stc-v1";
+import { STCv1 } from "./components/screen-to-code/stc-v1";
 import { useThemeStore } from "./store/theme-store";
-import { STCv2 } from "./screen-to-code/stc-v2";
+import { STCv2 } from "./components/screen-to-code/stc-v2";
 
 export default function Home() {
   const versionMap = {

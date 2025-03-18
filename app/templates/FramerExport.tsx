@@ -1,6 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
-import { v7 } from "@/app/reference-const/v6";
+import { v7 } from "@/app/components/reference-const/v6";
 import { HeaderTitle } from "@/app/common/components/titles";
 import { BaseDescription } from "@/app/common/components/descriptions";
 import { HorizontalCard } from "@/app/common/woop-ui/cards/horizontal-card";

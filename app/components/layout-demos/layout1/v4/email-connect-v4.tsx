@@ -6,7 +6,7 @@ import {
   BaseDescription,
   EmphasizedDescription,
 } from "@/app/common/components/descriptions";
-import { v4 } from "@/app/reference-const/v4";
+import { v4 } from "@/app/components/reference-const/v4";
 
 export default function EmailConnectV4() {
   return (

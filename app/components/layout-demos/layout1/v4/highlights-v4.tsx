@@ -1,6 +1,6 @@
 import { Container, Stack, Box, Rating } from "@mui/material";
 import React from "react";
-import { v4 } from "@/app/reference-const/v4";
+import { v4 } from "@/app/components/reference-const/v4";
 import { HeaderTitle } from "@/app/common/components/titles";
 import AvatarInfo from "@/app/common/components/avatar-info";
 import { ItemTitle, SubTitle } from "@/app/common/components/titles";

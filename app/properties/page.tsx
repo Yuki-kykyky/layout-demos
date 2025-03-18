@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import { PropertiesSection } from "@/app/screen-to-code/components/v2/properties-section";
+import { PropertiesSection } from "@/app/components/screen-to-code/components/v2/properties-section";
 import { SharedLayout } from "@/app/components/shared-layout";
 
 export default function PropertiesPage() {
