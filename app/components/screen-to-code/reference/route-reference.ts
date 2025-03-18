@@ -18,12 +18,11 @@ export const STCV2Routes = {
       },
     },
     modules: {
-      header_banner: {
-        vision: { path: "/vision" },
-        cta_button: { label: "Learn More", path: "/about" },
+      vision: {
+        cta_button: { label: "Learn more", path: "/about" },
       },
       properties: {
-        cta_button: { path: "/properties" },
+        cta_button: { label: "All properties",path: "/properties" },
         card_item: { dynamic_path: "/properties/:id" },
       },
       blogs: {

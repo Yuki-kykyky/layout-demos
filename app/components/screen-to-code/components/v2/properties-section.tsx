@@ -21,7 +21,7 @@ export const PropertiesSection = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "background.paper", py: 8 }}>
+    <Box sx={{ py: 8 }}>
       <Container>
         <Stack
           direction="row"

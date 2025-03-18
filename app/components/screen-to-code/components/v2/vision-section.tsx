@@ -1,61 +1,80 @@
 import React from "react";
+import { Container, Box, Stack, Typography, Button } from "@mui/material";
+import { useRouter } from "next/navigation";
+import { visionSectionMatchProps } from "../../reference/v2/match-props";
+import { STCV2Routes } from "../../reference/route-reference";
 
-export const VisionSection = () => <div className="bg-gray-50 py-16">
-	<div className="container mx-auto px-8">
-		<div className="flex flex-col md:flex-row items-center">
-			<div className="md:w-1/2">
-				<div className="text-sm text-blue-500">Our Vision</div>
-				<h2 className="text-2xl font-semibold text-gray-800 mt-2">
-					The values that drive <br/> everything we do
-				</h2>
-				<button className="bg-gray-900 text-white py-2 px-6 rounded-full mt-6 hover:bg-gray-700">
-					Learn more
-				</button>
-			</div>
-			<div className="md:w-1/2 mt-8 md:mt-0">
-				<div className="flex items-start mb-6">
-					<div className="bg-blue-100 text-blue-500 rounded-full p-2 mr-4">
-						<i className="fas fa-home"></i>
-					</div>
-					<div>
-						<h3 className="text-lg font-semibold text-gray-800">
-							Dream Home
-						</h3>
-						<p className="text-gray-600">
-							Discover your ideal living space with our premium featured
-							real estate listings.
-						</p>
-					</div>
-				</div>
-				<div className="flex items-start mb-6">
-					<div className="bg-blue-100 text-blue-500 rounded-full p-2 mr-4">
-						<i className="fas fa-chart-line"></i>
-					</div>
-					<div>
-						<h3 className="text-lg font-semibold text-gray-800">
-							Smart Investment
-						</h3>
-						<p className="text-gray-600">
-							Secure high-value, future-ready property and investment
-							opportunities today.
-						</p>
-					</div>
-				</div>
-				<div className="flex items-start">
-					<div className="bg-blue-100 text-blue-500 rounded-full p-2 mr-4">
-						<i className="fas fa-star"></i>
-					</div>
-					<div>
-						<h3 className="text-lg font-semibold text-gray-800">
-							Luxury Living
-						</h3>
-						<p className="text-gray-600">
-							Explore exclusive, sophisticated properties tailored to
-							your perfect lifestyle.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>;
+export const VisionSection = () => {
+  const { eyebrowBadge, title, button, visions } = visionSectionMatchProps;
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(STCV2Routes.routes.modules.vision.cta_button.path);
+  };
+
+  return (
+    <Box py={8} sx={{ backgroundColor: "grey.50" }}>
+      <Container>
+        <Stack direction={{ xs: "column", md: "row" }} alignItems="center">
+          <Box width={{ xs: "100%", md: "50%" }}>
+            <Typography color="primary" variant="body2">
+              {eyebrowBadge.content}
+            </Typography>
+            <Typography
+              variant={title.variant}
+              color="text.primary"
+              fontWeight={600}
+              mt={1}
+            >
+              {title.content}
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                mt: 3,
+                borderRadius: 28,
+                bgcolor: "grey.900",
+                "&:hover": { bgcolor: "grey.700" },
+              }}
+              onClick={handleClick}
+            >
+              {button.buttonText}
+            </Button>
+          </Box>
+
+          <Box width={{ xs: "100%", md: "50%" }} mt={{ xs: 4, md: 0 }}>
+            <Stack spacing={3}>
+              {visions.map((vision, index) => (
+                <Stack key={index} direction="row" alignItems="flex-start">
+                  <Box
+                    sx={{
+                      bgcolor: "primary.50",
+                      color: "primary.main",
+                      borderRadius: "50%",
+                      p: 1,
+                      mr: 2,
+                    }}
+                  >
+                    <i className="fas fa-star" />
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant={vision.title.variant}
+                      color="text.primary"
+                      fontWeight={600}
+                    >
+                      {vision.title.content}
+                    </Typography>
+                    <Typography color="text.secondary">
+                      {vision.content}
+                    </Typography>
+                  </Box>
+                </Stack>
+              ))}
+            </Stack>
+          </Box>
+        </Stack>
+      </Container>
+    </Box>
+  );
+};

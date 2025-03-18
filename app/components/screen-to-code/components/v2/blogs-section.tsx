@@ -15,7 +15,7 @@ export const BlogsSection = () => {
   };
 
   return (
-    <Box py={8} bgcolor="background.paper">
+    <Box py={8}>
       <Container>
         <Stack>
           <Typography variant="body2" color="primary">
