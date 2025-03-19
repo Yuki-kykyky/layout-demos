@@ -9,7 +9,7 @@ export const VisionSection = () => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(STCV2Routes.routes.modules.vision.cta_button.path);
+    router.push(STCV2Routes.routes.modules.home.vision.cta_button.path);
   };
 
   return (

@@ -18,15 +18,22 @@ export const STCV2Routes = {
       },
     },
     modules: {
-      vision: {
-        cta_button: { label: "Learn more", path: "/about" },
+      home: {
+        vision: {
+          cta_button: { label: "Learn more", path: "/about" },
+        },
+        properties: {
+          cta_button: { label: "All properties", path: "/properties" },
+          card_item: { dynamic_path: "/properties/:id" },
+        },
+        blogs: {
+          card_item: { dynamic_path: "/blogs/:post_id" },
+        },
       },
       properties: {
-        cta_button: { label: "All properties",path: "/properties" },
-        card_item: { dynamic_path: "/properties/:id" },
-      },
-      blogs: {
-        card_item: { dynamic_path: "/blogs/:post_id" },
+        banner: {
+          cta_button: { label: "Book Now", path: "/contact" },
+        },
       },
     },
   },

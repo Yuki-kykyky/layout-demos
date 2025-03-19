@@ -1,4 +1,4 @@
-import { Badge, Box, styled, Typography } from "@mui/material";
+import { Badge, Box, styled, SxProps, Typography } from "@mui/material";
 import React from "react";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 import { WoopBadgeStyles } from "./styles";
@@ -12,6 +12,7 @@ export interface WoopBadgeBaseProps {
   color?: string;
   textColor?: string;
   outlined?: boolean;
+  sx?: SxProps;
 }
 
 export interface StyledBadgeProps {
@@ -71,6 +72,7 @@ const WoopBadgeBase = ({
   color = ColorPalette.AccentOrange.accent2Primary,
   textColor = ColorPalette.Greyscale.white,
   outlined = false,
+  sx,
 }: WoopBadgeBaseProps) => {
   const variant = outlined ? "outlined" : "filled";
 
@@ -81,6 +83,7 @@ const WoopBadgeBase = ({
         width: width || "fit-content",
         height: height || "fit-content",
         ...WoopBadgeStyles.variantStyles[variant](color, textColor),
+        ...sx,
       }}
     >
       <Typography

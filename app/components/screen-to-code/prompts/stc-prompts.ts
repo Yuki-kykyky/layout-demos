@@ -21,11 +21,7 @@ const { title, subtitle, verticalCard, horizontalCard } = sectionBProps;
 </Typography>
 `;
 
-export const replaceWithMUICN = `
-第一步，${matchProps}, 
-
-第二步，
-
+export const replaceWithMUI = `
 你是一名专业的前端开发者，你的团队约定不在代码中使用原生 HTML 标签，你需要将它们全部替换为 Material UI 组件。
 
 0. 有关 Material UI，你需要记住：
@@ -33,9 +29,17 @@ ${fixGrid}
 
 1. 最外层使用 <Container>，Flex 布局使用 <Stack>，Grid 布局使用 <Grid2>，其余布局使用 <Box>；
 
-2. 文本使用 <Typography>；
+2. 根据提供的 index 文件搜寻匹配的 UI 组件进行替换；
 
-3. 按钮先匹配现有组件，若匹配失败，则使用 <Button>
+3. 文本使用 <Typography>；
+
+4. Icon 先从 @mui/icons-material 库中寻找匹配，如果不存在则自行绘制 svg；
+`;
+
+export const matchAndReplace = `
+第一步，${matchProps}, 
+
+第二步，${replaceWithMUI}
 `;
 
 export const initializePage = `
@@ -72,7 +76,7 @@ export default async function PropertyPage({
 ---
 `;
 
-export const matchCTACN = `
+export const matchCTA = `
 你需要从提供的 references 文件中获取对应特殊事件。
 
 - 案例一，例如：

@@ -3,12 +3,12 @@ import { BtnSize, BtnType, WoopAvatar, WoopBtn, WoopChip } from "../woop-ui";
 import { VerticalCardProps } from "../woop-ui/cards/vertical-card";
 import { ChipType } from "../woop-ui/woop-chip";
 import {
+  getRandomDate,
   getRandomImage,
-  getRandomName,
   getRandomJob,
+  getRandomName,
   getRandomText,
   getRandomTitle,
-  getRandomDate,
 } from "./random-const";
 import React from "react";
 
@@ -115,4 +115,28 @@ export const getHorizontalCard = () => {
     description: getRandomText(),
     footerSlot: getBtnFooter(),
   };
+};
+// 生成随机房产数据
+export const generateRandomProperties = (count: number) => {
+  const statuses = ["For Sale", "For Rent"];
+  const locations = [
+    "4231 Cedar Lane, NY",
+    "4350 Richmond Street, CA",
+    "3620 Sycamore Avenue, CA",
+    "7800 Serenity Avenue, CA",
+    "2445 Oakland Lane, TX",
+    "2345 Crystal Drive, FL",
+    "1234 Elm Street, Glendale, CA",
+  ];
+
+  return Array.from({ length: count }, (_, index) => ({
+    id: index + 1,
+    image: getRandomImage(),
+    status: statuses[Math.floor(Math.random() * statuses.length)],
+    location: locations[Math.floor(Math.random() * locations.length)],
+    title: getRandomTitle(),
+    bedrooms: Math.floor(Math.random() * 4) + 1,
+    bathrooms: Math.floor(Math.random() * 3) + 1,
+    area: `${Math.floor(Math.random() * 2000) + 1500} sqft`,
+  }));
 };

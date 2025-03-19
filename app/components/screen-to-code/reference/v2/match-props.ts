@@ -68,3 +68,17 @@ export const visionSectionMatchProps = {
     },
   ],
 };
+
+export const propertiesBannerMatchProps = {
+  eyebrowBadge: {
+    content: "Properties",
+  },
+  title: {
+    variant: "h3" as Variant,
+    content: getRandomTitle(),
+  },
+  button: {
+    buttonText: "Book Now",
+    type: BtnType.Outlined,
+  },
+};

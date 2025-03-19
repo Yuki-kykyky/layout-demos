@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export const PropertiesSection = () => {
   const { eyebrowBadge, title, button, verticalCards } =
     propertiesSectionMatchProps;
-  const { properties } = STCV2Routes.routes.modules;
+  const { properties } = STCV2Routes.routes.modules.home;
 
   const router = useRouter();
 
