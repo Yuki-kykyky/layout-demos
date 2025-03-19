@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Stack, Typography, Grid2, Box } from "@mui/material";
-import { WoopBadge, WoopBtn, VerticalCard } from "@/app/common/woop-ui";
+import { WoopBadge, WoopBtn, PropertyCard } from "@/app/common/woop-ui";
 import { propertiesSectionMatchProps } from "../../../reference/v2/match-props";
 import { STCV2Routes } from "../../../reference/route-reference";
 import { useRouter } from "next/navigation";
 
 export const PropertiesSection = () => {
-  const { eyebrowBadge, title, button, verticalCards } =
+  const { eyebrowBadge, title, button, propertiesCards } =
     propertiesSectionMatchProps;
   const { properties } = STCV2Routes.routes.modules.home;
 
@@ -16,8 +16,10 @@ export const PropertiesSection = () => {
     router.push(properties.cta_button.path);
   };
 
-  const handleCardClick = (id: string) => {
-    router.push(properties.card_item.dynamic_path.replace(":id", id));
+  const handleCardClick = (id: string | number) => {
+    router.push(
+      properties.card_item.dynamic_path.replace(":id", id.toString())
+    );
   };
 
   return (
@@ -30,7 +32,7 @@ export const PropertiesSection = () => {
         >
           <Stack>
             <WoopBadge {...eyebrowBadge} />
-            <Typography variant={title.variant} sx={{ mt: 1 }}>
+            <Typography variant={title.variant} sx={{ mt: 1, width: "70%" }}>
               {title.content}
             </Typography>
           </Stack>
@@ -42,13 +44,13 @@ export const PropertiesSection = () => {
         </Stack>
 
         <Grid2 container spacing={4} sx={{ mt: 6 }}>
-          {verticalCards.map((card, index) => (
+          {propertiesCards.map((card, index) => (
             <Grid2 key={index} size={{ xs: 12, md: 4 }}>
               <Box
                 onClick={() => handleCardClick(card.id)}
                 sx={{ cursor: "pointer" }}
               >
-                <VerticalCard {...card} />
+                <PropertyCard {...card} />
               </Box>
             </Grid2>
           ))}

@@ -8,6 +8,7 @@ import { BtnType } from "@/app/common/woop-ui";
 import {
   getRandomIcon,
   getVerticalCardGroups,
+  generateRandomProperties,
 } from "@/app/common/section/random-groups";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 
@@ -20,13 +21,13 @@ export const propertiesSectionMatchProps = {
   },
   title: {
     variant: "h3" as Variant,
-    content: getRandomTitle(),
+    content: "Ready to buy your dream home? find it here",
   },
   button: {
     buttonText: "All properties",
     type: BtnType.Filled,
   },
-  verticalCards: getVerticalCardGroups(),
+  propertiesCards: generateRandomProperties(6),
 };
 
 export const blogsSectionMatchProps = {
