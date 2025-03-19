@@ -11,6 +11,26 @@ import {
   getRandomTitle,
 } from "./random-const";
 import React from "react";
+import {
+  AccessAlarm,
+  AccountCircle,
+  AddCard,
+  AllOut,
+  Analytics,
+} from "@mui/icons-material";
+
+export const getRandomIcon = () => {
+  const IconSet = [
+    <AccessAlarm key={"accessAlarm"} />,
+    <AccountCircle key={"accountCircle"} />,
+    <AddCard key={"addCard"} />,
+    <AllOut key={"allOut"} />,
+    <Analytics key={"analytic"} />,
+  ];
+  const randomIndex = Math.floor(Math.random() * 5);
+
+  return IconSet[randomIndex];
+};
 
 export const getRandomAvatarInfo = () => {
   const avatar = getRandomImage();

@@ -84,7 +84,7 @@ const lightTheme = createTheme({
       fontFamily: "Montserrat, sans-serif",
       fontSize: "36px",
       lineHeight: "48px",
-      fontWeight: 600,
+      fontWeight: 700,
     },
     h6: {
       fontFamily: "Montserrat, sans-serif",

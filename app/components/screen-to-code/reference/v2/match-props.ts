@@ -5,7 +5,10 @@ import {
   getRandomTitle,
 } from "@/app/common/section/random-const";
 import { BtnType } from "@/app/common/woop-ui";
-import { getVerticalCardGroups } from "@/app/common/section/random-groups";
+import {
+  getRandomIcon,
+  getVerticalCardGroups,
+} from "@/app/common/section/random-groups";
 import { ColorPalette } from "@/app/common/styles/color-palette";
 
 export const propertiesSectionMatchProps = {
@@ -118,5 +121,41 @@ export const aboutBannerMatchProps = {
     { label: "Properties sold", rate: "196+" },
     { label: "Project done", rate: "496+" },
     { label: "Happy Clients", rate: "86%" },
+  ],
+};
+
+export const amenitiesSectionMatchProps = {
+  eyebrowBadge: {
+    content: "Amenities",
+    size: "M" as const,
+    color: ColorPalette.AccentViolet.accent1Secondary,
+    textColor: ColorPalette.Greyscale.white,
+  },
+  title: {
+    variant: "h3" as Variant,
+    content: "Discover exceptional amenities for a luxurious lifestyle",
+  },
+  image: getRandomImage(),
+  including: [
+    {
+      icon: getRandomIcon(),
+      content: "Cleanliness strictly",
+    },
+    {
+      icon: getRandomIcon(),
+      content: "High speed Network",
+    },
+    {
+      icon: getRandomIcon(),
+      content: "Full time security & work",
+    },
+    {
+      icon: getRandomIcon(),
+      content: "luxurious lifestyle",
+    },
+    {
+      icon: getRandomIcon(),
+      content: "Gym and Store",
+    },
   ],
 };
