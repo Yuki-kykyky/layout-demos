@@ -7,7 +7,7 @@ export const STCV2Routes = {
           { label: "About", path: "/about" },
           { label: "Properties", path: "/properties" },
           { label: "Agents", path: "/agents" },
-          { label: "blogs", path: "/blogs" },
+          { label: "Blogs", path: "/blogs" },
         ],
       },
       footer: {

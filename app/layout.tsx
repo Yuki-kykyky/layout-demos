@@ -26,8 +26,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Layout exercises",
-  description: "Layout exercises",
+  title: "Home | Layout demos",
+  description: "Home | Layout demos",
 };
 
 export default function RootLayout({

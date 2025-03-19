@@ -1,6 +1,12 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { SharedLayout } from "@/app/components/shared-layout";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs | Layout demos",
+  description: "Blogs | Layout demos",
+};
 
 export default function BlogsPage() {
   return (

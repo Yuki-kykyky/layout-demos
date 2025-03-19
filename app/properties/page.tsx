@@ -4,6 +4,12 @@ import { Box, Container, Grid2 } from "@mui/material";
 import { PropertyCard } from "@/app/common/woop-ui";
 import { generateRandomProperties } from "@/app/common/section/random-groups";
 import { PropertiesBanner } from "@/app/components/screen-to-code/components/v2/properties-banner";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Properties | Layout demos",
+  description: "Properties | Layout demos",
+};
 
 export default function PropertiesPage() {
   const properties = generateRandomProperties(9);
