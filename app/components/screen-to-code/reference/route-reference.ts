@@ -35,6 +35,11 @@ export const STCV2Routes = {
           cta_button: { label: "Book Now", path: "/contact" },
         },
       },
+      about: {
+        banner: {
+          cta_button: { label: "View Properties", path: "/properties" },
+        },
+      },
     },
   },
 };

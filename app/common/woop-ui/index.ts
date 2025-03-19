@@ -12,10 +12,6 @@ export { WoopIconBtn } from "./woop-icon-btn";
 // Chip 相关
 export { WoopChip, ChipType } from "./woop-chip";
 
-// Avatar 相关
-export { WoopAvatar } from "./woop-avatar";
-export { type AvatarSize } from "./woop-avatar";
-
 // Badge 相关
 export { WoopBadge, WoopNumberBadge, StyledBadge } from "./woop-badge";
 export type { WoopBadgeBaseProps, StyledBadgeProps } from "./woop-badge";
@@ -29,3 +25,7 @@ export { WoopSwitch } from "./woop-switch";
 
 // Tab 相关
 export { WoopTab, WoopTabPanelWrapper } from "./woop-tab";
+
+// Avatar 相关
+export { WoopAvatar } from "./woop-avatar";
+export { type AvatarSize } from "./woop-avatar";

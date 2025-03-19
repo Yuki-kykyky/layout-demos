@@ -1,10 +1,12 @@
 import { Variant } from "@mui/material/styles/createTypography";
 import {
+  getRandomImage,
   getRandomText,
   getRandomTitle,
 } from "@/app/common/section/random-const";
 import { BtnType } from "@/app/common/woop-ui";
 import { getVerticalCardGroups } from "@/app/common/section/random-groups";
+import { ColorPalette } from "@/app/common/styles/color-palette";
 
 export const propertiesSectionMatchProps = {
   eyebrowBadge: {
@@ -81,4 +83,40 @@ export const propertiesBannerMatchProps = {
     buttonText: "Book Now",
     type: BtnType.Outlined,
   },
+};
+
+export const aboutBannerMatchProps = {
+  eyebrowBadge: {
+    content: "About us",
+    size: "M" as const,
+    color: ColorPalette.AccentViolet.accent1Secondary,
+    textColor: ColorPalette.Greyscale.white,
+  },
+  title: {
+    variant: "h2" as Variant,
+    content:
+      "Connect with our experts and bring your Real Estate ideas to life",
+    emphasize: "Real Estate",
+  },
+  imageGroup: [getRandomImage(), getRandomImage(), getRandomImage()],
+  expert: {
+    title: {
+      variant: "subtitle2" as Variant,
+      content: "Your trusted real estate experts:",
+    },
+    content: {
+      description:
+        "With years of local expertise, we're committed to helping you buy, sell, or invest in properties with confidence. Our personalized approach ensures every client's unique needs are met with professionalism and care.",
+      button: {
+        buttonText: "View Properties",
+        type: BtnType.Filled,
+      },
+    },
+  },
+  stat: [
+    { label: "Satisfaction rate", rate: "86%" },
+    { label: "Properties sold", rate: "196+" },
+    { label: "Project done", rate: "496+" },
+    { label: "Happy Clients", rate: "86%" },
+  ],
 };
