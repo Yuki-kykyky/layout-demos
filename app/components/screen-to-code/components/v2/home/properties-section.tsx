@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Stack, Typography, Grid2, Box } from "@mui/material";
 import { WoopBadge, WoopBtn, VerticalCard } from "@/app/common/woop-ui";
-import { propertiesSectionMatchProps } from "../../reference/v2/match-props";
-import { STCV2Routes } from "../../reference/route-reference";
+import { propertiesSectionMatchProps } from "../../../reference/v2/match-props";
+import { STCV2Routes } from "../../../reference/route-reference";
 import { useRouter } from "next/navigation";
 
 export const PropertiesSection = () => {

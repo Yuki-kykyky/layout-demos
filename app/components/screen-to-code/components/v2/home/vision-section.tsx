@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Box, Stack, Typography, Button } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { visionSectionMatchProps } from "../../reference/v2/match-props";
-import { STCV2Routes } from "../../reference/route-reference";
+import { visionSectionMatchProps } from "../../../reference/v2/match-props";
+import { STCV2Routes } from "../../../reference/route-reference";
 
 export const VisionSection = () => {
   const { eyebrowBadge, title, button, visions } = visionSectionMatchProps;
