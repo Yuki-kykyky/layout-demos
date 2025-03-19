@@ -29,7 +29,7 @@ export const PropertiesSection = () => {
           justifyContent="space-between"
         >
           <Stack>
-            <WoopBadge content={eyebrowBadge.content} />
+            <WoopBadge {...eyebrowBadge} />
             <Typography variant={title.variant} sx={{ mt: 1 }}>
               {title.content}
             </Typography>

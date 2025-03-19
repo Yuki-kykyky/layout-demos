@@ -136,7 +136,7 @@ export const AboutBanner = () => {
         </Stack>
 
         {/* Stats */}
-        <Box bgcolor="grey.100" borderRadius={3} p={8} mb={12}>
+        <Box bgcolor="grey.100" borderRadius={3} p={8}>
           <Stack direction="row" justifyContent="space-between">
             {stat.map((item, index) => (
               <Box textAlign="center" key={index}>

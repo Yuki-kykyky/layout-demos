@@ -10,12 +10,12 @@ export const STCv2 = () => {
       {/* <HeaderBanner /> */}
       <VisionSection />
       <PropertiesSection />
+      <BlogsSection />
       {/* <FeaturesSection /> */}
       {/* <HorizontalCardSection /> */}
       {/* <HowItWorkSection /> */}
       {/* <WhyChooseSection /> */}
       {/* <TestimonialsSection /> */}
-      <BlogsSection />
     </SharedLayout>
   );
 };

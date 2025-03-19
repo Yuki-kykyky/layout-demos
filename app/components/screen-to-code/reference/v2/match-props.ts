@@ -14,6 +14,9 @@ import { ColorPalette } from "@/app/common/styles/color-palette";
 export const propertiesSectionMatchProps = {
   eyebrowBadge: {
     content: "Properties",
+    size: "M" as const,
+    color: ColorPalette.AccentViolet.accent1Secondary,
+    textColor: ColorPalette.Greyscale.white,
   },
   title: {
     variant: "h3" as Variant,

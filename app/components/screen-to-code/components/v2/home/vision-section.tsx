@@ -13,7 +13,7 @@ export const VisionSection = () => {
   };
 
   return (
-    <Box py={8} sx={{ backgroundColor: "grey.50" }}>
+    <Box py={8}>
       <Container>
         <Stack direction={{ xs: "column", md: "row" }} alignItems="center">
           <Box width={{ xs: "100%", md: "50%" }}>
