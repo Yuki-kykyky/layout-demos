@@ -10,9 +10,6 @@ import { lightTheme, darkTheme } from "./theme";
 import { STCv1 } from "./components/screen-to-code/stc-v1";
 import { useThemeStore } from "./store/theme-store";
 import { STCv2 } from "./components/screen-to-code/stc-v2";
-import { STCv3 } from "./components/screen-to-code/stc-v3";
-import { STCv4 } from "./components/screen-to-code/stc-v4";
-import { Dashboard } from "./components/screen-to-code/Dashboard";
 
 export default function Home() {
   const versionMap = {
@@ -31,18 +28,6 @@ export default function Home() {
     v7: {
       label: "screenshot-to-code-v2",
       content: <STCv2 />,
-    },
-    v8: {
-      label: "screenshot-to-code-v3",
-      content: <STCv3 />,
-    },
-    v9: {
-      label: "screenshot-to-code-v4",
-      content: <STCv4 />,
-    },
-    v10: {
-      label: "screenshot-to-code-v5",
-      content: <Dashboard />,
     },
   };
 
