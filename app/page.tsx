@@ -11,7 +11,7 @@ import { STCv1 } from "./components/screen-to-code/stc-v1";
 import { useThemeStore } from "./store/theme-store";
 import { STCv2 } from "./components/screen-to-code/stc-v2";
 import { STCv3 } from "./components/screen-to-code/stc-v3";
-
+import { STCv4 } from "./components/screen-to-code/stc-v4";
 export default function Home() {
   const versionMap = {
     v5: {
@@ -33,6 +33,10 @@ export default function Home() {
     v8: {
       label: "screenshot-to-code-v3",
       content: <STCv3 />,
+    },
+    v9: {
+      label: "screenshot-to-code-v4",
+      content: <STCv4 />,
     },
   };
 
