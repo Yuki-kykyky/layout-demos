@@ -1,0 +1,415 @@
+<html>
+<head>
+    <title>Intelly App</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.0.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="flex h-screen">
+
+                    {/* Left Sidebar */}
+                    <div className="w-64 bg-white shadow-md">
+                        <div className="p-4">
+                            <img src="https://placehold.co/100x40?text=intelly" alt="Intelly Logo" className="mb-6" />
+                            <div className="space-y-2">
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-th-large text-gray-500"></i>
+                                    <span>Dashboard</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="far fa-calendar-alt text-gray-500"></i>
+                                    <span>Schedule</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-user-friends text-gray-500"></i>
+                                    <span>Patients</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-chart-line text-gray-500"></i>
+                                    <span>Statistics & reports</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-book-open text-gray-500"></i>
+                                    <span>Education</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-newspaper text-gray-500"></i>
+                                    <span>My articles</span>
+                                </div>
+                            </div>
+                            <div className="mt-8 space-y-2">
+                                <h3 className="text-xs font-semibold text-gray-500 uppercase px-4">Tools</h3>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-comment-dots text-gray-500"></i>
+                                    <span>Chats & calls</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-dollar-sign text-gray-500"></i>
+                                    <span>Billing</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-file-alt text-gray-500"></i>
+                                    <span>Documents base</span>
+                                </div>
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-cog text-gray-500"></i>
+                                    <span>Settings</span>
+                                </div>
+                            </div>
+                            <div className="mt-8">
+                                <div className="flex items-center space-x-3 py-2 px-4 rounded-md hover:bg-gray-100 cursor-pointer font-medium">
+                                    <i className="fas fa-sign-out-alt text-gray-500"></i>
+                                    <span>Log out</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="flex-1 p-8">
+
+                        {/* Top Bar */}
+                        <div className="flex justify-between items-center mb-6">
+                            <div className="flex items-center">
+                                <div className="relative">
+                                    <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                    <input type="text" placeholder="Lis" className="pl-10 pr-4 py-2 rounded-full bg-gray-100 border-none focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                </div>
+                                <div className="ml-4">
+                                    In:
+                                    <span className="ml-2 px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">Patients</span>
+                                    <span className="ml-2 px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">Education</span>
+                                    <span className="ml-2 px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">Prescriptions</span>
+                                    <span className="ml-2 px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">Test results</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i className="fas fa-bell text-gray-600 mr-4 text-lg"></i>
+                                <i className="fas fa-cog text-gray-600 text-lg"></i>
+                            </div>
+                        </div>
+
+                        {/* Main Content Area */}
+                        <div>
+                            <h1 className="text-2xl font-semibold text-gray-800 mb-2">Good morning, Dr.Olivia</h1>
+                            <p className="text-gray-600 mb-6">Intelly wishes you a good and productive day. 45 patients waiting for your treatment today. You also have one live event in your calendar today.</p>
+
+                            {/* Dashboard Cards */}
+                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                <div className="bg-yellow-100 rounded-2xl p-4">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <h2 className="font-semibold text-gray-700">Patients:</h2>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500 mb-2">
+                                        <span>14 pers</span>
+                                        <span>5 pers</span>
+                                        <span>2 pers</span>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500">
+                                        <span>22-32 Y.O</span>
+                                        <span>32-45 Y.O</span>
+                                        <span>45+ Y.O</span>
+                                    </div>
+                                    <img src="https://placehold.co/280x100?text=Patients+Graph" alt="Patients Graph" className="mt-2" />
+                                    <div className="flex justify-between text-xs text-gray-500 mt-2">
+                                        <span>07:30 p.m</span>
+                                        <span>12:00 p.m</span>
+                                    </div>
+                                </div>
+
+                                <div className="bg-pink-100 rounded-2xl p-4">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <h2 className="font-semibold text-gray-700">Visits summary:</h2>
+                                        <span className="text-sm text-gray-500 cursor-pointer">Show all ...</span>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500 mb-2">
+                                        <span>24 min</span>
+                                        <span>15 min</span>
+                                        <span>01:30 h</span>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500">
+                                        <span>AVERAGE</span>
+                                        <span>MINIMUM</span>
+                                        <span>MAXIMUM</span>
+                                    </div>
+                                    <img src="https://placehold.co/280x100?text=Visits+Graph" alt="Visits Graph" className="mt-2" />
+                                    <div className="flex justify-between text-xs text-gray-500 mt-2">
+                                        <span>10:30</span>
+                                        <span>11:00</span>
+                                        <span>11:30</span>
+                                        <span>12:00</span>
+                                        <span>12:30</span>
+                                        <span>13:00</span>
+                                        <span>13:30</span>
+                                    </div>
+                                </div>
+
+                                <div className="bg-green-100 rounded-2xl p-4">
+                                    <h2 className="font-semibold text-gray-700 mb-4">By condition:</h2>
+                                    <div className="flex justify-between text-xs text-gray-500 mb-2">
+                                        <span>14 pers</span>
+                                        <span>5 pers</span>
+                                        <span>1 pers</span>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500">
+                                        <span>STABLE</span>
+                                        <span>FAIR</span>
+                                        <span>CRITICAL</span>
+                                    </div>
+                                </div>
+
+                                <div className="bg-blue-100 rounded-2xl p-4">
+                                    <h2 className="font-semibold text-gray-700 mb-4">Sessions:</h2>
+                                    <div className="flex justify-between text-xs text-gray-500 mb-2">
+                                        <span>03:45 h</span>
+                                        <span>02:00 min</span>
+                                        <span>00:24 min</span>
+                                    </div>
+                                    <div className="flex justify-between text-xs text-gray-500">
+                                        <span>IN CLINIC</span>
+                                        <span>VIDEO CALLS</span>
+                                        <span>IN CHAT</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Patient's List and Visit Details */}
+                            <div className="grid grid-cols-2 gap-6">
+                                <div className="bg-white rounded-2xl shadow-md p-4">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <h2 className="font-semibold text-gray-700">Patient's list</h2>
+                                        <div className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">Today <i className="fas fa-chevron-down ml-1"></i></div>
+                                    </div>
+
+                                    {/* Patient Items */}
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                                            <div className="flex items-center space-x-3">
+                                                <i className="fas fa-user-md text-blue-500"></i>
+                                                <div>
+                                                    <p className="font-medium text-gray-700">Taigo Wilkinson</p>
+                                                    <p className="text-sm text-gray-500">Emergency Visit</p>
+                                                </div>
+                                            </div>
+                                            <span className="text-sm text-gray-500">09:15 AM</span>
+                                        </div>
+                                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                                            <div className="flex items-center space-x-3">
+                                                <i className="fas fa-stethoscope text-blue-500"></i>
+                                                <div>
+                                                    <p className="font-medium text-gray-700">Samantha Williams</p>
+                                                    <p className="text-sm text-gray-500">Routine Check-Up</p>
+                                                </div>
+                                            </div>
+                                            <span className="text-sm text-gray-500">09:15 AM</span>
+                                        </div>
+                                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                                            <div className="flex items-center space-x-3">
+                                                <i className="fas fa-video text-blue-500"></i>
+                                                <div>
+                                                    <p className="font-medium text-gray-700">Amy White</p>
+                                                    <p className="text-sm text-gray-500">Video Consultation</p>
+                                                </div>
+                                            </div>
+                                            <span className="text-sm text-gray-500">09:15 AM</span>
+                                        </div>
+                                        <div className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                                            <div className="flex items-center space-x-3">
+                                                <i className="fas fa-file-alt text-blue-500"></i>
+                                                <div>
+                                                    <p className="font-medium text-gray-700">Tyler Young</p>
+                                                    <p className="text-sm text-gray-500">Report</p>
+                                                </div>
+                                            </div>
+                                            <span className="text-sm text-gray-500">09:45 AM</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Visit Details */}
+                                <div className="bg-white rounded-2xl shadow-md p-4">
+                                    <h2 className="font-semibold text-gray-700 mb-4">Visit details</h2>
+                                    <div>
+                                        <p className="font-medium text-gray-700">Taigo Wilkinson</p>
+                                        <p className="text-sm text-gray-500 mb-2">Male - 38 Years 5 Months</p>
+                                        <div className="flex space-x-2 mb-2">
+                                            <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">Fever</span>
+                                            <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">Caught</span>
+                                            <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">Heart Burn</span>
+                                        </div>
+                                        <p className="text-sm text-gray-500 mb-2">Last Checked <span className="font-medium">Dr Everly on 21 April 2021</span></p>
+                                        <p className="text-sm text-gray-500 mb-2">Prescription <span className="text-blue-500">#2.1983KTO</span></p>
+                                        <p className="text-sm text-gray-500 mb-2">Observation <span className="font-medium">High fever and cough at normal hemoglobin levels.</span></p>
+                                        <p className="text-sm text-gray-500 mb-2">Prescription <span className="font-medium">Paracetmol - 2 times a day</span></p>
+                                        <p className="text-sm text-gray-500"> <span className="font-medium">Dizopam - Day and Night before meal</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Sidebar */}
+                    <div className="w-80 bg-white shadow-md">
+                        <div className="p-4">
+                            {/* Calendar */}
+                            <div className="mb-6">
+                                <div className="flex justify-between items-center mb-2">
+                                    <i className="fas fa-arrow-left text-gray-600"></i>
+                                    <h2 className="font-semibold text-gray-700">May 2024</h2>
+                                    <i className="fas fa-arrow-right text-gray-600"></i>
+                                </div>
+                                <table className="w-full">
+                                    <thead>
+                                        <tr className="text-gray-500">
+                                            <th>MO</th>
+                                            <th>TU</th>
+                                            <th>WE</th>
+                                            <th>TH</th>
+                                            <th>FR</th>
+                                            <th>SA</th>
+                                            <th>SU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td className="bg-pink-200 rounded-full text-center">15</td>
+                                            <td>16</td>
+                                            <td>17</td>
+                                            <td>18</td>
+                                            <td>19</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                            <td>23</td>
+                                            <td>24</td>
+                                            <td>25</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td>29</td>
+                                            <td>30</td>
+                                            <td>31</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button className="bg-gray-800 text-white rounded-full py-2 w-full mt-2">Add event</button>
+                            </div>
+
+                            {/* Today's Schedule */}
+                            <div>
+                                <div className="flex justify-between items-center mb-2">
+                                    <h2 className="font-semibold text-gray-700">May 15</h2>
+                                    <div className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-sm cursor-pointer">All <i className="fas fa-chevron-down ml-1"></i></div>
+                                </div>
+                                <p className="text-sm text-gray-500">Time Today's timeline</p>
+
+                                <div className="space-y-3 mt-4">
+                                    <div className="flex items-start space-x-3">
+                                        <div>
+                                            <p className="text-sm text-gray-500">07:00</p>
+                                        </div>
+                                        <div>
+                                            <i className="fas fa-user-md text-blue-500"></i>
+                                            <p className="font-medium text-gray-700">Emergency visit</p>
+                                            <p className="text-sm text-gray-500">West camp, Room 312</p>
+                                            <p className="text-sm text-gray-500">07:00 - 07:30</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start space-x-3">
+                                        <div>
+                                            <p className="text-sm text-gray-500">07:30</p>
+                                        </div>
+                                        <div>
+                                            <i className="fas fa-file-medical-alt text-blue-500"></i>
+                                            <p className="font-medium text-gray-700">Diagnostic test</p>
+                                            <p className="text-sm text-gray-500">East camp, Laboratory, floor 5</p>
+                                            <p className="text-sm text-gray-500">07:30 - 07:55</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start space-x-3">
+                                        <div>
+                                            <p className="text-sm text-gray-500">08:12</p>
+                                        </div>
+                                        <div>
+                                            <i className="fas fa-users text-orange-500"></i>
+                                            <p className="font-medium text-gray-700">Team daily planning</p>
+                                            <p className="text-sm text-gray-500">East camp, Room 200</p>
+                                            <p className="text-sm text-gray-500">Participants</p>
+                                            <div className="flex space-x-1">
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">TY</span>
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">AB</span>
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">NR</span>
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">TY</span>
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">SS</span>
+                                                <span className="px-2 py-1 rounded-full bg-gray-200 text-gray-700 text-xs">+3</span>
+                                            </div>
+                                            <p className="text-sm text-gray-500">08:00 - 09:00</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start space-x-3">
+                                        <div>
+                                            <p className="text-sm text-gray-500">09:00</p>
+                                        </div>
+                                        <div>
+                                            <i className="fas fa-user-md text-blue-500"></i>
+                                            <p className="font-medium text-gray-700">Emergency visit</p>
+                                            <p className="text-sm text-gray-500">West camp, Room 312</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button className="bg-gray-100 text-gray-700 rounded-full py-2 w-full mt-4">View all details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
